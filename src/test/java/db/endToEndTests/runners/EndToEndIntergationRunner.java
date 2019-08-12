@@ -5,9 +5,9 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(plugin = {"pretty", "json:build/cucumber-report.json"},
+@CucumberOptions(format = { "json:target/REPORT_NAME.json", "pretty", "html:target/HTML_REPORT_NAME" },
         features = {"src/test/resources/features"},
-        glue = {"db.endToEndtests.steps.endToEndIntegrationSteps"})
-public class EndToEndIntergationRunner {
+        glue = {"db.endToEndTests.steps.endToEndIntegrationSteps"})
+public class EndToEndIntergationRunner{
 }
 

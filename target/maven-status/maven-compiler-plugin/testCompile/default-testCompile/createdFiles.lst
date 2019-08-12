@@ -1,0 +1,5 @@
+db/endToEndTests/utils/ReadPropertyFile.class
+db/endToEndTests/utils/CurrentDateTime.class
+db/endToEndTests/utils/BaseClass.class
+db/endToEndTests/runners/EndToEndIntergationRunner.class
+db/endToEndTests/steps/endToEndIntegrationSteps/BNITests.class
