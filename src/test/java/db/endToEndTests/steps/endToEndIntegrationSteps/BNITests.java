@@ -6,6 +6,8 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import db.endToEndTests.pageFactory.LoginPage;
+import db.endToEndTests.utils.BniLogin;
 import db.endToEndTests.utils.LaunchBrowser;
 import db.endToEndTests.utils.ReadPropertyFile;
 import org.openqa.selenium.WebDriver;
@@ -16,15 +18,18 @@ import static junit.framework.TestCase.assertEquals;
 
 public class BNITests {
 
+    public static WebDriver driver;
     private ReadPropertyFile readPropertyFile = new ReadPropertyFile();
     private LaunchBrowser launchBrowser = new LaunchBrowser();
-    public static WebDriver driver;
+    private LoginPage loginPage;
+    private BniLogin bniLogin = new BniLogin();
 
     @Before
     public void setup() throws Exception {
         System.out.println("Cucumber test execution has started...");
         launchBrowser.getDriver();
         launchBrowser.setDriver();
+        bniLogin.logintoBni();
     }
 
     @After

@@ -1,6 +1,7 @@
 package db.endToEndTests.pageFactory;
 
 import db.endToEndTests.utils.ReadPropertyFile;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -32,9 +33,10 @@ public class LoginPage {
 
     public void enterBniUserName(){
         bniUserName.sendKeys(readPropertyFile.loadAndReadPropertyFile("bniUsername"));
+        //bniUserName.sendKeys(Keys.TAB);
     }
     public void enterBniPassword(){
-        bniUserName.sendKeys(readPropertyFile.loadAndReadPropertyFile("bniPassword"));
+        bniPassword.sendKeys(readPropertyFile.loadAndReadPropertyFile("bniPassword"));
     }
     public void clickBniSignInButton(){
         bniSignIn.click();
