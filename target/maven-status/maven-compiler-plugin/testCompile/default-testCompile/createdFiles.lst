@@ -1,7 +1,9 @@
 db/endToEndTests/utils/ReadPropertyFile.class
-db/endToEndTests/utils/BniLogin.class
+db/endToEndTests/bniCommonLibraries/Login.class
 db/endToEndTests/utils/CurrentDateTime.class
-db/endToEndTests/pageFactory/LoginPage.class
-db/endToEndTests/runners/EndToEndIntergationRunner.class
 db/endToEndTests/utils/LaunchBrowser.class
+db/endToEndTests/pageFactory/Login.class
+db/endToEndTests/pageFactory/BNIConnect.class
+db/endToEndTests/bniCommonLibraries/SignOut.class
+db/endToEndTests/runners/EndToEndIntergationRunner.class
 db/endToEndTests/steps/endToEndIntegrationSteps/BNITests.class

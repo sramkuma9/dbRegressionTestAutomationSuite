@@ -19,7 +19,7 @@ public class LaunchBrowser {
         return driver;
     }
 
-    public void setDriver() throws Exception {
+    public void invokeBrowser() throws Exception {
         String browserType = readPropertyFile.loadAndReadPropertyFile("browserType");
         String appURL = readPropertyFile.loadAndReadPropertyFile("bniUrl");
 

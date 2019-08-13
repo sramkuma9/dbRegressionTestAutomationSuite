@@ -1,7 +1,9 @@
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/bniCommonLibraries/Login.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/utils/LaunchBrowser.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/runners/EndToEndIntergationRunner.java
-/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/utils/BniLogin.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/utils/ReadPropertyFile.java
-/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/pageFactory/LoginPage.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/pageFactory/Login.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/utils/CurrentDateTime.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/pageFactory/BNIConnect.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/bniCommonLibraries/SignOut.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/db/endToEndTests/steps/endToEndIntegrationSteps/BNITests.java
