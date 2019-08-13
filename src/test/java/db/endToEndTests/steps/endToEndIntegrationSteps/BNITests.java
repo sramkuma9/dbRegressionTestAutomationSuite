@@ -8,6 +8,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import db.endToEndTests.bniCommonLibraries.Login;
 import db.endToEndTests.bniCommonLibraries.SignOut;
+import db.endToEndTests.utils.CaptureScreenShot;
 import db.endToEndTests.utils.LaunchBrowser;
 import db.endToEndTests.utils.ReadPropertyFile;
 import org.openqa.selenium.WebDriver;
@@ -25,6 +26,7 @@ public class BNITests {
     @Before
     public void setup() throws Exception {
         System.out.println("Cucumber test execution has started...");
+        driver=launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
         login.loginToBni();
     }

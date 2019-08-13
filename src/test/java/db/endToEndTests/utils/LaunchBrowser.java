@@ -40,7 +40,7 @@ public class LaunchBrowser {
         }
     }
 
-    private WebDriver initChromeDriver(String appURL) {
+    private WebDriver initChromeDriver(String appURL) throws Exception {
         String envName = readPropertyFile.loadAndReadPropertyFile("bniUrl");
         System.out.println("Executing the tests in " + envName + " environment");
         System.out.println("Launching google chrome with new profile..");
@@ -53,25 +53,28 @@ public class LaunchBrowser {
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(15000, TimeUnit.SECONDS);
         driver.navigate().to(appURL);
+        TimeUnit.SECONDS.sleep(5);
         return driver;
     }
 
-    private static WebDriver initInternetExplorerDriver(String appURL) {
+    private static WebDriver initInternetExplorerDriver(String appURL) throws Exception{
         System.out.println("Launching google chrome with new profile..");
         System.setProperty("webdriver.ie.driver", "src/test/resources/drivers/ie.exe");
         System.out.println("Launching Internet browser..");
         WebDriver driver = new InternetExplorerDriver();
         driver.manage().window().maximize();
         driver.navigate().to(appURL);
+        TimeUnit.SECONDS.sleep(5);
         return driver;
     }
 
-    private static WebDriver initFirefoxDriver(String appURL) {
+    private static WebDriver initFirefoxDriver(String appURL) throws Exception{
         System.out.println("Launching Firefox browser..");
         System.setProperty("webdriver.gecko.driver", "src/test/resources/drivers/geckodriver.exe");
         WebDriver driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.navigate().to(appURL);
+        TimeUnit.SECONDS.sleep(5);
         return driver;
     }
 }

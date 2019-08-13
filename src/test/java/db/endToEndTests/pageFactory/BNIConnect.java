@@ -9,6 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.concurrent.TimeUnit;
+
 public class BNIConnect {
     public static WebDriver driver;
     public WebDriverWait wait;
@@ -34,7 +36,8 @@ public class BNIConnect {
         action.build().perform();
     }
 
-    public void clickSignOut() {
+    public void clickSignOut() throws Exception{
         signOut.click();
+        TimeUnit.SECONDS.sleep(5);
     }
 }
