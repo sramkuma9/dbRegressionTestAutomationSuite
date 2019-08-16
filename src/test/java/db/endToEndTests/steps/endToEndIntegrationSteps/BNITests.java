@@ -10,6 +10,7 @@ import db.endToEndTests.bniCommonLibraries.Login;
 import db.endToEndTests.bniCommonLibraries.SignOut;
 import db.endToEndTests.utils.CaptureScreenShot;
 import db.endToEndTests.utils.LaunchBrowser;
+import db.endToEndTests.utils.PDFReader;
 import db.endToEndTests.utils.ReadPropertyFile;
 import org.openqa.selenium.WebDriver;
 import java.io.IOException;
@@ -22,6 +23,7 @@ public class BNITests {
     private LaunchBrowser launchBrowser = new LaunchBrowser();
     private Login login = new Login();
     private SignOut signOut = new SignOut();
+    private PDFReader pdfReader = new PDFReader();
 
     @Before
     public void setup() throws Exception {
