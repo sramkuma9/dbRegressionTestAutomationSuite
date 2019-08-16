@@ -16,6 +16,7 @@ public class PDFReader {
         if (!document.isEncrypted()) {
             PDFTextStripper stripper = new PDFTextStripper();
             pdfText = stripper.getText(document);
+            System.out.println(pdfText);
         }
         document.close();
         return pdfText;
