@@ -1,4 +1,4 @@
-package db.endToEndTests.utils;
+package bni.regression.libraries.common;
 
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;

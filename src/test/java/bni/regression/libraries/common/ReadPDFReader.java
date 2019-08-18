@@ -1,12 +1,11 @@
-package db.endToEndTests.utils;
+package bni.regression.libraries.common;
 
 import java.io.File;
 import java.io.IOException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
-import org.apache.pdfbox.text.PDFTextStripperByArea;
 
-public class PDFReader {
+public class ReadPDFReader {
     private String pdfText;
     private ReadPropertyFile readPropertyFile = new ReadPropertyFile();
 

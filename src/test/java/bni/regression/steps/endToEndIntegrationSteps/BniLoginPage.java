@@ -1,29 +1,28 @@
-package db.endToEndTests.steps.endToEndIntegrationSteps;
+package bni.regression.steps.endToEndIntegrationSteps;
 
+import bni.regression.libraries.common.LaunchBrowser;
+import bni.regression.libraries.common.ReadPDFReader;
+import bni.regression.libraries.common.ReadPropertyFile;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import db.endToEndTests.bniCommonLibraries.Login;
-import db.endToEndTests.bniCommonLibraries.SignOut;
-import db.endToEndTests.utils.CaptureScreenShot;
-import db.endToEndTests.utils.LaunchBrowser;
-import db.endToEndTests.utils.PDFReader;
-import db.endToEndTests.utils.ReadPropertyFile;
+import bni.regression.libraries.ui.Login;
+import bni.regression.libraries.ui.SignOut;
 import org.openqa.selenium.WebDriver;
 import java.io.IOException;
 import static junit.framework.TestCase.assertEquals;
 
-public class BNITests {
+public class BniLoginPage {
 
     public static WebDriver driver;
     private ReadPropertyFile readPropertyFile = new ReadPropertyFile();
     private LaunchBrowser launchBrowser = new LaunchBrowser();
     private Login login = new Login();
     private SignOut signOut = new SignOut();
-    private PDFReader pdfReader = new PDFReader();
+    private ReadPDFReader readPdfReader = new ReadPDFReader();
 
     @Before
     public void setup() throws Exception {

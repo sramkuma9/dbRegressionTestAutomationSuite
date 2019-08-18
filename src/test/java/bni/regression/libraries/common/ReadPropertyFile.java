@@ -1,4 +1,4 @@
-package db.endToEndTests.utils;
+package bni.regression.libraries.common;
 
 import java.io.*;
 import java.util.Properties;
@@ -12,7 +12,7 @@ public class ReadPropertyFile {
 
         try {
             // load a properties file
-            input = new FileInputStream(getClass().getClassLoader().getResource("files/config.properties").getPath());
+            input = new FileInputStream(getClass().getClassLoader().getResource("properties/config.properties").getPath());
             prop.load(input);
 
             // get the property value and print it out

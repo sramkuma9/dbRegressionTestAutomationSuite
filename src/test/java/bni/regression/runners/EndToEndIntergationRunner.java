@@ -1,4 +1,4 @@
-package db.endToEndTests.runners;
+package bni.regression.runners;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;

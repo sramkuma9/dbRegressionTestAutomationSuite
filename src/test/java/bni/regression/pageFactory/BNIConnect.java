@@ -1,6 +1,6 @@
-package db.endToEndTests.pageFactory;
+package bni.regression.pageFactory;
 
-import db.endToEndTests.utils.ReadPropertyFile;
+import bni.regression.libraries.common.ReadPropertyFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;

@@ -1,9 +1,7 @@
-package db.endToEndTests.utils;
+package bni.regression.libraries.common;
 
 import java.util.concurrent.TimeUnit;
 
-import io.github.bonigarcia.wdm.DriverManagerType;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -48,7 +46,8 @@ public class LaunchBrowser {
         //WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
         ChromeOptions chromeOptions = new ChromeOptions();
         //chromeOptions.setHeadless(true);
-        chromeOptions.addArguments("--start-maximized");
+        //chromeOptions.addArguments("disable-infobars");
+        //chromeOptions.addArguments("--start-maximized");
         chromeOptions.setExperimentalOption("useAutomationExtension", false);
         WebDriver driver = new ChromeDriver(chromeOptions);
         driver.manage().timeouts().implicitlyWait(15000, TimeUnit.SECONDS);
