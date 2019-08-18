@@ -25,7 +25,7 @@ public class CaptureScreenShot {
         //Call getScreenshotAs method to create image file
         File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
         //Move image file to new destination
-        File DestFile = new File("src/test/resources/snapShots/" + currentDateTime.dateTime() +".jpg");
+        File DestFile = new File("src/test/executionReports/screenShots/test.pdf" + currentDateTime.dateTime() +".jpg");
         //Copy file at destination
         FileUtils.copyFile(SrcFile, DestFile);
     }

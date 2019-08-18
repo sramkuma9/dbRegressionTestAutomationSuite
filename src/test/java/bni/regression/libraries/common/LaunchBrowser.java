@@ -19,7 +19,7 @@ public class LaunchBrowser {
 
     public void invokeBrowser() throws Exception {
         String browserType = readPropertyFile.loadAndReadPropertyFile("browserType");
-        String appURL = readPropertyFile.loadAndReadPropertyFile("bniUrl");
+        String appURL = readPropertyFile.loadAndReadPropertyFile("baseUrl");
 
         switch(browserType)
         {
