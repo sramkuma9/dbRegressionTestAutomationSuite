@@ -1,6 +1,5 @@
 package bni.regression.runners;
 
-import bni.regression.libraries.common.CurrentDateTime;
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;

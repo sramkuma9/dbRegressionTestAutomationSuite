@@ -1,70 +1,57 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("bNILoginPage.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("searchAndAddVisitor.feature");
 formatter.feature({
   "line": 1,
-  "name": "BNI Login page",
+  "name": "Add and search visitor",
   "description": "",
-  "id": "bni-login-page",
+  "id": "add-and-search-visitor",
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 21680711470,
+  "duration": 21363626871,
   "status": "passed"
 });
 formatter.scenario({
   "line": 3,
-  "name": "Test login page with incorrect credentials",
+  "name": "Navigate to Add a Visitor page",
   "description": "",
-  "id": "bni-login-page;test-login-page-with-incorrect-credentials",
+  "id": "add-and-search-visitor;navigate-to-add-a-visitor-page",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
   "line": 4,
-  "name": "I am on the BNI login page",
+  "name": "I am on the BNI home page",
   "keyword": "Given "
 });
 formatter.step({
   "line": 5,
-  "name": "I enter an incorrect username and password",
+  "name": "I navigate to Operations Region Add a visitor",
   "keyword": "When "
 });
 formatter.step({
   "line": 6,
-  "name": "I click Login button",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 7,
-  "name": "a message Your username or password is incorrect is displayed",
+  "name": "a pop up window \u0027Add a Visitor\u0027 appears",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "BniLoginPage.I_am_on_the_BNI_login_page()"
+  "location": "SearchAndAddVisitor.I_am_on_the_BNI_home_page()"
 });
 formatter.result({
-  "duration": 180094226,
-  "status": "passed"
-});
-formatter.match({
-  "location": "BniLoginPage.I_enter_an_incorrect_username_and_password()"
-});
-formatter.result({
-  "duration": 174023,
-  "status": "passed"
-});
-formatter.match({
-  "location": "BniLoginPage.I_click_Login_button()"
-});
-formatter.result({
-  "duration": 273247,
+  "duration": 7515706706,
   "status": "passed"
 });
 formatter.match({});
 formatter.result({
   "status": "undefined"
 });
+formatter.match({
+  "location": "SearchAndAddVisitor.a_pop_up_window_Add_a_Visitor_appears()"
+});
+formatter.result({
+  "status": "skipped"
+});
 formatter.after({
-  "duration": 20657573581,
+  "duration": 21661308115,
   "status": "passed"
 });
 });
