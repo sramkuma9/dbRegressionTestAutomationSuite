@@ -49,7 +49,7 @@ public class SearchAndAddVisitor {
         TimeUnit.SECONDS.sleep(2);
         driver = launchBrowser.getDriver();
         bniConnect = new BNIConnect(driver);
-        bniConnect.hoverOnMenu("Reports");
+        bniConnect.navigateMenu("Operations,Region");
     }
 
     @When("I navigate to Operations -> Region -> Add a visitor")

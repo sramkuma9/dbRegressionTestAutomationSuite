@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 21363626871,
+  "duration": 21464238426,
   "status": "passed"
 });
 formatter.scenario({
@@ -37,7 +37,7 @@ formatter.match({
   "location": "SearchAndAddVisitor.I_am_on_the_BNI_home_page()"
 });
 formatter.result({
-  "duration": 7515706706,
+  "duration": 12546700192,
   "status": "passed"
 });
 formatter.match({});
@@ -51,7 +51,7 @@ formatter.result({
   "status": "skipped"
 });
 formatter.after({
-  "duration": 21661308115,
+  "duration": 18986535725,
   "status": "passed"
 });
 });
