@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 21641764243,
+              "duration": 6493387,
               "status": "passed"
             },
             "match": {
@@ -21,7 +21,7 @@
         "after": [
           {
             "result": {
-              "duration": 36762,
+              "duration": 44860,
               "status": "passed"
             },
             "match": {
@@ -34,7 +34,7 @@
         "steps": [
           {
             "result": {
-              "duration": 12348327105,
+              "duration": 33678875471,
               "status": "passed"
             },
             "line": 4,
@@ -46,7 +46,7 @@
           },
           {
             "result": {
-              "duration": 5367463958,
+              "duration": 5365030848,
               "status": "passed"
             },
             "line": 5,
@@ -58,13 +58,112 @@
           },
           {
             "result": {
-              "duration": 44118725,
+              "duration": 50877248,
               "status": "passed"
             },
             "line": 6,
             "name": "a pop up window \u0027Add a Visitor\u0027 appears",
             "match": {
               "location": "SearchAndAddVisitor.a_pop_up_window_Add_a_Visitor_appears()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 66071,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.setup()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Search with email id and name",
+        "description": "",
+        "id": "add-and-search-visitor;search-with-email-id-and-name",
+        "after": [
+          {
+            "result": {
+              "duration": 34919,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 94169,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I am on the Add a visitor page",
+            "match": {
+              "location": "SearchAndAddVisitor.I_am_on_the_Add_a_visitor_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1118761490,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I enter a valid email id",
+            "match": {
+              "location": "SearchAndAddVisitor.I_enter_a_valid_email_id()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6692365083,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "click search and click search by name",
+            "match": {
+              "location": "SearchAndAddVisitor.click_search_and_click_search_by_name()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 12,
+            "name": "I enter the First and Last name",
+            "match": {},
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 13,
+            "name": "I click the search button",
+            "match": {
+              "location": "SearchAndAddVisitor.I_click_the_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 14,
+            "name": "create new button is displayed",
+            "match": {
+              "location": "SearchAndAddVisitor.create_new_button_is_displayed()"
             },
             "keyword": "Then "
           }

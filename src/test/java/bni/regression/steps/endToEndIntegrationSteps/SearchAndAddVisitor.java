@@ -1,5 +1,6 @@
 package bni.regression.steps.endToEndIntegrationSteps;
 
+import bni.regression.libraries.common.CurrentDateTime;
 import bni.regression.libraries.common.LaunchBrowser;
 import bni.regression.libraries.common.ReadPDFReader;
 import bni.regression.libraries.common.ReadWritePropertyFile;
@@ -7,6 +8,7 @@ import bni.regression.pageFactory.AddAVisitor;
 import bni.regression.pageFactory.BNIConnect;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -22,6 +24,7 @@ public class SearchAndAddVisitor {
 
     public static WebDriver driver;
     private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
+    private CurrentDateTime currentDateTime = new CurrentDateTime();
     private LaunchBrowser launchBrowser = new LaunchBrowser();
     private Login login = new Login();
     private SignOut signOut = new SignOut();
@@ -31,10 +34,10 @@ public class SearchAndAddVisitor {
 
     @Before
     public void setup() throws Exception {
-        System.out.println("Cucumber test execution has started...");
-        driver=launchBrowser.getDriver();
-        launchBrowser.invokeBrowser();
-        login.loginToBni();
+//        System.out.println("Cucumber test execution has started...");
+//        driver=launchBrowser.getDriver();
+//        launchBrowser.invokeBrowser();
+//        login.loginToBni();
     }
 
     @After
@@ -46,6 +49,10 @@ public class SearchAndAddVisitor {
 
     @Given("I am on the BNI home page")
     public void I_am_on_the_BNI_home_page() throws Exception {
+        System.out.println("Cucumber test execution has started...");
+        driver=launchBrowser.getDriver();
+        launchBrowser.invokeBrowser();
+        login.loginToBni();
         System.out.println("I am on the BNI home page");
         TimeUnit.SECONDS.sleep(2);
         driver = launchBrowser.getDriver();
@@ -66,4 +73,52 @@ public class SearchAndAddVisitor {
         String pageTitle = addAVisitor.getPageTitle();
         assertEquals("not able to navigate to Add A visitor page", addAVisitor.getPageTitle(), "Add a Visitor" );
     }
+
+    // Scenario: Search with email id and name
+
+    @Given("I am on the Add a visitor page")
+    public void I_am_on_the_Add_a_visitor_page() throws Exception{
+        System.out.println("I am on the Add a visitor page");
+    }
+
+    @And("I enter a valid email id")
+    public  void I_enter_a_valid_email_id() throws Exception{
+        readWritePropertyFile.writePropertyFile(currentDateTime.dateTime());
+        addAVisitor = new AddAVisitor(driver);
+        TimeUnit.SECONDS.sleep(1);
+        addAVisitor.enterEmail("autotest" + readWritePropertyFile.loadAndReadPropertyFile( "datetime") + "@gmail.com");
+    }
+
+    @And("click search and click search by name")
+    public  void click_search_and_click_search_by_name() throws Exception{
+        TimeUnit.SECONDS.sleep(2);
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.clickSearchButton();
+        TimeUnit.SECONDS.sleep(2);
+        addAVisitor.clickSearchByNameButton();
+        TimeUnit.SECONDS.sleep(2);
+    }
+
+    @And("And I enter the First and Last name")
+    public  void I_enter_the_First_and_Last_name() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.enterFirstName("Auto");
+        addAVisitor.enterLastName("Test");
+        TimeUnit.SECONDS.sleep(1);
+    }
+
+    @And("I click the search button")
+    public void I_click_the_search_button() throws Exception{
+        addAVisitor.clickSearchButton();
+        System.out.println("Successfully clicked the search button");
+        TimeUnit.SECONDS.sleep(3);
+    }
+
+    @Then("create new button is displayed")
+    public  void create_new_button_is_displayed() throws Exception{
+        addAVisitor.clickCreateNewButton();
+        TimeUnit.SECONDS.sleep(2);
+        System.out.println("Successfully clicked the create new button");
+    }
+
 }

@@ -5,13 +5,14 @@ Feature: Add and search visitor
     When I navigate to Operations -> Region -> Add a visitor
     Then a pop up window 'Add a Visitor' appears
 
-#  Scenario: Search with email id and name
-#    Given I am on the Add a visitor page
-#    And I enter a valid email id
-#    And click search and click search by name
-#    And I enter the First and Last name
-#    Then craete new button is displayed
-#
+  Scenario: Search with email id and name
+    Given I am on the Add a visitor page
+    And I enter a valid email id
+    And click search and click search by name
+    And I enter the First and Last name
+    And I click the search button
+    Then create new button is displayed
+
 #  Scenario: Check if create new button is displayed
 #    Given I am on the Add a visitor page
 #    And I click the create new button
