@@ -27,6 +27,9 @@ public class BNIConnect {
     @FindBy(css =  "#textnav > li > ul > li")
     List<WebElement> subMenuNavigate;
 
+    @FindBy(css = "#tabs-3-4 > table")
+    List<WebElement> manageVisitorMenu;
+
     public BNIConnect(WebDriver driver) {
         BNIConnect.driver = driver;
         AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 100);
@@ -79,6 +82,19 @@ public class BNIConnect {
         }
     }
 
+    public void selectItemFromManageVisitor(String item) throws Exception{
+        TimeUnit.SECONDS.sleep(2);
+        for(WebElement trElement : manageVisitorMenu)
+        {
+            List<WebElement> td_collection=trElement.findElements(By.tagName("tbody"));
+            String menuItem = td_collection.get(0).findElement(By.tagName("tr")).getText();
+                if (item.equals(menuItem)){
+                    td_collection.get(0).findElement(By.tagName("tr")).findElement(By.tagName("a")).click();
+                    TimeUnit.SECONDS.sleep(3);
+                    break;
+                }
+        }
+    }
 
     public void clickSignOut() throws Exception{
         signOut.click();

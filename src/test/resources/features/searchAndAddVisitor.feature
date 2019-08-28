@@ -2,7 +2,7 @@ Feature: Add and search visitor
 
   Scenario: Navigate to Add a Visitor page
     Given I am on the BNI home page
-    When I navigate to Operations Region Add a visitor
+    When I navigate to Operations -> Region -> Add a visitor
     Then a pop up window 'Add a Visitor' appears
 
 #  Scenario: Search with email id and name

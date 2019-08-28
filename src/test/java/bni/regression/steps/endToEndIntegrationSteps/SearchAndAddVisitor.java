@@ -12,6 +12,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import bni.regression.libraries.ui.Login;
 import bni.regression.libraries.ui.SignOut;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -53,9 +57,10 @@ public class SearchAndAddVisitor {
     }
 
     @When("I navigate to Operations -> Region -> Add a visitor")
-    public void I_navigate_to_Operations_Region_Add_visitor() throws IOException {
+    public void I_navigate_to_Operations_Region_Add_visitor() throws Exception {
         System.out.println("Navigating to add a visitor page");
-
+        bniConnect = new BNIConnect(driver);
+        bniConnect.selectItemFromManageVisitor("Add a Visitor");
     }
 
     @Then("a pop up window 'Add a Visitor' appears")
