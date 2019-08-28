@@ -11,15 +11,15 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class LaunchBrowser {
 
     public static WebDriver driver;
-    private ReadPropertyFile readPropertyFile = new ReadPropertyFile();
+    private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
 
     public WebDriver getDriver() {
         return driver;
     }
 
     public void invokeBrowser() throws Exception {
-        String browserType = readPropertyFile.loadAndReadPropertyFile("browserType");
-        String appURL = readPropertyFile.loadAndReadPropertyFile("baseUrl");
+        String browserType = readWritePropertyFile.loadAndReadPropertyFile("browserType");
+        String appURL = readWritePropertyFile.loadAndReadPropertyFile("baseUrl");
 
         switch(browserType)
         {
@@ -39,7 +39,7 @@ public class LaunchBrowser {
     }
 
     private WebDriver initChromeDriver(String appURL) throws Exception {
-        String envName = readPropertyFile.loadAndReadPropertyFile("bniUrl");
+        String envName = readWritePropertyFile.loadAndReadPropertyFile("bniUrl");
         System.out.println("Executing the tests in " + envName + " environment");
         System.out.println("Launching google chrome with new profile..");
         System.setProperty("webdriver.chrome.driver", ("src/test/resources/drivers/chromedriver.exe"));

@@ -7,11 +7,11 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 public class ReadPDFReader {
     private String pdfText;
-    private ReadPropertyFile readPropertyFile = new ReadPropertyFile();
+    private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
 
     public String readPDF() throws IOException
     {
-        PDDocument document = PDDocument.load(new File(readPropertyFile.loadAndReadPropertyFile("pdfFilePath")));
+        PDDocument document = PDDocument.load(new File(readWritePropertyFile.loadAndReadPropertyFile("pdfFilePath")));
         if (!document.isEncrypted()) {
             PDFTextStripper stripper = new PDFTextStripper();
             pdfText = stripper.getText(document);

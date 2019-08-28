@@ -3,9 +3,10 @@ bni/regression/runners/PriorityCases.class
 bni/regression/libraries/ui/Login.class
 bni/regression/libraries/common/LaunchBrowser.class
 bni/regression/pageFactory/Login.class
-bni/regression/libraries/common/ReadPropertyFile.class
 bni/regression/libraries/common/CaptureScreenShot.class
+bni/regression/libraries/common/ReadWritePropertyFile.class
 bni/regression/libraries/common/CurrentDateTime.class
 bni/regression/libraries/ui/SignOut.class
+bni/regression/pageFactory/AddAVisitor.class
 bni/regression/pageFactory/BNIConnect.class
 bni/regression/steps/endToEndIntegrationSteps/SearchAndAddVisitor.class

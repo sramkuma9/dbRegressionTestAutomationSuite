@@ -1,6 +1,6 @@
 package bni.regression.pageFactory;
 
-import bni.regression.libraries.common.ReadPropertyFile;
+import bni.regression.libraries.common.ReadWritePropertyFile;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Login {
     public static WebDriver driver;
     public WebDriverWait wait;
-    private ReadPropertyFile readPropertyFile = new ReadPropertyFile();
+    private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
 
     @FindBy(css =  "#app > div > div > div.styles__AppContent-cDnHLr.gXPOuk > div > div.styles__ContentContainer-kcVUrs.DjEAQ > section.styles__Container-ieicpK.iVPZSq > div.styles__Container-jGsLTA.fXXdOL > form.styles__StyledForm-feCSaU.hJcysH > div:nth-child(1) > div > div > div > input")
     WebElement bniUserName;
@@ -31,12 +31,12 @@ public class Login {
     }
 
     public void enterBniUserName(){
-        bniUserName.sendKeys(readPropertyFile.loadAndReadPropertyFile("bniUsername"));
+        bniUserName.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniUsername"));
         //bniUserName.sendKeys(Keys.TAB);
     }
     public void enterBniPassword(){
 
-        bniPassword.sendKeys(readPropertyFile.loadAndReadPropertyFile("bniPassword"));
+        bniPassword.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniPassword"));
     }
     public void clickBniSignInButton(){
 

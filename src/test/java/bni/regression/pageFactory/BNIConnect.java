@@ -1,6 +1,6 @@
 package bni.regression.pageFactory;
 
-import bni.regression.libraries.common.ReadPropertyFile;
+import bni.regression.libraries.common.ReadWritePropertyFile;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 public class BNIConnect {
     public static WebDriver driver;
     public WebDriverWait wait;
-    private ReadPropertyFile readPropertyFile = new ReadPropertyFile();
+    private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
 
     @FindBy(css =  "#accountNav_2 > p > a")
     WebElement options;
