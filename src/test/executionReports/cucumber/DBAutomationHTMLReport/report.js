@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 6493387,
+  "duration": 7174311,
   "status": "passed"
 });
 formatter.scenario({
@@ -37,29 +37,29 @@ formatter.match({
   "location": "SearchAndAddVisitor.I_am_on_the_BNI_home_page()"
 });
 formatter.result({
-  "duration": 33678875471,
+  "duration": 34214621937,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_navigate_to_Operations_Region_Add_visitor()"
 });
 formatter.result({
-  "duration": 5365030848,
+  "duration": 5366013951,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.a_pop_up_window_Add_a_Visitor_appears()"
 });
 formatter.result({
-  "duration": 50877248,
+  "duration": 108942747,
   "status": "passed"
 });
 formatter.after({
-  "duration": 44860,
+  "duration": 53484,
   "status": "passed"
 });
 formatter.before({
-  "duration": 66071,
+  "duration": 73224,
   "status": "passed"
 });
 formatter.scenario({
@@ -104,41 +104,46 @@ formatter.match({
   "location": "SearchAndAddVisitor.I_am_on_the_Add_a_visitor_page()"
 });
 formatter.result({
-  "duration": 94169,
+  "duration": 120136,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_enter_a_valid_email_id()"
 });
 formatter.result({
-  "duration": 1118761490,
+  "duration": 1138546539,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.click_search_and_click_search_by_name()"
 });
 formatter.result({
-  "duration": 6692365083,
+  "duration": 6701788446,
   "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "location": "SearchAndAddVisitor.I_enter_the_First_and_Last_name()"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 1094039841,
+  "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_click_the_search_button()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 3885947107,
+  "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.create_new_button_is_displayed()"
 });
 formatter.result({
-  "status": "skipped"
+  "duration": 2297527074,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 34919,
+  "duration": 76277,
   "status": "passed"
 });
 });

@@ -1,11 +1,13 @@
 package bni.regression.pageFactory;
 
 import bni.regression.libraries.common.ReadWritePropertyFile;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AddAVisitor {
@@ -56,7 +58,7 @@ public class AddAVisitor {
 
     public void clickSearchButton(){
         searchButton.click();
-    }
+         }
 
     public void clickSearchByNameButton(){
         searchByNameButton.click();

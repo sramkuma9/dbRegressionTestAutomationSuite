@@ -14,8 +14,13 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import bni.regression.libraries.ui.Login;
 import bni.regression.libraries.ui.SignOut;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.concurrent.TimeUnit;
 
 import static junit.framework.TestCase.assertEquals;
@@ -83,10 +88,12 @@ public class SearchAndAddVisitor {
 
     @And("I enter a valid email id")
     public  void I_enter_a_valid_email_id() throws Exception{
-        readWritePropertyFile.writePropertyFile(currentDateTime.dateTime());
+        String dateTime = (currentDateTime.dateTime().replaceAll("/","").replaceAll(":","").replaceAll(" ", ""));
+        System.out.println(dateTime);
+        //readWritePropertyFile.writePropertyFile(dateTime);
         addAVisitor = new AddAVisitor(driver);
         TimeUnit.SECONDS.sleep(1);
-        addAVisitor.enterEmail("autotest" + readWritePropertyFile.loadAndReadPropertyFile( "datetime") + "@gmail.com");
+        addAVisitor.enterEmail("autotest" + dateTime + "@gmail.com");
     }
 
     @And("click search and click search by name")
@@ -99,7 +106,7 @@ public class SearchAndAddVisitor {
         TimeUnit.SECONDS.sleep(2);
     }
 
-    @And("And I enter the First and Last name")
+    @And("I enter the First and Last name")
     public  void I_enter_the_First_and_Last_name() throws Exception{
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.enterFirstName("Auto");
@@ -109,16 +116,19 @@ public class SearchAndAddVisitor {
 
     @And("I click the search button")
     public void I_click_the_search_button() throws Exception{
-        addAVisitor.clickSearchButton();
+        WebDriverWait wait = new WebDriverWait(driver, 5);
+        addAVisitor = new AddAVisitor(driver);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.name("submit"))));
+        driver.findElement(By.name("submit")).click();
         System.out.println("Successfully clicked the search button");
         TimeUnit.SECONDS.sleep(3);
     }
 
     @Then("create new button is displayed")
     public  void create_new_button_is_displayed() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickCreateNewButton();
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Successfully clicked the create new button");
     }
-
 }
