@@ -37,6 +37,7 @@ public class SearchAndAddVisitor {
     private ReadPDFReader readPdfReader = new ReadPDFReader();
     private BNIConnect bniConnect;
     private AddAVisitor addAVisitor;
+    public static String fixedDateTime;
 
     @Before
     public void setup() throws Exception {
@@ -44,6 +45,7 @@ public class SearchAndAddVisitor {
 //        driver=launchBrowser.getDriver();
 //        launchBrowser.invokeBrowser();
 //        login.loginToBni();
+          fixedDateTime =  currentDateTime.dateTime();
     }
 
     @After
@@ -89,12 +91,11 @@ public class SearchAndAddVisitor {
 
     @And("I enter a valid email id")
     public  void I_enter_a_valid_email_id() throws Exception{
-        String dateTime = (currentDateTime.dateTime().replaceAll("/","").replaceAll(":","").replaceAll(" ", ""));
-        System.out.println(dateTime);
+        String visitorDateTime = (fixedDateTime.replaceAll("/","").replaceAll(":","").replaceAll(" ", ""));
         //readWritePropertyFile.writePropertyFile(dateTime);
         addAVisitor = new AddAVisitor(driver);
         TimeUnit.SECONDS.sleep(1);
-        addAVisitor.enterEmail("autotest" + dateTime + "@gmail.com");
+        addAVisitor.enterEmail("autotest" + visitorDateTime + "@gmail.com");
     }
 
     @And("click search and click search by name")
