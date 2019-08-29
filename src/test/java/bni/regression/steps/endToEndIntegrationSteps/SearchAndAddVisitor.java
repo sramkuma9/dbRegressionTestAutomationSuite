@@ -15,6 +15,7 @@ import cucumber.api.java.en.When;
 import bni.regression.libraries.ui.Login;
 import bni.regression.libraries.ui.SignOut;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -168,7 +169,6 @@ public class SearchAndAddVisitor {
         addAVisitor.clickVisitDateField();
         TimeUnit.SECONDS.sleep(2);
         addAVisitor.selectDateFromDatePicker("12");
-        TimeUnit.SECONDS.sleep(2);
     }
 
     @And("select title, first and last name")
@@ -177,6 +177,7 @@ public class SearchAndAddVisitor {
         addAVisitor.selectVisitorTitle("Mr");
         TimeUnit.SECONDS.sleep(2);
         addAVisitor.enterVisitorFirstName("Auto");
+        TimeUnit.SECONDS.sleep(1);
         addAVisitor.enterVisitorLastName("Test");
         TimeUnit.SECONDS.sleep(2);
     }
@@ -184,7 +185,7 @@ public class SearchAndAddVisitor {
     @And("select the country")
     public void select_the_country() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectVisitorCountry("Antartica");
+        addAVisitor.selectVisitorCountry("Antarctica");
         TimeUnit.SECONDS.sleep(2);
     }
 

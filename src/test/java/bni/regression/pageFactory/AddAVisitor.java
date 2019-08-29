@@ -61,7 +61,7 @@ public class AddAVisitor {
     @FindBy(css = "#visitorFirstName")
     WebElement visitorFirstName;
 
-    @FindBy(css = "#visitorLastName")
+    @FindBy(css = "#visitorSecondName")
     WebElement visitorLastName;
 
     @FindBy(css = "#visitorCountry")
@@ -130,15 +130,16 @@ public class AddAVisitor {
     }
 
     public void selectDateFromDatePicker(String day) throws Exception{
-        System.out.println("test");
         for(WebElement trElement : datePicker)
         {
             List<WebElement> td_collection=trElement.findElements(By.tagName("td"));
-            String dayItem = td_collection.get(0).findElement(By.tagName("a")).getText();
-            if (day.equals(dayItem)){
-                td_collection.get(0).findElement(By.tagName("a")).click();
-                TimeUnit.SECONDS.sleep(3);
-                break;
+            for (int row = 0; row < 7; row++) {
+                String dayItem = td_collection.get(row).getText();
+                if (day.equals(dayItem)) {
+                    td_collection.get(row).findElement(By.tagName("a")).click();
+                    TimeUnit.SECONDS.sleep(3);
+                    break;
+                }
             }
         }
     }
