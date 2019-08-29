@@ -124,11 +124,63 @@ public class SearchAndAddVisitor {
         TimeUnit.SECONDS.sleep(3);
     }
 
-    @Then("create new button is displayed")
+    @Then("create new button is displayed and clicked")
     public  void create_new_button_is_displayed() throws Exception{
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickCreateNewButton();
         TimeUnit.SECONDS.sleep(2);
         System.out.println("Successfully clicked the create new button");
     }
+
+    // Scenario: Add a new visitor
+
+//    And select title, first and last name
+//    And select the country
+//    And enter the phone and notes
+//    And click save button
+//    Then a message Your form has been sucussfully submitted appears
+
+
+    @Given("I am on the add a new visitor page and is displayed")
+    public void  I_am_on_the_add_a_new_visitor_page_and_is_displayed() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        String pageTitle = addAVisitor.getPageTitle();
+        assertEquals("not able to navigate to Add A visitor page", addAVisitor.getPageTitle(), "Add a Visitor" );
+    }
+
+    @When("I select a proffession")
+    public void I_select_a_proffession() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.selectProfession("Information Technology");
+        TimeUnit.SECONDS.sleep(2);
+    }
+
+    @And("select speciality")
+    public void select_speciality() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.selectSpeciality("Information Technology");
+        TimeUnit.SECONDS.sleep(2);
+    }
+
+    @And("select person")
+    public void select_person() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.selectInvitedBy("BNI");
+        TimeUnit.SECONDS.sleep(2);
+    }
+
+    @And("enter a valid date")
+    public void enter_a_valid_date() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.clickVisitDateField();
+        TimeUnit.SECONDS.sleep(2);
+
+    }
+
+
+
+
+
+
+
 }

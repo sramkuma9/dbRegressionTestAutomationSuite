@@ -11,21 +11,16 @@ Feature: Add and search visitor
     And click search and click search by name
     And I enter the First and Last name
     And I click the search button
-    Then create new button is displayed
+    Then create new button is displayed and clicked
 
-#  Scenario: Check if create new button is displayed
-#    Given I am on the Add a visitor page
-#    And I click the create new button
-#    Then details to add a visitor are displayed
-#
-#  Scenario: Add a new visitor
-#    Given I am on the add a new visitor page with all the required details displayed
-#    When I select a proffession
-#    And speciality
-#    And select person
-#    And enter a valid date
-#    And select title, first and last name
-#    And select the country
-#    And enter the phone and notes
-#    And click save button
-#    Then a message Your form has been sucussfully submitted appears
+  Scenario: Add a new visitor
+    Given I am on the add a new visitor page and is displayed
+    When I select a proffession
+    And select speciality
+    And select person
+    And enter a valid date
+    And select title, first and last name
+    And select the country
+    And enter the phone and notes
+    And click save button
+    Then a message Your form has been sucussfully submitted appears
