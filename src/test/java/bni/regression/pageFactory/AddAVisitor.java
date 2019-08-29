@@ -55,6 +55,23 @@ public class AddAVisitor {
     @FindBy(css = "#ui-datepicker-div > table > tbody > tr")
     List<WebElement> datePicker;
 
+    @FindBy(css = "#visitorTitle")
+    WebElement visitorTitle;
+
+    @FindBy(css = "#visitorFirstName")
+    WebElement visitorFirstName;
+
+    @FindBy(css = "#visitorLastName")
+    WebElement visitorLastName;
+
+    @FindBy(css = "#visitorCountry")
+    WebElement visitorCountry;
+
+    @FindBy(css = "#visitorPhoneNumber")
+    WebElement visitorPhoneNumber;
+
+    @FindBy(css = "body > div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > button:nth-child(2)")
+    WebElement saveButton;
 
     public AddAVisitor(WebDriver driver) {
         AddAVisitor.driver = driver;
@@ -95,8 +112,9 @@ public class AddAVisitor {
         searchButton.click();
          }
 
-    public void clickVisitDateField(){
+    public void clickVisitDateField() throws InterruptedException {
         visitDateTextBox.click();
+        TimeUnit.SECONDS.sleep(2);
     }
 
     public void clickSearchByNameButton(){
@@ -112,7 +130,7 @@ public class AddAVisitor {
     }
 
     public void selectDateFromDatePicker(String day) throws Exception{
-        TimeUnit.SECONDS.sleep(2);
+        System.out.println("test");
         for(WebElement trElement : datePicker)
         {
             List<WebElement> td_collection=trElement.findElements(By.tagName("td"));
@@ -123,5 +141,31 @@ public class AddAVisitor {
                 break;
             }
         }
+    }
+
+    public void selectVisitorTitle(String title) {
+        Select titleSelect = new Select(visitorTitle);
+        titleSelect.selectByVisibleText(title);
+    }
+
+    public void enterVisitorFirstName(String visitFirstName){
+        visitorFirstName.sendKeys(visitFirstName);
+    }
+
+    public void enterVisitorLastName(String visitLastName){
+        visitorLastName.sendKeys(visitLastName);
+    }
+
+    public void selectVisitorCountry(String visitCountry) {
+        Select visitorCountrySelect = new Select(visitorCountry);
+        visitorCountrySelect.selectByVisibleText(visitCountry);
+    }
+
+    public void enterVisitorPhoneNumber(String phoneNumber){
+        visitorPhoneNumber.sendKeys(phoneNumber);
+    }
+
+    public void clickSaveButton(){
+        saveButton.click();
     }
 }

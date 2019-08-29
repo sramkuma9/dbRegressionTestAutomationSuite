@@ -134,13 +134,6 @@ public class SearchAndAddVisitor {
 
     // Scenario: Add a new visitor
 
-//    And select title, first and last name
-//    And select the country
-//    And enter the phone and notes
-//    And click save button
-//    Then a message Your form has been sucussfully submitted appears
-
-
     @Given("I am on the add a new visitor page and is displayed")
     public void  I_am_on_the_add_a_new_visitor_page_and_is_displayed() throws Exception{
         addAVisitor = new AddAVisitor(driver);
@@ -174,13 +167,38 @@ public class SearchAndAddVisitor {
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickVisitDateField();
         TimeUnit.SECONDS.sleep(2);
-
+        addAVisitor.selectDateFromDatePicker("12");
+        TimeUnit.SECONDS.sleep(2);
     }
 
+    @And("select title, first and last name")
+    public void select_title_first_and_last_name() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.selectVisitorTitle("Mr");
+        TimeUnit.SECONDS.sleep(2);
+        addAVisitor.enterVisitorFirstName("Auto");
+        addAVisitor.enterVisitorLastName("Test");
+        TimeUnit.SECONDS.sleep(2);
+    }
 
+    @And("select the country")
+    public void select_the_country() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.selectVisitorCountry("Antartica");
+        TimeUnit.SECONDS.sleep(2);
+    }
 
+    @And("enter the phone")
+    public void enter_the_phone() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.enterVisitorPhoneNumber("9999999999");
+        TimeUnit.SECONDS.sleep(2);
+    }
 
-
-
-
+    @And("click save button")
+    public void click_save_button() throws Exception{
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitor.clickSaveButton();
+        TimeUnit.SECONDS.sleep(3);
+    }
 }

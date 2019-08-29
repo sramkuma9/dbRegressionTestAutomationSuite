@@ -21,6 +21,7 @@ Feature: Add and search visitor
     And enter a valid date
     And select title, first and last name
     And select the country
-    And enter the phone and notes
+    And enter the phone
     And click save button
-    Then a message Your form has been sucussfully submitted appears
+#    And search using the email id
+ #   Then the saved record should be retrived
