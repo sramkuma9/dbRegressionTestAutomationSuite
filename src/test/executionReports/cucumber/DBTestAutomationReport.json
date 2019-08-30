@@ -1,0 +1,401 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 45605312,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.setup()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "Navigate to Add a Visitor page",
+        "description": "",
+        "id": "add-and-search-visitor;navigate-to-add-a-visitor-page",
+        "after": [
+          {
+            "result": {
+              "duration": 53069,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 33989810706,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am on the BNI home page",
+            "match": {
+              "location": "SearchAndAddVisitor.I_am_on_the_BNI_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 5376258623,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I navigate to Operations -\u003e Region -\u003e Add a visitor",
+            "match": {
+              "location": "SearchAndAddVisitor.I_navigate_to_Operations_Region_Add_visitor()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 53229068,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "a pop up window \u0027Add a Visitor\u0027 appears",
+            "match": {
+              "location": "SearchAndAddVisitor.a_pop_up_window_Add_a_Visitor_appears()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 226899,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.setup()"
+            }
+          }
+        ],
+        "line": 8,
+        "name": "Search with email id and name",
+        "description": "",
+        "id": "add-and-search-visitor;search-with-email-id-and-name",
+        "after": [
+          {
+            "result": {
+              "duration": 70262,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 85605,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I am on the Add a visitor page",
+            "match": {
+              "location": "SearchAndAddVisitor.I_am_on_the_Add_a_visitor_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1159718399,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I enter a valid email id",
+            "match": {
+              "location": "SearchAndAddVisitor.I_enter_a_valid_email_id()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 6703285154,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "click search and click search by name",
+            "match": {
+              "location": "SearchAndAddVisitor.click_search_and_click_search_by_name()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 1118905703,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "I enter the First and Last name",
+            "match": {
+              "location": "SearchAndAddVisitor.I_enter_the_First_and_Last_name()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3958246949,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "I click the search button",
+            "match": {
+              "location": "SearchAndAddVisitor.I_click_the_search_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2311779562,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "create new button is displayed and clicked",
+            "match": {
+              "location": "SearchAndAddVisitor.create_new_button_is_displayed()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 570590,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.setup()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Add a new visitor",
+        "description": "",
+        "id": "add-and-search-visitor;add-a-new-visitor",
+        "after": [
+          {
+            "result": {
+              "duration": 32328,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 34111187,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "I am on the add a new visitor page and is displayed",
+            "match": {
+              "location": "SearchAndAddVisitor.I_am_on_the_add_a_new_visitor_page_and_is_displayed()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2290420854,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "I select a proffession",
+            "match": {
+              "location": "SearchAndAddVisitor.I_select_a_proffession()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 2283023178,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "select speciality",
+            "match": {
+              "location": "SearchAndAddVisitor.select_speciality()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2287291466,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "select person",
+            "match": {
+              "location": "SearchAndAddVisitor.select_person()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 7810621784,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "enter a valid date",
+            "match": {
+              "location": "SearchAndAddVisitor.enter_a_valid_date()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 5377027059,
+              "status": "passed"
+            },
+            "line": 22,
+            "name": "select title, first and last name",
+            "match": {
+              "location": "SearchAndAddVisitor.select_title_first_and_last_name()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2279961413,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "select the country",
+            "match": {
+              "location": "SearchAndAddVisitor.select_the_country()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2092437836,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "enter the phone",
+            "match": {
+              "location": "SearchAndAddVisitor.enter_the_phone()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3303374055,
+              "status": "passed"
+            },
+            "line": 25,
+            "name": "click save button",
+            "match": {
+              "location": "SearchAndAddVisitor.click_save_button()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 130883,
+              "status": "passed"
+            },
+            "line": 26,
+            "name": "visitor details saved sucessfully",
+            "match": {
+              "location": "SearchAndAddVisitor.visitor_details_saved_sucessfully()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 346703,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.setup()"
+            }
+          }
+        ],
+        "line": 28,
+        "name": "Search the added visitor",
+        "description": "",
+        "id": "add-and-search-visitor;search-the-added-visitor",
+        "after": [
+          {
+            "result": {
+              "duration": 69917,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddVisitor.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 4000298761,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "I am on the Add visitor page",
+            "match": {
+              "location": "SearchAndAddVisitor.I_am_on_the_Add_visitor_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 16629731703,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "search the added visitor using the email id",
+            "match": {
+              "location": "SearchAndAddVisitor.search_the_added_visitor_using_the_email_id()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "status": "undefined"
+            },
+            "line": 31,
+            "name": "the saved record(s) should be retrived 2 records with type visit and visitor with correct details",
+            "match": {},
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Add and search visitor",
+    "description": "",
+    "id": "add-and-search-visitor",
+    "keyword": "Feature",
+    "uri": "searchAndAddVisitor.feature"
+  }
+]

@@ -23,6 +23,7 @@ Feature: Add and search visitor
     And select the country
     And enter the phone
     And click save button
+    Then visitor details saved sucessfully
 
   Scenario: Search the added visitor
     Given I am on the Add visitor page

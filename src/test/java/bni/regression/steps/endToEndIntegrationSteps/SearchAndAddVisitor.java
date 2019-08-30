@@ -38,7 +38,7 @@ public class SearchAndAddVisitor {
     private BNIConnect bniConnect;
     private AddAVisitor addAVisitor;
     public static String fixedDateTime;
-    public String visitorDateTime;
+    public static String visitorDateTime;
     public String name;
     public  String [] addAVisitorDetails = new String [8];
 
@@ -208,17 +208,23 @@ public class SearchAndAddVisitor {
         TimeUnit.SECONDS.sleep(3);
     }
 
+    @Then("visitor details saved sucessfully")
+    public void visitor_details_saved_sucessfully() throws Exception{
+        System.out.println("Visitor details added sucessfully.");
+    }
+
     // Scenario: Search the added visitor
 
     @Given("I am on the Add visitor page")
     public void I_am_on_the_Add_visitor_page() throws Exception{
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(4);
         System.out.println("I am on the Add a visitor page");
     }
 
     @And("search the added visitor using the email id")
     public void search_the_added_visitor_using_the_email_id() throws Exception {
         bniConnect = new BNIConnect(driver);
+        TimeUnit.SECONDS.sleep(5);
         bniConnect.selectItemFromManageVisitor("Add a Visitor");
         TimeUnit.SECONDS.sleep(3);
         addAVisitor = new AddAVisitor(driver);
