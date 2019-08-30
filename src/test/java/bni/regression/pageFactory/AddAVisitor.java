@@ -73,6 +73,9 @@ public class AddAVisitor {
     @FindBy(css = "body > div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > button:nth-child(2)")
     WebElement saveButton;
 
+    @FindBy(css = "#datalist1 > tbody > tr")
+    List<WebElement> searchResults;
+
     public AddAVisitor(WebDriver driver) {
         AddAVisitor.driver = driver;
         AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 100);
@@ -168,5 +171,25 @@ public class AddAVisitor {
 
     public void clickSaveButton(){
         saveButton.click();
+    }
+
+    public String[] getSearchResults() throws Exception{
+        Integer recordCount = 1;
+        String [] addAVisitorDetails = new String [8];
+        for(WebElement trElement : searchResults)
+        {
+            List<WebElement> td_collection=trElement.findElements(By.tagName("td"));
+            String type = td_collection.get(1).getText();
+            if (type.equals("Visit")) {
+                addAVisitorDetails[0] = td_collection.get(0).getText();
+                addAVisitorDetails[1] = td_collection.get(2).getText();
+                addAVisitorDetails[2] = td_collection.get(3).getText();
+                addAVisitorDetails[3] = td_collection.get(5).getText();
+                addAVisitorDetails[4] = td_collection.get(6).getText();
+                }
+            recordCount++;
+        }
+        System.out.println("recordCount is = " + recordCount);
+        return addAVisitorDetails;
     }
 }

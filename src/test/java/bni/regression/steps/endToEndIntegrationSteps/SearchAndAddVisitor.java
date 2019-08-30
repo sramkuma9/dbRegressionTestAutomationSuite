@@ -38,6 +38,9 @@ public class SearchAndAddVisitor {
     private BNIConnect bniConnect;
     private AddAVisitor addAVisitor;
     public static String fixedDateTime;
+    public String visitorDateTime;
+    public String name;
+    public  String [] addAVisitorDetails = new String [8];
 
     @Before
     public void setup() throws Exception {
@@ -91,8 +94,7 @@ public class SearchAndAddVisitor {
 
     @And("I enter a valid email id")
     public  void I_enter_a_valid_email_id() throws Exception{
-        String visitorDateTime = (fixedDateTime.replaceAll("/","").replaceAll(":","").replaceAll(" ", ""));
-        //readWritePropertyFile.writePropertyFile(dateTime);
+        visitorDateTime = (fixedDateTime.replaceAll("/","").replaceAll(":","").replaceAll(" ", ""));
         addAVisitor = new AddAVisitor(driver);
         TimeUnit.SECONDS.sleep(1);
         String firstName = readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties");
@@ -204,5 +206,35 @@ public class SearchAndAddVisitor {
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickSaveButton();
         TimeUnit.SECONDS.sleep(3);
+    }
+
+    // Scenario: Search the added visitor
+
+    @Given("I am on the Add visitor page")
+    public void I_am_on_the_Add_visitor_page() throws Exception{
+        TimeUnit.SECONDS.sleep(3);
+        System.out.println("I am on the Add a visitor page");
+    }
+
+    @And("search the added visitor using the email id")
+    public void search_the_added_visitor_using_the_email_id() throws Exception {
+        bniConnect = new BNIConnect(driver);
+        bniConnect.selectItemFromManageVisitor("Add a Visitor");
+        TimeUnit.SECONDS.sleep(3);
+        addAVisitor = new AddAVisitor(driver);
+        name = ((readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties")) + (readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties")));
+        addAVisitor.enterEmail(name + visitorDateTime + "@gmail.com");
+        TimeUnit.SECONDS.sleep(2);
+        addAVisitor.clickSearchButton();
+    }
+
+    @Then("the saved record(s) should be retrived 2 records with type visit and visitor with correct details")
+    public void the_saved_records_should_be_retrived_2_records_with_type_visit_and_visitor_with_correct_details() throws Exception {
+        TimeUnit.SECONDS.sleep(3);
+        String chapter = "Ant - One - Chapter A";
+        String region = "Ant - One";
+        String day = readWritePropertyFile.loadAndReadPropertyFile("day", "inputFiles/searchAndAddVisitor.properties");
+        addAVisitor = new AddAVisitor(driver);
+        addAVisitorDetails = addAVisitor.getSearchResults();
     }
 }
