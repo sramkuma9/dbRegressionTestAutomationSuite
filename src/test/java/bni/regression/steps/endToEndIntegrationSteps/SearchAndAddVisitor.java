@@ -95,7 +95,9 @@ public class SearchAndAddVisitor {
         //readWritePropertyFile.writePropertyFile(dateTime);
         addAVisitor = new AddAVisitor(driver);
         TimeUnit.SECONDS.sleep(1);
-        addAVisitor.enterEmail("autotest" + visitorDateTime + "@gmail.com");
+        String firstName = readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties");
+        String lastName = readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties");
+        addAVisitor.enterEmail( firstName + lastName + visitorDateTime + "@gmail.com");
     }
 
     @And("click search and click search by name")
@@ -111,8 +113,8 @@ public class SearchAndAddVisitor {
     @And("I enter the First and Last name")
     public  void I_enter_the_First_and_Last_name() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.enterFirstName("Auto");
-        addAVisitor.enterLastName("Test");
+        addAVisitor.enterFirstName(readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.enterLastName(readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(1);
     }
 
@@ -146,21 +148,21 @@ public class SearchAndAddVisitor {
     @When("I select a proffession")
     public void I_select_a_proffession() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectProfession("Information Technology");
+        addAVisitor.selectProfession(readWritePropertyFile.loadAndReadPropertyFile("proffession", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("select speciality")
     public void select_speciality() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectSpeciality("Information Technology");
+        addAVisitor.selectSpeciality(readWritePropertyFile.loadAndReadPropertyFile("speciality", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("select person")
     public void select_person() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectInvitedBy("BNI");
+        addAVisitor.selectInvitedBy(readWritePropertyFile.loadAndReadPropertyFile("invitedBy", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
@@ -169,31 +171,31 @@ public class SearchAndAddVisitor {
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickVisitDateField();
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.selectDateFromDatePicker("12");
+        addAVisitor.selectDateFromDatePicker(readWritePropertyFile.loadAndReadPropertyFile("day", "inputFiles/searchAndAddVisitor.properties"));
     }
 
     @And("select title, first and last name")
     public void select_title_first_and_last_name() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectVisitorTitle("Mr");
+        addAVisitor.selectVisitorTitle(readWritePropertyFile.loadAndReadPropertyFile("visitorTitle", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.enterVisitorFirstName("Auto");
+        addAVisitor.enterVisitorFirstName(readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(1);
-        addAVisitor.enterVisitorLastName("Test");
+        addAVisitor.enterVisitorLastName(readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("select the country")
     public void select_the_country() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectVisitorCountry("Antarctica");
+        addAVisitor.selectVisitorCountry(readWritePropertyFile.loadAndReadPropertyFile("country", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("enter the phone")
     public void enter_the_phone() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.enterVisitorPhoneNumber("9999999999");
+        addAVisitor.enterVisitorPhoneNumber(readWritePropertyFile.loadAndReadPropertyFile("phoneNumber", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 

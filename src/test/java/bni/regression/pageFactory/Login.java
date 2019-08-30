@@ -31,12 +31,12 @@ public class Login {
     }
 
     public void enterBniUserName(){
-        bniUserName.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniUsername"));
+        bniUserName.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniUsername", "properties/config.properties"));
         //bniUserName.sendKeys(Keys.TAB);
     }
     public void enterBniPassword(){
 
-        bniPassword.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniPassword"));
+        bniPassword.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniPassword", "properties/config.properties"));
     }
     public void clickBniSignInButton(){
 

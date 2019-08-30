@@ -11,7 +11,7 @@ public class ReadPDFReader {
 
     public String readPDF() throws IOException
     {
-        PDDocument document = PDDocument.load(new File(readWritePropertyFile.loadAndReadPropertyFile("pdfFilePath")));
+        PDDocument document = PDDocument.load(new File(readWritePropertyFile.loadAndReadPropertyFile("pdfFilePath", "properties/config.properties")));
         if (!document.isEncrypted()) {
             PDFTextStripper stripper = new PDFTextStripper();
             pdfText = stripper.getText(document);

@@ -18,8 +18,8 @@ public class LaunchBrowser {
     }
 
     public void invokeBrowser() throws Exception {
-        String browserType = readWritePropertyFile.loadAndReadPropertyFile("browserType");
-        String appURL = readWritePropertyFile.loadAndReadPropertyFile("baseUrl");
+        String browserType = readWritePropertyFile.loadAndReadPropertyFile("browserType", "properties/config.properties");
+        String appURL = readWritePropertyFile.loadAndReadPropertyFile("baseUrl", "properties/config.properties");
 
         switch(browserType)
         {
@@ -39,7 +39,7 @@ public class LaunchBrowser {
     }
 
     private WebDriver initChromeDriver(String appURL) throws Exception {
-        String envName = readWritePropertyFile.loadAndReadPropertyFile("bniUrl");
+        String envName = readWritePropertyFile.loadAndReadPropertyFile("bniUrl", "properties/config.properties");
         System.out.println("Executing the tests in " + envName + " environment");
         System.out.println("Launching google chrome with new profile..");
         System.setProperty("webdriver.chrome.driver", ("src/test/resources/drivers/chromedriver.exe"));
