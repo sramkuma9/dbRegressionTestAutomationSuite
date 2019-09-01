@@ -10,9 +10,9 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+import static junit.framework.TestCase.assertEquals;
 
 public class AddAVisitor {
     public static WebDriver driver;
@@ -70,11 +70,20 @@ public class AddAVisitor {
     @FindBy(css = "#visitorPhoneNumber")
     WebElement visitorPhoneNumber;
 
+    @FindBy(css = "#ui-datepicker-div > div > div > select.ui-datepicker-month")
+    WebElement visitMonth;
+
+    @FindBy(css = "#ui-datepicker-div > div > div > select.ui-datepicker-year")
+    WebElement visitYear;
+
     @FindBy(css = "body > div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > button:nth-child(2)")
     WebElement saveButton;
 
     @FindBy(css = "#datalist1 > tbody > tr")
     List<WebElement> searchResults;
+
+    @FindBy(css = "body > div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > button:nth-child(3)")
+    WebElement closeButton;
 
     public AddAVisitor(WebDriver driver) {
         AddAVisitor.driver = driver;
@@ -173,8 +182,12 @@ public class AddAVisitor {
         saveButton.click();
     }
 
+    public void clickCloseButton(){
+        closeButton.click();
+    }
+
     public String[] getSearchResults() throws Exception{
-        Integer recordCount = 1;
+        Integer recordCount = 0;
         String [] addAVisitorDetails = new String [8];
         for(WebElement trElement : searchResults)
         {
@@ -189,7 +202,18 @@ public class AddAVisitor {
                 }
             recordCount++;
         }
-        System.out.println("recordCount is = " + recordCount);
+        Integer expRecordCount = 2;
+        assertEquals("Add a visitor search result does not have 2 records", expRecordCount, recordCount );
         return addAVisitorDetails;
+    }
+
+    public void selectVisitMonth(String month) {
+        Select visitMonthSelect = new Select(visitMonth);
+        visitMonthSelect.selectByVisibleText(month);
+    }
+
+    public void selectVisitYear(String year) {
+        Select visitYearSelect = new Select(visitYear);
+        visitYearSelect.selectByVisibleText(year);
     }
 }

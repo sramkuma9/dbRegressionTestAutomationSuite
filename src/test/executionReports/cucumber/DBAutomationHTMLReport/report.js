@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 45605312,
+  "duration": 36326538,
   "status": "passed"
 });
 formatter.scenario({
@@ -37,29 +37,29 @@ formatter.match({
   "location": "SearchAndAddVisitor.I_am_on_the_BNI_home_page()"
 });
 formatter.result({
-  "duration": 33989810706,
+  "duration": 34975560367,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_navigate_to_Operations_Region_Add_visitor()"
 });
 formatter.result({
-  "duration": 5376258623,
+  "duration": 5371047129,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.a_pop_up_window_Add_a_Visitor_appears()"
 });
 formatter.result({
-  "duration": 53229068,
+  "duration": 113691659,
   "status": "passed"
 });
 formatter.after({
-  "duration": 53069,
+  "duration": 48389,
   "status": "passed"
 });
 formatter.before({
-  "duration": 226899,
+  "duration": 228945,
   "status": "passed"
 });
 formatter.scenario({
@@ -104,50 +104,50 @@ formatter.match({
   "location": "SearchAndAddVisitor.I_am_on_the_Add_a_visitor_page()"
 });
 formatter.result({
-  "duration": 85605,
+  "duration": 80248,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_enter_a_valid_email_id()"
 });
 formatter.result({
-  "duration": 1159718399,
+  "duration": 1170069262,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.click_search_and_click_search_by_name()"
 });
 formatter.result({
-  "duration": 6703285154,
+  "duration": 6695558025,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_enter_the_First_and_Last_name()"
 });
 formatter.result({
-  "duration": 1118905703,
+  "duration": 1117037187,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_click_the_search_button()"
 });
 formatter.result({
-  "duration": 3958246949,
+  "duration": 4105031394,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.create_new_button_is_displayed()"
 });
 formatter.result({
-  "duration": 2311779562,
+  "duration": 2303900001,
   "status": "passed"
 });
 formatter.after({
-  "duration": 70262,
+  "duration": 69506,
   "status": "passed"
 });
 formatter.before({
-  "duration": 570590,
+  "duration": 440160,
   "status": "passed"
 });
 formatter.scenario({
@@ -212,78 +212,78 @@ formatter.match({
   "location": "SearchAndAddVisitor.I_am_on_the_add_a_new_visitor_page_and_is_displayed()"
 });
 formatter.result({
-  "duration": 34111187,
+  "duration": 34811934,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_select_a_proffession()"
 });
 formatter.result({
-  "duration": 2290420854,
+  "duration": 2294324318,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.select_speciality()"
 });
 formatter.result({
-  "duration": 2283023178,
+  "duration": 2279358145,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.select_person()"
 });
 formatter.result({
-  "duration": 2287291466,
+  "duration": 2284553832,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.enter_a_valid_date()"
 });
 formatter.result({
-  "duration": 7810621784,
+  "duration": 12175702010,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.select_title_first_and_last_name()"
 });
 formatter.result({
-  "duration": 5377027059,
+  "duration": 5399566805,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.select_the_country()"
 });
 formatter.result({
-  "duration": 2279961413,
+  "duration": 2312626092,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.enter_the_phone()"
 });
 formatter.result({
-  "duration": 2092437836,
+  "duration": 2101842158,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.click_save_button()"
 });
 formatter.result({
-  "duration": 3303374055,
+  "duration": 3305685661,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.visitor_details_saved_sucessfully()"
 });
 formatter.result({
-  "duration": 130883,
+  "duration": 118184,
   "status": "passed"
 });
 formatter.after({
-  "duration": 32328,
+  "duration": 29650,
   "status": "passed"
 });
 formatter.before({
-  "duration": 346703,
+  "duration": 143984,
   "status": "passed"
 });
 formatter.scenario({
@@ -301,34 +301,37 @@ formatter.step({
 });
 formatter.step({
   "line": 30,
-  "name": "search the added visitor using the email id",
-  "keyword": "And "
+  "name": "I search the added visitor using the email id",
+  "keyword": "When "
 });
 formatter.step({
   "line": 31,
-  "name": "the saved record(s) should be retrived 2 records with type visit and visitor with correct details",
+  "name": "the saved record should retrive 2 records with type visit and visitor with correct details",
   "keyword": "Then "
 });
 formatter.match({
   "location": "SearchAndAddVisitor.I_am_on_the_Add_visitor_page()"
 });
 formatter.result({
-  "duration": 4000298761,
+  "duration": 4000454901,
   "status": "passed"
 });
 formatter.match({
   "location": "SearchAndAddVisitor.search_the_added_visitor_using_the_email_id()"
 });
 formatter.result({
-  "duration": 16629731703,
+  "duration": 16559494154,
   "status": "passed"
 });
-formatter.match({});
+formatter.match({
+  "location": "SearchAndAddVisitor.the_saved_records_should_be_retrived_2_records_with_type_visit_and_visitor_with_correct_details()"
+});
 formatter.result({
-  "status": "undefined"
+  "duration": 55406253089,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 69917,
+  "duration": 40616,
   "status": "passed"
 });
 });

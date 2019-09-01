@@ -14,7 +14,6 @@ public class Login {
         login.enterBniUserName();
         login.enterBniPassword();
         login.clickBniSignInButton();
-        captureScreenShot.takeSnapShot(LaunchBrowser.driver);
         TimeUnit.SECONDS.sleep(6);
     }
 }

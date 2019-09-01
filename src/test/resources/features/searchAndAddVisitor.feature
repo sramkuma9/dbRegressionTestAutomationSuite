@@ -27,5 +27,5 @@ Feature: Add and search visitor
 
   Scenario: Search the added visitor
     Given I am on the Add visitor page
-    And search the added visitor using the email id
-    Then the saved record(s) should be retrived 2 records with type visit and visitor with correct details
+    When I search the added visitor using the email id
+    Then the saved record should retrive 2 records with type visit and visitor with correct details
