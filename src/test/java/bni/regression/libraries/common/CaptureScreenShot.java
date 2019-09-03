@@ -19,13 +19,15 @@ public class CaptureScreenShot {
         PageFactory.initElements(factory, this);
     }
 
-    public void takeSnapShot(WebDriver webdriver) throws Exception {
+    public void takeSnapShot(WebDriver webdriver, String featureName) throws Exception {
         //Convert web driver object to TakeScreenshot
         TakesScreenshot scrShot = ((TakesScreenshot) webdriver);
         //Call getScreenshotAs method to create image file
         File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
         //Move image file to new destination
-        File DestFile = new File("src/test/executionReports/screenShots/test.pdf" + currentDateTime.dateTime() +".jpg");
+        String[] dateSplit = currentDateTime.dateTime().split("/");
+        String timesplit[] = dateSplit[2].split(" ");
+        File DestFile = new File("src/test/executionReports/screenShots/" + dateSplit[0] + "/" + dateSplit[1] + "/" + timesplit[0] + "/" + featureName + timesplit[1] + ".jpg");
         //Copy file at destination
         FileUtils.copyFile(SrcFile, DestFile);
     }

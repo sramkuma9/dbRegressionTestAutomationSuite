@@ -40,6 +40,9 @@ public class AddAVisitor {
     @FindBy(css = "#droppedMemberLastName")
     WebElement lastNameTextBox;
 
+    @FindBy(css = "#visitorChapter")
+    WebElement chapterListBox;
+
     @FindBy(css = "#visitorPrimaryCategory")
     WebElement professionListBox;
 
@@ -85,6 +88,9 @@ public class AddAVisitor {
     @FindBy(css = "body > div.ui-dialog.ui-widget.ui-widget-content.ui-corner-all.ui-draggable > div.ui-dialog-buttonpane.ui-widget-content.ui-helper-clearfix > button:nth-child(3)")
     WebElement closeButton;
 
+    @FindBy(css = "#visitorCompanyName")
+    WebElement companyNameTextBox;
+
     public AddAVisitor(WebDriver driver) {
         AddAVisitor.driver = driver;
         AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 100);
@@ -118,6 +124,11 @@ public class AddAVisitor {
     public void selectInvitedBy(String invitedBy) {
         Select invitedBySelect = new Select(invitedByListBox);
         invitedBySelect.selectByVisibleText(invitedBy);
+    }
+
+    public void selectChapter(String chapter) {
+        Select chapterSelect = new Select(chapterListBox);
+        chapterSelect.selectByVisibleText(chapter);
     }
 
     public void clickSearchButton(){
@@ -199,6 +210,7 @@ public class AddAVisitor {
                 addAVisitorDetails[2] = td_collection.get(3).getText();
                 addAVisitorDetails[3] = td_collection.get(5).getText();
                 addAVisitorDetails[4] = td_collection.get(6).getText();
+                addAVisitorDetails[5] = td_collection.get(4).getText();
                 }
             recordCount++;
         }
@@ -215,5 +227,9 @@ public class AddAVisitor {
     public void selectVisitYear(String year) {
         Select visitYearSelect = new Select(visitYear);
         visitYearSelect.selectByVisibleText(year);
+    }
+
+    public void enterCompanyName(String companyName){
+        companyNameTextBox.sendKeys(companyName);
     }
 }

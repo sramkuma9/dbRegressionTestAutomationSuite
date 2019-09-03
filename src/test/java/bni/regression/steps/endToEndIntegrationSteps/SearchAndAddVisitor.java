@@ -49,7 +49,7 @@ public class SearchAndAddVisitor {
 //        driver=launchBrowser.getDriver();
 //        launchBrowser.invokeBrowser();
 //        login.loginToBni();
-          fixedDateTime =  currentDateTime.dateTime();
+        fixedDateTime =  currentDateTime.dateTime();
     }
 
     @After
@@ -149,9 +149,11 @@ public class SearchAndAddVisitor {
         assertEquals("not able to navigate to Add A visitor page", addAVisitor.getPageTitle(), "Add a Visitor" );
     }
 
-    @When("I select a proffession")
+    @When("I select a chapter and proffession")
     public void I_select_a_proffession() throws Exception{
         addAVisitor = new AddAVisitor(driver);
+        addAVisitor.selectChapter(readWritePropertyFile.loadAndReadPropertyFile("chapter", "inputFiles/searchAndAddVisitor.properties"));
+        TimeUnit.SECONDS.sleep(2);
         addAVisitor.selectProfession(readWritePropertyFile.loadAndReadPropertyFile("proffession", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
@@ -182,7 +184,7 @@ public class SearchAndAddVisitor {
         addAVisitor.selectDateFromDatePicker(readWritePropertyFile.loadAndReadPropertyFile("visitDay", "inputFiles/searchAndAddVisitor.properties"));
     }
 
-    @And("select title, first and last name")
+    @And("select title, first and last name and company name")
     public void select_title_first_and_last_name() throws Exception{
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.selectVisitorTitle(readWritePropertyFile.loadAndReadPropertyFile("visitorTitle", "inputFiles/searchAndAddVisitor.properties"));
@@ -190,6 +192,8 @@ public class SearchAndAddVisitor {
         addAVisitor.enterVisitorFirstName(readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(1);
         addAVisitor.enterVisitorLastName(readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties"));
+        TimeUnit.SECONDS.sleep(2);
+        addAVisitor.enterCompanyName(readWritePropertyFile.loadAndReadPropertyFile("companyName", "inputFiles/searchAndAddVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
@@ -254,12 +258,13 @@ public class SearchAndAddVisitor {
         addAVisitor = new AddAVisitor(driver);
         addAVisitorDetails = addAVisitor.getSearchResults();
         captureScreenShot = new CaptureScreenShot(driver);
-        captureScreenShot.takeSnapShot(driver);
+        captureScreenShot.takeSnapShot(driver, "searchAndAddVisitor");
         assertEquals("Visit date is not correct", expectedDate, addAVisitorDetails[0] );
         assertEquals("First Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[1] );
         assertEquals("Last Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[2] );
         assertEquals("Region is not correct", readWritePropertyFile.loadAndReadPropertyFile("region", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[3] );
         assertEquals("Chapter is not correct", readWritePropertyFile.loadAndReadPropertyFile("chapter", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[4] );
+        assertEquals("Company Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("companyName", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[5] );
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickCloseButton();
         TimeUnit.SECONDS.sleep(2);

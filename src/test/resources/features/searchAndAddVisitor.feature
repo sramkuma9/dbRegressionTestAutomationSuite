@@ -15,11 +15,11 @@ Feature: Add and search visitor
 
   Scenario: Add a new visitor
     Given I am on the add a new visitor page and is displayed
-    When I select a proffession
+    When I select a chapter and proffession
     And select speciality
     And select person
     And enter a valid date
-    And select title, first and last name
+    And select title, first and last name and company name
     And select the country
     And enter the phone
     And click save button
