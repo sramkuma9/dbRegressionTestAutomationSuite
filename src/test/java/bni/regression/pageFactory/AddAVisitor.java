@@ -91,6 +91,9 @@ public class AddAVisitor {
     @FindBy(css = "#visitorCompanyName")
     WebElement companyNameTextBox;
 
+    @FindBy(css = "#recordVisitBtn")
+    WebElement addButton;
+
     public AddAVisitor(WebDriver driver) {
         AddAVisitor.driver = driver;
         AjaxElementLocatorFactory factory = new AjaxElementLocatorFactory(driver, 100);
@@ -134,6 +137,10 @@ public class AddAVisitor {
     public void clickSearchButton(){
         searchButton.click();
          }
+
+    public void clickAddButton(){
+        addButton.click();
+    }
 
     public void clickVisitDateField() throws InterruptedException {
         visitDateTextBox.click();

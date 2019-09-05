@@ -13,18 +13,16 @@ import bni.regression.libraries.ui.Login;
 import bni.regression.libraries.ui.SignOut;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 import static junit.framework.TestCase.assertEquals;
 
-public class SearchAndAddVisitor {
+public class SearchAndAddBrandNewVisitor {
 
     public static WebDriver driver;
     private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
@@ -58,11 +56,10 @@ public class SearchAndAddVisitor {
     }
 
     // Scenario: Navigate to Add a Visitor page
-
     @Given("I am on the BNI home page")
     public void I_am_on_the_BNI_home_page() throws Exception {
         System.out.println("Cucumber test execution has started...");
-        driver=launchBrowser.getDriver();
+        driver = launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
         login.loginToBni();
         System.out.println("I am on the BNI home page");
@@ -99,8 +96,8 @@ public class SearchAndAddVisitor {
         visitorDateTime = (fixedDateTime.replaceAll("/","").replaceAll(":","").replaceAll(" ", ""));
         addAVisitor = new AddAVisitor(driver);
         TimeUnit.SECONDS.sleep(1);
-        firstName = readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties");
-        lastName = readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties");
+        firstName = readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddBrandNewVisitor.properties");
+        lastName = readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddBrandNewVisitor.properties");
         addAVisitor.enterEmail( firstName + lastName + visitorDateTime + "@gmail.com");
     }
 
@@ -117,8 +114,8 @@ public class SearchAndAddVisitor {
     @And("I enter the First and Last name")
     public  void I_enter_the_First_and_Last_name() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.enterFirstName(readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties"));
-        addAVisitor.enterLastName(readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.enterFirstName(readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddBrandNewVisitor.properties"));
+        addAVisitor.enterLastName(readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(1);
     }
 
@@ -152,23 +149,23 @@ public class SearchAndAddVisitor {
     @When("I select a chapter and proffession")
     public void I_select_a_proffession() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectChapter(readWritePropertyFile.loadAndReadPropertyFile("chapter", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectChapter(readWritePropertyFile.loadAndReadPropertyFile("chapter", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.selectProfession(readWritePropertyFile.loadAndReadPropertyFile("proffession", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectProfession(readWritePropertyFile.loadAndReadPropertyFile("proffession", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("select speciality")
     public void select_speciality() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectSpeciality(readWritePropertyFile.loadAndReadPropertyFile("speciality", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectSpeciality(readWritePropertyFile.loadAndReadPropertyFile("speciality", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("select person")
     public void select_person() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectInvitedBy(readWritePropertyFile.loadAndReadPropertyFile("invitedBy", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectInvitedBy(readWritePropertyFile.loadAndReadPropertyFile("invitedBy", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
@@ -177,37 +174,37 @@ public class SearchAndAddVisitor {
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickVisitDateField();
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.selectVisitYear(readWritePropertyFile.loadAndReadPropertyFile("visitYear", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectVisitYear(readWritePropertyFile.loadAndReadPropertyFile("visitYear", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.selectVisitMonth(readWritePropertyFile.loadAndReadPropertyFile("visitMonth", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectVisitMonth(readWritePropertyFile.loadAndReadPropertyFile("visitMonth", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.selectDateFromDatePicker(readWritePropertyFile.loadAndReadPropertyFile("visitDay", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectDateFromDatePicker(readWritePropertyFile.loadAndReadPropertyFile("visitDay", "inputFiles/searchAndAddBrandNewVisitor.properties"));
     }
 
     @And("select title, first and last name and company name")
     public void select_title_first_and_last_name() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectVisitorTitle(readWritePropertyFile.loadAndReadPropertyFile("visitorTitle", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectVisitorTitle(readWritePropertyFile.loadAndReadPropertyFile("visitorTitle", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.enterVisitorFirstName(readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.enterVisitorFirstName(readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(1);
-        addAVisitor.enterVisitorLastName(readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.enterVisitorLastName(readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
-        addAVisitor.enterCompanyName(readWritePropertyFile.loadAndReadPropertyFile("companyName", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.enterCompanyName(readWritePropertyFile.loadAndReadPropertyFile("companyName", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("select the country")
     public void select_the_country() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.selectVisitorCountry(readWritePropertyFile.loadAndReadPropertyFile("country", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.selectVisitorCountry(readWritePropertyFile.loadAndReadPropertyFile("country", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
     @And("enter the phone")
     public void enter_the_phone() throws Exception{
         addAVisitor = new AddAVisitor(driver);
-        addAVisitor.enterVisitorPhoneNumber(readWritePropertyFile.loadAndReadPropertyFile("phoneNumber", "inputFiles/searchAndAddVisitor.properties"));
+        addAVisitor.enterVisitorPhoneNumber(readWritePropertyFile.loadAndReadPropertyFile("phoneNumber", "inputFiles/searchAndAddBrandNewVisitor.properties"));
         TimeUnit.SECONDS.sleep(2);
     }
 
@@ -238,7 +235,7 @@ public class SearchAndAddVisitor {
         bniConnect.selectItemFromManageVisitor("Add a Visitor");
         TimeUnit.SECONDS.sleep(3);
         addAVisitor = new AddAVisitor(driver);
-        name = ((readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties")) + (readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties")));
+        name = ((readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddBrandNewVisitor.properties")) + (readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddBrandNewVisitor.properties")));
         addAVisitor.enterEmail(name + visitorDateTime + "@gmail.com");
         TimeUnit.SECONDS.sleep(2);
         addAVisitor.clickSearchButton();
@@ -247,9 +244,9 @@ public class SearchAndAddVisitor {
     @Then("the saved record should retrive 2 records with type visit and visitor with correct details")
     public void the_saved_records_should_be_retrived_2_records_with_type_visit_and_visitor_with_correct_details() throws Exception {
         TimeUnit.SECONDS.sleep(3);
-        String day = readWritePropertyFile.loadAndReadPropertyFile("visitDay", "inputFiles/searchAndAddVisitor.properties");
-        String year = readWritePropertyFile.loadAndReadPropertyFile("visitYear", "inputFiles/searchAndAddVisitor.properties");
-        String month = readWritePropertyFile.loadAndReadPropertyFile("visitMonth", "inputFiles/searchAndAddVisitor.properties");
+        String day = readWritePropertyFile.loadAndReadPropertyFile("visitDay", "inputFiles/searchAndAddBrandNewVisitor.properties");
+        String year = readWritePropertyFile.loadAndReadPropertyFile("visitYear", "inputFiles/searchAndAddBrandNewVisitor.properties");
+        String month = readWritePropertyFile.loadAndReadPropertyFile("visitMonth", "inputFiles/searchAndAddBrandNewVisitor.properties");
         SimpleDateFormat inputFormat = new SimpleDateFormat("MMM");
         Calendar cal = Calendar.getInstance();
         cal.setTime(inputFormat.parse(month));
@@ -260,11 +257,11 @@ public class SearchAndAddVisitor {
         captureScreenShot = new CaptureScreenShot(driver);
         captureScreenShot.takeSnapShot(driver, "searchAndAddVisitor");
         assertEquals("Visit date is not correct", expectedDate, addAVisitorDetails[0] );
-        assertEquals("First Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[1] );
-        assertEquals("Last Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[2] );
-        assertEquals("Region is not correct", readWritePropertyFile.loadAndReadPropertyFile("region", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[3] );
-        assertEquals("Chapter is not correct", readWritePropertyFile.loadAndReadPropertyFile("chapter", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[4] );
-        assertEquals("Company Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("companyName", "inputFiles/searchAndAddVisitor.properties"), addAVisitorDetails[5] );
+        assertEquals("First Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("firstName", "inputFiles/searchAndAddBrandNewVisitor.properties"), addAVisitorDetails[1] );
+        assertEquals("Last Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("lastName", "inputFiles/searchAndAddBrandNewVisitor.properties"), addAVisitorDetails[2] );
+        assertEquals("Region is not correct", readWritePropertyFile.loadAndReadPropertyFile("region", "inputFiles/searchAndAddBrandNewVisitor.properties"), addAVisitorDetails[3] );
+        assertEquals("Chapter is not correct", readWritePropertyFile.loadAndReadPropertyFile("chapter", "inputFiles/searchAndAddBrandNewVisitor.properties"), addAVisitorDetails[4] );
+        assertEquals("Company Name is not correct", readWritePropertyFile.loadAndReadPropertyFile("companyName", "inputFiles/searchAndAddBrandNewVisitor.properties"), addAVisitorDetails[5] );
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickCloseButton();
         TimeUnit.SECONDS.sleep(2);
