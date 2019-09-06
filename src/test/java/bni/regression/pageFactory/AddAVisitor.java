@@ -102,8 +102,8 @@ public class AddAVisitor {
         wait = new WebDriverWait(driver, 5);
     }
 
-    public void enterEmail(String dateTime){
-        emailTextBox.sendKeys(dateTime);
+    public void enterEmail(String emailId){
+        emailTextBox.sendKeys(emailId);
     }
 
     public void enterFirstName(String firstName){

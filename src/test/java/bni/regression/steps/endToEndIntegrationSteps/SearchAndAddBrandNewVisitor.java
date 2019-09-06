@@ -56,8 +56,8 @@ public class SearchAndAddBrandNewVisitor {
     }
 
     // Scenario: Navigate to Add a Visitor page
-    @Given("I am on the BNI home page")
-    public void I_am_on_the_BNI_home_page() throws Exception {
+    @Given("I am on the BNI page")
+    public void I_am_on_the_BNI_page() throws Exception {
         System.out.println("Cucumber test execution has started...");
         driver = launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
@@ -70,14 +70,14 @@ public class SearchAndAddBrandNewVisitor {
         bniConnect.navigateMenu("Operations,Region");
     }
 
-    @When("I navigate to Operations -> Region -> Add a visitor")
-    public void I_navigate_to_Operations_Region_Add_visitor() throws Exception {
+    @When("I navigate to Operations, Region -> Add a visitor")
+    public void I_navigate_to_Operations_And_Region_Add_visitor() throws Exception {
         System.out.println("Navigating to add a visitor page");
         bniConnect = new BNIConnect(driver);
         bniConnect.selectItemFromManageVisitor("Add a Visitor");
     }
 
-    @Then("a pop up window 'Add a Visitor' appears")
+    @Then("a pop up window Add a Visitor appears")
     public void a_pop_up_window_Add_a_Visitor_appears() throws IOException{
         addAVisitor = new AddAVisitor(driver);
         String pageTitle = addAVisitor.getPageTitle();
@@ -208,15 +208,15 @@ public class SearchAndAddBrandNewVisitor {
         TimeUnit.SECONDS.sleep(2);
     }
 
-    @And("click save button")
-    public void click_save_button() throws Exception{
+    @And("click the save button")
+    public void click_the_save_button() throws Exception{
         addAVisitor = new AddAVisitor(driver);
         addAVisitor.clickSaveButton();
         TimeUnit.SECONDS.sleep(3);
     }
 
-    @Then("visitor details saved sucessfully")
-    public void visitor_details_saved_sucessfully() throws Exception{
+    @Then("visitor detail is saved sucessfully")
+    public void visitor_detail_is_saved_sucessfully() throws Exception{
         System.out.println("Visitor details added sucessfully.");
     }
 

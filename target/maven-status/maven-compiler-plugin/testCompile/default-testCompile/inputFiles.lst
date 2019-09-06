@@ -1,7 +1,7 @@
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/ui/Login.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/common/CaptureScreenShot.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/AddPVVisitor.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/ui/SignOut.java
-/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/SearchAndAddPVVisitor.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/runners/PriorityCases.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/Login.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/common/LaunchBrowser.java
