@@ -14,12 +14,12 @@ public class SignOut {
     public void signOutBni() throws Exception{
         LaunchBrowser.driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0, -250)", "");
+        js.executeScript("window.scrollBy(0, 250)", "");
         TimeUnit.SECONDS.sleep(1);
         bniConnect = new BNIConnect(LaunchBrowser.driver);
-        bniConnect.hoverOnOptions();
+       // bniConnect.hoverOnOptions();
         TimeUnit.SECONDS.sleep(5);
-        bniConnect.clickSignOut();
+        bniConnect.clickSignOutFooter();
         TimeUnit.SECONDS.sleep(3);
         LaunchBrowser.driver.quit();
     }
