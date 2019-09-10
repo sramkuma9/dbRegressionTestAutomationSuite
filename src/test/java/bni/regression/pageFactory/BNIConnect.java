@@ -21,6 +21,9 @@ public class BNIConnect {
     @FindBy(css =  "#accountNav_2 > ul > li:nth-child(3) > a")
     WebElement signOut;
 
+    @FindBy(css = "#footer > div:nth-child(2) > a:nth-child(3)")
+    WebElement signOutFooter;
+
     @FindBy(css =  "#textnav > li")
     List<WebElement> menuNavigate;
 
@@ -98,6 +101,11 @@ public class BNIConnect {
 
     public void clickSignOut() throws Exception{
         signOut.click();
+        TimeUnit.SECONDS.sleep(5);
+    }
+
+    public void clickSignOutFooter() throws Exception{
+        signOutFooter.click();
         TimeUnit.SECONDS.sleep(5);
     }
 }
