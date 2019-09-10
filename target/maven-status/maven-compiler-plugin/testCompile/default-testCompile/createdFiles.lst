@@ -7,7 +7,7 @@ bni/regression/libraries/common/CaptureScreenShot.class
 bni/regression/libraries/common/ReadWritePropertyFile.class
 bni/regression/libraries/common/CurrentDateTime.class
 bni/regression/libraries/ui/SignOut.class
-bni/regression/steps/endToEndIntegrationSteps/AddPVVisitor.class
 bni/regression/pageFactory/AddAVisitor.class
+bni/regression/steps/endToEndIntegrationSteps/AddVisitorForExistingIndividual.class
 bni/regression/pageFactory/BNIConnect.class
 bni/regression/steps/endToEndIntegrationSteps/SearchAndAddBrandNewVisitor.class

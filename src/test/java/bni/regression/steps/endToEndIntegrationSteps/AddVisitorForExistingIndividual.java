@@ -16,7 +16,7 @@ import org.openqa.selenium.WebDriver;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
-public class AddPVVisitor {
+public class AddVisitorForExistingIndividual {
 
     public static WebDriver driver;
     private LaunchBrowser launchBrowser = new LaunchBrowser();
@@ -73,7 +73,7 @@ public class AddPVVisitor {
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.selectChapter(data.get("chapter"));
             TimeUnit.SECONDS.sleep(2);
-            addAVisitor.selectProfession(data.get("proffession"));
+            addAVisitor.selectProfession(data.get("profession"));
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.selectSpeciality(data.get("speciality"));
             TimeUnit.SECONDS.sleep(2);
@@ -87,18 +87,18 @@ public class AddPVVisitor {
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.selectDateFromDatePicker(data.get("visitDay"));
             TimeUnit.SECONDS.sleep(2);
-            //addAVisitor.selectVisitorTitle(data.get("title"));
-            //TimeUnit.SECONDS.sleep(2);
-            //addAVisitor.enterVisitorFirstName(data.get("firstName"));
-            //TimeUnit.SECONDS.sleep(1);
-            //addAVisitor.enterVisitorLastName(data.get("lastName"));
-            //TimeUnit.SECONDS.sleep(2);
-            //addAVisitor.enterCompanyName(data.get("companyName"));
-            //TimeUnit.SECONDS.sleep(2);
-            //addAVisitor.selectVisitorCountry(data.get("country"));
-            //TimeUnit.SECONDS.sleep(2);
-            //addAVisitor.enterVisitorPhoneNumber(data.get("phone"));
-            //TimeUnit.SECONDS.sleep(2);
+            addAVisitor.selectVisitorTitle(data.get("title"));
+            TimeUnit.SECONDS.sleep(2);
+            addAVisitor.enterVisitorFirstName(data.get("firstName"));
+            TimeUnit.SECONDS.sleep(1);
+            addAVisitor.enterVisitorLastName(data.get("lastName"));
+            TimeUnit.SECONDS.sleep(2);
+            addAVisitor.enterCompanyName(data.get("companyName"));
+            TimeUnit.SECONDS.sleep(2);
+            addAVisitor.selectVisitorCountry(data.get("country"));
+            TimeUnit.SECONDS.sleep(2);
+            addAVisitor.enterVisitorPhoneNumber(data.get("phone"));
+            TimeUnit.SECONDS.sleep(2);
             addAVisitor.clickSaveButton();
             TimeUnit.SECONDS.sleep(12);
         }

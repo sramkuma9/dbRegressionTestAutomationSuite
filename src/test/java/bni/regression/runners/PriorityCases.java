@@ -19,4 +19,3 @@ import org.openqa.selenium.WebDriver;
 public class PriorityCases {
 
 }
-
