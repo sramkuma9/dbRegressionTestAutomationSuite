@@ -41,10 +41,10 @@ public class AddVisitorForExistingIndividual {
     }
 
     // Scenario: Navigate to Add a Visitor page
-    @Given("I am on the BNI home page")
-    public void I_am_on_the_BNI_home_page() throws Exception {
+    @Given("user logs into BNI and navigates to home page")
+    public void user_logs_into_BNI_and_navigates_to_home_page() throws Exception {
         System.out.println("Cucumber test execution has started...");
-        driver = launchBrowser.getDriver();
+        driver=launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
         login.loginToBni();
         System.out.println("I am on the BNI home page");
@@ -104,13 +104,13 @@ public class AddVisitorForExistingIndividual {
         }
     }
 
-    @Then("visitor details saved sucessfully")
-    public void visitor_details_saved_sucessfully() throws Exception{
+    @Then("visitor details saved successfully")
+    public void visitor_details_saved_successfully() throws Exception{
         System.out.println("Visitor details added sucessfully.");
     }
 
-    @And("I sucessfully sign out from BNI")
-    public void I_sucessfully_sign_out_from_BNI() throws Exception{
+    @And("I successfully sign out from BNI")
+    public void I_successfully_sign_out_from_BNI() throws Exception{
         TimeUnit.SECONDS.sleep(2);
         signOut.signOutBni();
     }

@@ -1,7 +1,9 @@
 bni/regression/libraries/common/ReadPDFReader.class
 bni/regression/runners/PriorityCases.class
 bni/regression/libraries/ui/Login.class
+bni/regression/steps/endToEndIntegrationSteps/ConvertVisitorToMember.class
 bni/regression/libraries/common/LaunchBrowser.class
+bni/regression/libraries/common/ReadWriteExcel.class
 bni/regression/pageFactory/Login.class
 bni/regression/libraries/common/CaptureScreenShot.class
 bni/regression/libraries/common/ReadWritePropertyFile.class

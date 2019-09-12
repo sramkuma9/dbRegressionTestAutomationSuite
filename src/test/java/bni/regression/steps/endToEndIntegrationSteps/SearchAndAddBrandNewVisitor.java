@@ -46,7 +46,7 @@ public class SearchAndAddBrandNewVisitor {
     @Before
     public void setup() throws Exception {
 //        System.out.println("Cucumber test execution has started...");
-//        driver=launchBrowser.getDriver();
+//        driver = launchBrowser.getDriver();
 //        launchBrowser.invokeBrowser();
 //        login.loginToBni();
         fixedDateTime =  currentDateTime.dateTime();
@@ -59,19 +59,19 @@ public class SearchAndAddBrandNewVisitor {
 
     // Scenario: Navigate to Add a Visitor page
     // Scenario: Navigate to Add a Visitor page
-    @Given("I am on the BNI homepage")
-    public void I_am_on_the_BNI_homepage() throws Exception {
-        System.out.println("Cucumber test execution has started...");
-        driver = launchBrowser.getDriver();
-        launchBrowser.invokeBrowser();
-        login.loginToBni();
-        System.out.println("I am on the BNI home page");
-        TimeUnit.SECONDS.sleep(2);
-        driver = launchBrowser.getDriver();
-        bniConnect = new BNIConnect(driver);
-        captureScreenShot = new CaptureScreenShot(driver);
-        bniConnect.navigateMenu("Operations,Region");
-        TimeUnit.SECONDS.sleep(2);
+    @Given("User navigates to BNI homepage")
+    public void User_navigates_to_BNI_homepage() throws Exception {
+          //System.out.println("Cucumber test execution has started...");
+          driver = launchBrowser.getDriver();
+          launchBrowser.invokeBrowser();
+          login.loginToBni();
+          System.out.println("I am on the BNI home page");
+          TimeUnit.SECONDS.sleep(2);
+          driver = launchBrowser.getDriver();
+          bniConnect = new BNIConnect(driver);
+          captureScreenShot = new CaptureScreenShot(driver);
+          bniConnect.navigateMenu("Operations,Region");
+          TimeUnit.SECONDS.sleep(2);
     }
 
     @When("I enter a valid existing email id and click search and create new button and I enter the below details and click the save button and search the added visitor")
@@ -171,8 +171,8 @@ public class SearchAndAddBrandNewVisitor {
         System.out.println("Visitor details added successfully.");
     }
 
-    @And("I successfully sign out from BNI system")
-    public void I_successfully_sign_out_from_BNI_system() throws Exception{
+    @And("sign out from BNI")
+    public void sign_out_from_BNI() throws Exception{
         TimeUnit.SECONDS.sleep(2);
         signOut.signOutBni();
     }
