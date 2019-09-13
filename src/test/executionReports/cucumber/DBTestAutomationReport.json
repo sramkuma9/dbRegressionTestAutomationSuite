@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 19104367,
+              "duration": 26730704,
               "status": "passed"
             },
             "match": {
@@ -15,213 +15,7 @@
           },
           {
             "result": {
-              "duration": 149869,
-              "status": "passed"
-            },
-            "match": {
-              "location": "AddVisitorForExistingIndividual.setup()"
-            }
-          }
-        ],
-        "line": 3,
-        "name": "Add a Prospective Visitor",
-        "description": "",
-        "id": "add-a-prospective-visitor;add-a-prospective-visitor",
-        "after": [
-          {
-            "result": {
-              "duration": 65738,
-              "status": "passed"
-            },
-            "match": {
-              "location": "SearchAndAddBrandNewVisitor.tearDown()"
-            }
-          },
-          {
-            "result": {
-              "duration": 47362,
-              "status": "passed"
-            },
-            "match": {
-              "location": "AddVisitorForExistingIndividual.tearDown()"
-            }
-          }
-        ],
-        "type": "scenario",
-        "keyword": "Scenario",
-        "steps": [
-          {
-            "result": {
-              "duration": 36950474677,
-              "status": "passed"
-            },
-            "line": 4,
-            "name": "user logs into BNI and navigates to home page",
-            "match": {
-              "location": "AddVisitorForExistingIndividual.user_logs_into_BNI_and_navigates_to_home_page()"
-            },
-            "keyword": "Given "
-          },
-          {
-            "result": {
-              "duration": 125974480552,
-              "status": "passed"
-            },
-            "line": 5,
-            "name": "I enter a valid existing email id and click search and Add button and I enter the below details and click the save button",
-            "match": {
-              "location": "AddVisitorForExistingIndividual.When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button(DataTable)"
-            },
-            "rows": [
-              {
-                "cells": [
-                  "emailId",
-                  "",
-                  "chapter",
-                  "",
-                  "profession",
-                  "",
-                  "speciality",
-                  "",
-                  "person",
-                  "",
-                  "visitDay",
-                  "",
-                  "visitMonth",
-                  "",
-                  "visitYear",
-                  "",
-                  "title",
-                  "",
-                  "firstName",
-                  "",
-                  "lastName",
-                  "",
-                  "companyName",
-                  "",
-                  "country",
-                  "",
-                  "phone"
-                ],
-                "line": 6
-              },
-              {
-                "cells": [
-                  "meenabni25+adv@gmail.com",
-                  "",
-                  "Ant - One - Chapter A",
-                  "",
-                  "Information Technology",
-                  "",
-                  "Information Technology",
-                  "",
-                  "BNI",
-                  "",
-                  "12",
-                  "",
-                  "Aug",
-                  "",
-                  "2019",
-                  "",
-                  "Mr",
-                  "",
-                  "Selenium",
-                  "",
-                  "Test",
-                  "",
-                  "Airtel",
-                  "",
-                  "Antarctica",
-                  "",
-                  "123456789"
-                ],
-                "line": 7
-              },
-              {
-                "cells": [
-                  "bnidemo+activeuser@gmail.com",
-                  "",
-                  "Ant - One - Chapter A",
-                  "",
-                  "Information Technology",
-                  "",
-                  "Information Technology",
-                  "",
-                  "BNI",
-                  "",
-                  "12",
-                  "",
-                  "Aug",
-                  "",
-                  "2019",
-                  "",
-                  "Mr",
-                  "",
-                  "Selenium",
-                  "",
-                  "Test",
-                  "",
-                  "Airtel",
-                  "",
-                  "Antarctica",
-                  "",
-                  "123456789"
-                ],
-                "line": 8
-              }
-            ],
-            "keyword": "When "
-          },
-          {
-            "result": {
-              "duration": 488183,
-              "status": "passed"
-            },
-            "line": 9,
-            "name": "visitor details saved successfully",
-            "match": {
-              "location": "AddVisitorForExistingIndividual.visitor_details_saved_successfully()"
-            },
-            "keyword": "Then "
-          },
-          {
-            "result": {
-              "duration": 19440183645,
-              "status": "passed"
-            },
-            "line": 10,
-            "name": "I successfully sign out from BNI",
-            "match": {
-              "location": "AddVisitorForExistingIndividual.I_successfully_sign_out_from_BNI()"
-            },
-            "keyword": "And "
-          }
-        ]
-      }
-    ],
-    "name": "Add a prospective visitor",
-    "description": "",
-    "id": "add-a-prospective-visitor",
-    "keyword": "Feature",
-    "uri": "AddVisitorForExistingIndividual.feature"
-  },
-  {
-    "line": 1,
-    "elements": [
-      {
-        "before": [
-          {
-            "result": {
-              "duration": 220195,
-              "status": "passed"
-            },
-            "match": {
-              "location": "SearchAndAddBrandNewVisitor.setup()"
-            }
-          },
-          {
-            "result": {
-              "duration": 55013,
+              "duration": 148297,
               "status": "passed"
             },
             "match": {
@@ -236,7 +30,7 @@
         "after": [
           {
             "result": {
-              "duration": 65243,
+              "duration": 50110,
               "status": "passed"
             },
             "match": {
@@ -245,7 +39,7 @@
           },
           {
             "result": {
-              "duration": 55536,
+              "duration": 36247,
               "status": "passed"
             },
             "match": {
@@ -258,7 +52,7 @@
         "steps": [
           {
             "result": {
-              "duration": 34536333836,
+              "duration": 36586579328,
               "status": "passed"
             },
             "line": 4,
@@ -270,7 +64,7 @@
           },
           {
             "result": {
-              "duration": 173898831023,
+              "duration": 174305003686,
               "status": "passed"
             },
             "line": 5,
@@ -380,7 +174,7 @@
           },
           {
             "result": {
-              "duration": 265286,
+              "duration": 176370,
               "status": "passed"
             },
             "line": 9,
@@ -392,7 +186,7 @@
           },
           {
             "result": {
-              "duration": 18851510068,
+              "duration": 19175783437,
               "status": "passed"
             },
             "line": 10,

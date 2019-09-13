@@ -42,6 +42,7 @@ public class SearchAndAddBrandNewVisitor {
     public String firstName;
     public String lastName;
     private CaptureScreenShot captureScreenShot;
+    ReadWriteExcel readWriteExcel = new ReadWriteExcel();
 
     @Before
     public void setup() throws Exception {
@@ -76,6 +77,7 @@ public class SearchAndAddBrandNewVisitor {
 
     @When("I enter a valid existing email id and click search and create new button and I enter the below details and click the save button and search the added visitor")
     public void When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable addPVVisitor) throws Exception{
+        Integer i =2;
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
             System.out.println("Navigating to add a visitor page");
             bniConnect = new BNIConnect(driver);
@@ -85,11 +87,11 @@ public class SearchAndAddBrandNewVisitor {
             TimeUnit.SECONDS.sleep(3);
             String dateTimeStamp =  currentDateTime.dateTime();
             visitorDateTime = (dateTimeStamp.replaceAll("/","").replaceAll(":","").replaceAll(" ", ""));
-            System.out.println("firstname is " + data.get("firstName"));
-            System.out.println(data.get("lastName"));
             addAVisitor.enterEmail(data.get("firstName") + data.get("lastName") + visitorDateTime + "@gmail.com");
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.clickSearchButton();
+            readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
+            boolean setFlag = readWriteExcel.setCellData("src/test/resources/inputFiles/testInput.xlsx","addVisitor", 0,i, data.get("firstName") + data.get("lastName") + visitorDateTime + "@gmail.com");
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.clickSearchByNameButton();
             TimeUnit.SECONDS.sleep(2);
@@ -163,6 +165,7 @@ public class SearchAndAddBrandNewVisitor {
             TimeUnit.SECONDS.sleep(2);
             Alert alert = driver.switchTo().alert();
             alert.accept();
+            i++;
         }
     }
 
