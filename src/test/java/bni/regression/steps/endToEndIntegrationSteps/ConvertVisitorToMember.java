@@ -13,8 +13,13 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
+
+import static junit.framework.TestCase.assertEquals;
 
 public class ConvertVisitorToMember {
     public static WebDriver driver;
@@ -29,6 +34,7 @@ public class ConvertVisitorToMember {
     private ViewEditVisitorsList viewEditVisitorsList;
     private EnterNewApplication enterNewApplication;
     private Add add;
+    public  String [] convertToMemberDetails = new String [8];
 
     @Before
     public void setup() throws Exception {
@@ -130,6 +136,29 @@ public class ConvertVisitorToMember {
             TimeUnit.SECONDS.sleep(2);
             add.clickSubmitButton();
             TimeUnit.SECONDS.sleep(4);
+            enterNewApplication = new EnterNewApplication(driver);
+            enterNewApplication.enterEmail(visitorEmailId);
+            TimeUnit.SECONDS.sleep(2);
+            enterNewApplication.clickSearchButton();
+            TimeUnit.SECONDS.sleep(3);
+            String day = data.get(("visitDay"));
+            String year = data.get(("visitYear"));
+            String month = data.get(("visitMonth"));
+            SimpleDateFormat inputFormat = new SimpleDateFormat("MMM");
+            Calendar cal = Calendar.getInstance();
+            cal.setTime(inputFormat.parse(month));
+            SimpleDateFormat outputFormat = new SimpleDateFormat("MM");
+            String expectedDate = day + "/" + outputFormat.format(cal.getTime()) + "/" + year;
+            enterNewApplication = new EnterNewApplication(driver);
+            convertToMemberDetails = enterNewApplication.getSearchResults();
+            captureScreenShot = new CaptureScreenShot(driver);
+            captureScreenShot.takeSnapShot(driver, "convertVisitorToMember");
+            assertEquals("Visit date is not correct", expectedDate, convertToMemberDetails[0] );
+            assertEquals("First Name is not correct", data.get("firstName"), convertToMemberDetails[1] );
+            assertEquals("Last Name is not correct", data.get("lastName"), convertToMemberDetails[2] );
+            assertEquals("Region is not correct", data.get("region"), convertToMemberDetails[3] );
+            assertEquals("Chapter is not correct", data.get("chapter"), convertToMemberDetails[4] );
+            assertEquals("Company Name is not correct", data.get("companyName"), convertToMemberDetails[5] );
             i++;
         }
     }
