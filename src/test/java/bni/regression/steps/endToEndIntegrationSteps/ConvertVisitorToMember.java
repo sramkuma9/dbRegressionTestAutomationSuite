@@ -11,14 +11,14 @@ import cucumber.api.DataTable;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
-
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-
 import static junit.framework.TestCase.assertEquals;
 
 public class ConvertVisitorToMember {
@@ -38,7 +38,6 @@ public class ConvertVisitorToMember {
 
     @Before
     public void setup() throws Exception {
-//        System.out.println("Cucumber test execution has started...");
 //        driver = launchBrowser.getDriver();
 //        launchBrowser.invokeBrowser();
 //        login.loginToBni();
@@ -53,18 +52,14 @@ public class ConvertVisitorToMember {
     // Scenario: Navigate to Add a Visitor page
     @Given("I am on the Enter New Application page")
     public void I_am_on_the_Enter_New_Application_page() throws Exception {
-        //System.out.println("Cucumber test execution has started...");
         driver = launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
         login.loginToBni();
-        System.out.println("I am on the BNI home page");
         TimeUnit.SECONDS.sleep(2);
         driver = launchBrowser.getDriver();
         bniConnect = new BNIConnect(driver);
         bniConnect.navigateMenu("Operations,Region");
         TimeUnit.SECONDS.sleep(2);
-        System.out.println("Navigating to add a visitor page");
-        bniConnect = new BNIConnect(driver);
         bniConnect.selectItemFromManageVisitor("View/Edit Visitors List");
         TimeUnit.SECONDS.sleep(2);
         viewEditVisitorsList = new ViewEditVisitorsList(driver);
@@ -92,7 +87,7 @@ public class ConvertVisitorToMember {
 
     @When("I search emailid and click add and enter the below details and click save")
     public void I_search_emailid_and_click_add_and_enter_the_below_details_and_click_save(DataTable convertToMember) throws Exception {
-        Integer i =2;
+        Integer i =1;
         for (Map<String, String> data : convertToMember.asMaps(String.class, String.class)) {
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
             String visitorEmailId = readWriteExcel.getCellData("addVisitor",0,i);
@@ -108,7 +103,7 @@ public class ConvertVisitorToMember {
             TimeUnit.SECONDS.sleep(2);
             add.selectVisitYear(data.get("applicationYear"));
             TimeUnit.SECONDS.sleep(2);
-            add.selectVisitMonth(data.get("applicationonth"));
+            add.selectVisitMonth(data.get("applicationMonth"));
             TimeUnit.SECONDS.sleep(2);
             add.selectDateFromDatePicker(data.get("applicationDay"));
             TimeUnit.SECONDS.sleep(2);
@@ -135,20 +130,15 @@ public class ConvertVisitorToMember {
             add.selectMemberShipOption(data.get("membershipOption"));
             TimeUnit.SECONDS.sleep(2);
             add.clickSubmitButton();
-            TimeUnit.SECONDS.sleep(4);
+            TimeUnit.SECONDS.sleep(10);
             enterNewApplication = new EnterNewApplication(driver);
             enterNewApplication.enterEmail(visitorEmailId);
             TimeUnit.SECONDS.sleep(2);
             enterNewApplication.clickSearchButton();
             TimeUnit.SECONDS.sleep(3);
-            String day = data.get(("visitDay"));
-            String year = data.get(("visitYear"));
-            String month = data.get(("visitMonth"));
-            SimpleDateFormat inputFormat = new SimpleDateFormat("MMM");
-            Calendar cal = Calendar.getInstance();
-            cal.setTime(inputFormat.parse(month));
-            SimpleDateFormat outputFormat = new SimpleDateFormat("MM");
-            String expectedDate = day + "/" + outputFormat.format(cal.getTime()) + "/" + year;
+            DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            LocalDateTime now = LocalDateTime.now();
+            String expectedDate = dtf.format(now).toString();
             enterNewApplication = new EnterNewApplication(driver);
             convertToMemberDetails = enterNewApplication.getSearchResults();
             captureScreenShot = new CaptureScreenShot(driver);
@@ -161,5 +151,11 @@ public class ConvertVisitorToMember {
             assertEquals("Company Name is not correct", data.get("companyName"), convertToMemberDetails[5] );
             i++;
         }
+    }
+
+    @Then("visitor is successfully converted to a member and I signout from BNI")
+    public void visitor_is_successfully_converted_to_a_member_and_I_signout_from_BNI() throws Exception{
+        TimeUnit.SECONDS.sleep(2);
+        signOut.signOutBni();
     }
 }

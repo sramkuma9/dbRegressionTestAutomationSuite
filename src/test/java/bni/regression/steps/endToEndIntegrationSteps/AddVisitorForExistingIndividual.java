@@ -28,7 +28,6 @@ public class AddVisitorForExistingIndividual {
 
     @Before
     public void setup() throws Exception {
-//        System.out.println("Cucumber test execution has started...");
 //        driver=launchBrowser.getDriver();
 //        launchBrowser.invokeBrowser();
 //        login.loginToBni();
@@ -43,11 +42,9 @@ public class AddVisitorForExistingIndividual {
     // Scenario: Navigate to Add a Visitor page
     @Given("user logs into BNI and navigates to home page")
     public void user_logs_into_BNI_and_navigates_to_home_page() throws Exception {
-        System.out.println("Cucumber test execution has started...");
         driver=launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
         login.loginToBni();
-        System.out.println("I am on the BNI home page");
         TimeUnit.SECONDS.sleep(2);
         driver = launchBrowser.getDriver();
         bniConnect = new BNIConnect(driver);
@@ -59,10 +56,8 @@ public class AddVisitorForExistingIndividual {
     @When("I enter a valid existing email id and click search and Add button and I enter the below details and click the save button")
     public void When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button(DataTable addPVVisitor) throws Exception{
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
-            System.out.println("Navigating to add a visitor page");
             bniConnect = new BNIConnect(driver);
             bniConnect.selectItemFromManageVisitor("Add a Visitor");
-            System.out.println("I am on the Add a visitor page");
             addAVisitor = new AddAVisitor(driver);
             TimeUnit.SECONDS.sleep(3);
             addAVisitor.enterEmail(data.get("emailId"));

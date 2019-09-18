@@ -51,12 +51,18 @@ public class ViewEditVisitorsList {
         TimeUnit.SECONDS.sleep(2);
     }
 
+    public void clickConvertToMemberButton() throws InterruptedException {
+        convertToMemberButton.click();
+        TimeUnit.SECONDS.sleep(2);
+    }
+
     public void clickToEndDateField() throws InterruptedException {
         toEndDate.click();
         TimeUnit.SECONDS.sleep(2);
     }
 
     public void selectDateFromDatePicker(String day) throws Exception{
+        Integer breaker = 2;
         for(WebElement trElement : datePicker)
         {
             List<WebElement> td_collection=trElement.findElements(By.tagName("td"));
@@ -65,8 +71,12 @@ public class ViewEditVisitorsList {
                 if (day.equals(dayItem)) {
                     td_collection.get(row).findElement(By.tagName("a")).click();
                     TimeUnit.SECONDS.sleep(3);
+                    breaker++;
                     break;
                 }
+            }
+            if (breaker==3) {
+                break;
             }
         }
     }

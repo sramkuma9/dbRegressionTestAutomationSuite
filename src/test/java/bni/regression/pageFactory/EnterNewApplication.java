@@ -12,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import static junit.framework.TestCase.assertEquals;
+
 public class EnterNewApplication {
     public static WebDriver driver;
     public WebDriverWait wait;
@@ -24,6 +26,9 @@ public class EnterNewApplication {
 
     @FindBy(css = "#convertToMemberHref")
     WebElement addButton;
+
+    @FindBy(css = "#datalist1 > tbody > tr")
+    List<WebElement> searchResults;
 
     public EnterNewApplication(WebDriver driver) {
         EnterNewApplication.driver = driver;
@@ -44,7 +49,30 @@ public class EnterNewApplication {
     }
 
     public void enterEmail(String emailId) throws InterruptedException {
+        emailTextBox.clear();
         emailTextBox.sendKeys(emailId);
         TimeUnit.SECONDS.sleep(1);
+    }
+
+    public String[] getSearchResults() throws Exception{
+        Integer recordCount = 0;
+        String [] addAVisitorDetails = new String [8];
+        for(WebElement trElement : searchResults)
+        {
+            List<WebElement> td_collection=trElement.findElements(By.tagName("td"));
+            String type = td_collection.get(1).getText();
+            if (type.equals("Pending Membership")) {
+                addAVisitorDetails[0] = td_collection.get(0).getText();
+                addAVisitorDetails[1] = td_collection.get(2).getText();
+                addAVisitorDetails[2] = td_collection.get(3).getText();
+                addAVisitorDetails[3] = td_collection.get(5).getText();
+                addAVisitorDetails[4] = td_collection.get(6).getText();
+                addAVisitorDetails[5] = td_collection.get(4).getText();
+            }
+            recordCount++;
+        }
+        Integer expRecordCount = 4;
+        assertEquals("Search All individuals result does not have 4 records", expRecordCount, recordCount );
+        return addAVisitorDetails;
     }
 }

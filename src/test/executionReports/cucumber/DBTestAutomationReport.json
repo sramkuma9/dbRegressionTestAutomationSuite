@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 26730704,
+              "duration": 20594264,
               "status": "passed"
             },
             "match": {
@@ -15,11 +15,20 @@
           },
           {
             "result": {
-              "duration": 148297,
+              "duration": 164101,
               "status": "passed"
             },
             "match": {
               "location": "AddVisitorForExistingIndividual.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 154101,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.setup()"
             }
           }
         ],
@@ -30,7 +39,7 @@
         "after": [
           {
             "result": {
-              "duration": 50110,
+              "duration": 47494,
               "status": "passed"
             },
             "match": {
@@ -39,11 +48,20 @@
           },
           {
             "result": {
-              "duration": 36247,
+              "duration": 37018,
               "status": "passed"
             },
             "match": {
               "location": "AddVisitorForExistingIndividual.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 34948,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.tearDown()"
             }
           }
         ],
@@ -52,7 +70,7 @@
         "steps": [
           {
             "result": {
-              "duration": 36586579328,
+              "duration": 37007014022,
               "status": "passed"
             },
             "line": 4,
@@ -64,7 +82,7 @@
           },
           {
             "result": {
-              "duration": 174305003686,
+              "duration": 175198951030,
               "status": "passed"
             },
             "line": 5,
@@ -174,7 +192,7 @@
           },
           {
             "result": {
-              "duration": 176370,
+              "duration": 123160,
               "status": "passed"
             },
             "line": 9,
@@ -186,7 +204,7 @@
           },
           {
             "result": {
-              "duration": 19175783437,
+              "duration": 19068470073,
               "status": "passed"
             },
             "line": 10,
@@ -203,6 +221,224 @@
     "description": "",
     "id": "add-and-search-brand-new-visitor",
     "keyword": "Feature",
-    "uri": "searchAndAddBrandNewVisitor.feature"
+    "uri": "1searchAndAddBrandNewVisitor.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 189738,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddBrandNewVisitor.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 93940,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 104825,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.setup()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "convert the added brand new visitor to member",
+        "description": "",
+        "id": "convert-visitor-to-member;convert-the-added-brand-new-visitor-to-member",
+        "after": [
+          {
+            "result": {
+              "duration": 62637,
+              "status": "passed"
+            },
+            "match": {
+              "location": "SearchAndAddBrandNewVisitor.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 23962,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 24586,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 92077922210,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "I am on the Enter New Application page",
+            "match": {
+              "location": "ConvertVisitorToMember.I_am_on_the_Enter_New_Application_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 140014675771,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I search emailid and click add and enter the below details and click save",
+            "match": {
+              "location": "ConvertVisitorToMember.I_search_emailid_and_click_add_and_enter_the_below_details_and_click_save(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "applicationDay",
+                  "",
+                  "applicationMonth",
+                  "",
+                  "applicationYear",
+                  "",
+                  "country",
+                  "",
+                  "region",
+                  "",
+                  "chapter",
+                  "",
+                  "profession",
+                  "",
+                  "speciality",
+                  "",
+                  "firstName",
+                  "",
+                  "lastName",
+                  "",
+                  "companyName",
+                  "",
+                  "addressLine1",
+                  "",
+                  "phone",
+                  "",
+                  "paymentOption",
+                  "",
+                  "membershipOption"
+                ],
+                "line": 6
+              },
+              {
+                "cells": [
+                  "9",
+                  "",
+                  "Sep",
+                  "",
+                  "2019",
+                  "",
+                  "Antarctica",
+                  "",
+                  "Ant - One",
+                  "",
+                  "Ant - One - Chapter A",
+                  "",
+                  "Information Technology",
+                  "",
+                  "Information Technology",
+                  "",
+                  "Selenium",
+                  "",
+                  "Test+v",
+                  "",
+                  "Airtel",
+                  "",
+                  "77, Edward Street",
+                  "",
+                  "1234567890",
+                  "",
+                  "Card",
+                  "",
+                  "One Year Membership"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "9",
+                  "",
+                  "Sep",
+                  "",
+                  "2019",
+                  "",
+                  "Antarctica",
+                  "",
+                  "Ant - One",
+                  "",
+                  "Ant - One - Chapter A",
+                  "",
+                  "Information Technology",
+                  "",
+                  "Information Technology",
+                  "",
+                  "Selenium",
+                  "",
+                  "Test+v",
+                  "",
+                  "Airtel",
+                  "",
+                  "77, Edward Street",
+                  "",
+                  "1234567890",
+                  "",
+                  "Card",
+                  "",
+                  "One Year Membership"
+                ],
+                "line": 8
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 19790970508,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "visitor is successfully converted to a member and I signout from BNI",
+            "match": {
+              "location": "ConvertVisitorToMember.visitor_is_successfully_converted_to_a_member_and_I_signout_from_BNI()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Convert visitor to member",
+    "description": "",
+    "id": "convert-visitor-to-member",
+    "keyword": "Feature",
+    "uri": "convertVisitorToMember.feature"
   }
 ]

@@ -22,6 +22,15 @@ public class Add {
     @FindBy(css = "#memberEmail")
     WebElement emailTextBox;
 
+    @FindBy(css = "#memberSelectRegion")
+    WebElement regionListbox;
+
+    @FindBy(css = "#memberSelectCountry")
+    WebElement countryListbox;
+
+    @FindBy(css = "#memberSecondaryCategory")
+    WebElement specialityListbox;
+
     @FindBy(css = "#memberFirstName")
     WebElement firstNameTextBox;
 
@@ -47,7 +56,7 @@ public class Add {
     List<WebElement> datePicker;
 
     @FindBy(css = "#memberAddressLine1")
-    WebElement addressLine1;
+    WebElement addressLine1TextBox;
 
     @FindBy(css = "#memberPhoneNumber")
     WebElement PhoneNumber;
@@ -77,11 +86,22 @@ public class Add {
     }
 
     public void enterFirstName(String firstName){
+        firstNameTextBox.clear();
         firstNameTextBox.sendKeys(firstName);
     }
 
     public void enterLastName(String lastName){
+        lastNameTextBox.clear();
         lastNameTextBox.sendKeys(lastName);
+    }
+
+    public void enterPhone(String phone){
+        PhoneNumber.clear();
+        PhoneNumber.sendKeys(phone);
+    }
+
+    public void enterAddressLine1(String addressLine1){
+        addressLine1TextBox.sendKeys(addressLine1);
     }
 
     public void selectProfession(String profession) {
@@ -89,9 +109,34 @@ public class Add {
         professionSelect.selectByVisibleText(profession);
     }
 
+    public void selectPaymentOption(String paymentOption) {
+        Select paymentOptionSelect = new Select(paymentOptionListBox);
+        paymentOptionSelect.selectByVisibleText(paymentOption);
+    }
+
+    public void selectMemberShipOption(String memberShipOption) {
+        Select memberShipOptionSelect = new Select(membershipOptionListBox);
+        memberShipOptionSelect.selectByVisibleText(memberShipOption);
+    }
+
+    public void selectCountry(String country) {
+        Select countrySelect = new Select(countryListbox);
+        countrySelect.selectByVisibleText(country);
+    }
+
+    public void selectRegion(String region) {
+        Select regionSelect = new Select(regionListbox);
+        regionSelect.selectByVisibleText(region);
+    }
+
     public void selectChapter(String chapter) {
         Select chapterSelect = new Select(chapterListBox);
         chapterSelect.selectByVisibleText(chapter);
+    }
+
+    public void selectSpeciality(String speciality) {
+        Select specialitySelect = new Select(specialityListbox);
+        specialitySelect.selectByVisibleText(speciality);
     }
 
     public void clickApplicationDateField() throws InterruptedException {
@@ -100,6 +145,7 @@ public class Add {
     }
 
     public void selectDateFromDatePicker(String day) throws Exception{
+        Integer breaker = 2;
         for(WebElement trElement : datePicker)
         {
             List<WebElement> td_collection=trElement.findElements(By.tagName("td"));
@@ -108,8 +154,12 @@ public class Add {
                 if (day.equals(dayItem)) {
                     td_collection.get(row).findElement(By.tagName("a")).click();
                     TimeUnit.SECONDS.sleep(3);
+                    breaker++;
                     break;
                 }
+            }
+            if (breaker==3) {
+                break;
             }
         }
     }

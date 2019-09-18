@@ -32,7 +32,6 @@ public class SearchAndAddBrandNewVisitor {
     private LaunchBrowser launchBrowser = new LaunchBrowser();
     private Login login = new Login();
     private SignOut signOut = new SignOut();
-    private ReadPDFReader readPdfReader = new ReadPDFReader();
     private BNIConnect bniConnect;
     private AddAVisitor addAVisitor;
     public static String fixedDateTime;
@@ -46,7 +45,6 @@ public class SearchAndAddBrandNewVisitor {
 
     @Before
     public void setup() throws Exception {
-//        System.out.println("Cucumber test execution has started...");
 //        driver = launchBrowser.getDriver();
 //        launchBrowser.invokeBrowser();
 //        login.loginToBni();
@@ -62,11 +60,9 @@ public class SearchAndAddBrandNewVisitor {
     // Scenario: Navigate to Add a Visitor page
     @Given("User navigates to BNI homepage")
     public void User_navigates_to_BNI_homepage() throws Exception {
-          //System.out.println("Cucumber test execution has started...");
           driver = launchBrowser.getDriver();
           launchBrowser.invokeBrowser();
           login.loginToBni();
-          System.out.println("I am on the BNI home page");
           TimeUnit.SECONDS.sleep(2);
           driver = launchBrowser.getDriver();
           bniConnect = new BNIConnect(driver);
@@ -79,10 +75,8 @@ public class SearchAndAddBrandNewVisitor {
     public void When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable addPVVisitor) throws Exception{
         Integer i =2;
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
-            System.out.println("Navigating to add a visitor page");
             bniConnect = new BNIConnect(driver);
             bniConnect.selectItemFromManageVisitor("Add a Visitor");
-            System.out.println("I am on the Add a visitor page");
             addAVisitor = new AddAVisitor(driver);
             TimeUnit.SECONDS.sleep(3);
             String dateTimeStamp =  currentDateTime.dateTime();
@@ -153,7 +147,7 @@ public class SearchAndAddBrandNewVisitor {
             addAVisitor = new AddAVisitor(driver);
             addAVisitorDetails = addAVisitor.getSearchResults();
             captureScreenShot = new CaptureScreenShot(driver);
-            captureScreenShot.takeSnapShot(driver, "searchAndAddVisitor");
+            captureScreenShot.takeSnapShot(driver, "searchAndAddBrandNewVisitor");
             assertEquals("Visit date is not correct", expectedDate, addAVisitorDetails[0] );
             assertEquals("First Name is not correct", data.get("firstName"), addAVisitorDetails[1] );
             assertEquals("Last Name is not correct", data.get("lastName"), addAVisitorDetails[2] );

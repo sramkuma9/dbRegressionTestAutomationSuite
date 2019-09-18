@@ -1,6 +1,8 @@
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/ui/Login.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/ViewEditVisitorsList.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/common/CaptureScreenShot.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/ui/SignOut.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/EnterNewApplication.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/runners/PriorityCases.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/Login.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/ConvertVisitorToMember.java
@@ -9,6 +11,7 @@
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/common/ReadPDFReader.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/BNIConnect.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/common/ReadWriteExcel.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/Add.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/AddVisitorForExistingIndividual.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/SearchAndAddBrandNewVisitor.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/AddAVisitor.java
