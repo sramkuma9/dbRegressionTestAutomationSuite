@@ -24,7 +24,7 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import static junit.framework.TestCase.assertEquals;
 
-public class SearchAndAddBrandNewVisitor {
+public class AddAndSearchBrandNewVisitor {
 
     public static WebDriver driver;
     private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
@@ -45,18 +45,14 @@ public class SearchAndAddBrandNewVisitor {
 
     @Before
     public void setup() throws Exception {
-//        driver = launchBrowser.getDriver();
-//        launchBrowser.invokeBrowser();
-//        login.loginToBni();
         fixedDateTime =  currentDateTime.dateTime();
     }
 
     @After
     public void tearDown() throws Exception{
-        //signOut.signOutBni();
+
     }
 
-    // Scenario: Navigate to Add a Visitor page
     // Scenario: Navigate to Add a Visitor page
     @Given("User navigates to BNI homepage")
     public void User_navigates_to_BNI_homepage() throws Exception {

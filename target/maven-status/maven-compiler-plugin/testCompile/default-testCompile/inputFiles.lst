@@ -13,6 +13,6 @@
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/common/ReadWriteExcel.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/Add.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/AddVisitorForExistingIndividual.java
-/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/SearchAndAddBrandNewVisitor.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/pageFactory/AddAVisitor.java
 /home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/libraries/common/ReadWritePropertyFile.java
+/home/ajay/IdeaProjects/dbRegressionTestSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/AddAndSearchBrandNewVisitor.java

@@ -6,29 +6,29 @@
         "before": [
           {
             "result": {
-              "duration": 20594264,
-              "status": "passed"
-            },
-            "match": {
-              "location": "SearchAndAddBrandNewVisitor.setup()"
-            }
-          },
-          {
-            "result": {
-              "duration": 164101,
-              "status": "passed"
-            },
-            "match": {
-              "location": "AddVisitorForExistingIndividual.setup()"
-            }
-          },
-          {
-            "result": {
-              "duration": 154101,
+              "duration": 20880644,
               "status": "passed"
             },
             "match": {
               "location": "ConvertVisitorToMember.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 13861039,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 163492,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.setup()"
             }
           }
         ],
@@ -39,29 +39,29 @@
         "after": [
           {
             "result": {
-              "duration": 47494,
-              "status": "passed"
-            },
-            "match": {
-              "location": "SearchAndAddBrandNewVisitor.tearDown()"
-            }
-          },
-          {
-            "result": {
-              "duration": 37018,
-              "status": "passed"
-            },
-            "match": {
-              "location": "AddVisitorForExistingIndividual.tearDown()"
-            }
-          },
-          {
-            "result": {
-              "duration": 34948,
+              "duration": 58148,
               "status": "passed"
             },
             "match": {
               "location": "ConvertVisitorToMember.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 44717,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 43298,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.tearDown()"
             }
           }
         ],
@@ -70,25 +70,25 @@
         "steps": [
           {
             "result": {
-              "duration": 37007014022,
+              "duration": 36736202697,
               "status": "passed"
             },
             "line": 4,
             "name": "User navigates to BNI homepage",
             "match": {
-              "location": "SearchAndAddBrandNewVisitor.User_navigates_to_BNI_homepage()"
+              "location": "AddAndSearchBrandNewVisitor.User_navigates_to_BNI_homepage()"
             },
             "keyword": "Given "
           },
           {
             "result": {
-              "duration": 175198951030,
+              "duration": 175284310078,
               "status": "passed"
             },
             "line": 5,
             "name": "I enter a valid existing email id and click search and create new button and I enter the below details and click the save button and search the added visitor",
             "match": {
-              "location": "SearchAndAddBrandNewVisitor.When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable)"
+              "location": "AddAndSearchBrandNewVisitor.When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable)"
             },
             "rows": [
               {
@@ -192,25 +192,25 @@
           },
           {
             "result": {
-              "duration": 123160,
+              "duration": 316191,
               "status": "passed"
             },
             "line": 9,
             "name": "brand new visitor details saved successfully",
             "match": {
-              "location": "SearchAndAddBrandNewVisitor.brand_new_visitor_details_saved_successfully()"
+              "location": "AddAndSearchBrandNewVisitor.brand_new_visitor_details_saved_successfully()"
             },
             "keyword": "Then "
           },
           {
             "result": {
-              "duration": 19068470073,
+              "duration": 19019632664,
               "status": "passed"
             },
             "line": 10,
             "name": "sign out from BNI",
             "match": {
-              "location": "SearchAndAddBrandNewVisitor.sign_out_from_BNI()"
+              "location": "AddAndSearchBrandNewVisitor.sign_out_from_BNI()"
             },
             "keyword": "And "
           }
@@ -221,7 +221,7 @@
     "description": "",
     "id": "add-and-search-brand-new-visitor",
     "keyword": "Feature",
-    "uri": "1searchAndAddBrandNewVisitor.feature"
+    "uri": "addAndsearchBrandNewVisitor.feature"
   },
   {
     "line": 1,
@@ -230,29 +230,253 @@
         "before": [
           {
             "result": {
-              "duration": 189738,
+              "duration": 112648,
               "status": "passed"
             },
             "match": {
-              "location": "SearchAndAddBrandNewVisitor.setup()"
+              "location": "ConvertVisitorToMember.setup()"
             }
           },
           {
             "result": {
-              "duration": 93940,
+              "duration": 236489,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 96679,
               "status": "passed"
             },
             "match": {
               "location": "AddVisitorForExistingIndividual.setup()"
             }
+          }
+        ],
+        "line": 3,
+        "name": "Add a Prospective Visitor",
+        "description": "",
+        "id": "add-a-prospective-visitor;add-a-prospective-visitor",
+        "after": [
+          {
+            "result": {
+              "duration": 34695,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.tearDown()"
+            }
           },
           {
             "result": {
-              "duration": 104825,
+              "duration": 16841,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 61849,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 34492053226,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "user logs into BNI and navigates to home page",
+            "match": {
+              "location": "AddVisitorForExistingIndividual.user_logs_into_BNI_and_navigates_to_home_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 125360687445,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "I enter a valid existing email id and click search and Add button and I enter the below details and click the save button",
+            "match": {
+              "location": "AddVisitorForExistingIndividual.When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "emailId",
+                  "",
+                  "chapter",
+                  "",
+                  "profession",
+                  "",
+                  "speciality",
+                  "",
+                  "person",
+                  "",
+                  "visitDay",
+                  "",
+                  "visitMonth",
+                  "",
+                  "visitYear",
+                  "",
+                  "title",
+                  "",
+                  "firstName",
+                  "",
+                  "lastName",
+                  "",
+                  "companyName",
+                  "",
+                  "country",
+                  "",
+                  "phone"
+                ],
+                "line": 6
+              },
+              {
+                "cells": [
+                  "meenabni25+adv@gmail.com",
+                  "",
+                  "Ant - One - Chapter A",
+                  "",
+                  "Information Technology",
+                  "",
+                  "Information Technology",
+                  "",
+                  "BNI",
+                  "",
+                  "12",
+                  "",
+                  "Aug",
+                  "",
+                  "2019",
+                  "",
+                  "Mr",
+                  "",
+                  "Selenium",
+                  "",
+                  "Test",
+                  "",
+                  "Airtel",
+                  "",
+                  "Antarctica",
+                  "",
+                  "123456789"
+                ],
+                "line": 7
+              },
+              {
+                "cells": [
+                  "bnidemo+activeuser@gmail.com",
+                  "",
+                  "Ant - One - Chapter A",
+                  "",
+                  "Information Technology",
+                  "",
+                  "Information Technology",
+                  "",
+                  "BNI",
+                  "",
+                  "12",
+                  "",
+                  "Aug",
+                  "",
+                  "2019",
+                  "",
+                  "Mr",
+                  "",
+                  "Selenium",
+                  "",
+                  "Test",
+                  "",
+                  "Airtel",
+                  "",
+                  "Antarctica",
+                  "",
+                  "123456789"
+                ],
+                "line": 8
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 255555,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "visitor details saved successfully",
+            "match": {
+              "location": "AddVisitorForExistingIndividual.visitor_details_saved_successfully()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 19339493689,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "I successfully sign out from BNI",
+            "match": {
+              "location": "AddVisitorForExistingIndividual.I_successfully_sign_out_from_BNI()"
+            },
+            "keyword": "And "
+          }
+        ]
+      }
+    ],
+    "name": "Add a prospective visitor",
+    "description": "",
+    "id": "add-a-prospective-visitor",
+    "keyword": "Feature",
+    "uri": "addVisitorForExistingIndividual.feature"
+  },
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 62056,
               "status": "passed"
             },
             "match": {
               "location": "ConvertVisitorToMember.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 186946,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 49652,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.setup()"
             }
           }
         ],
@@ -263,29 +487,29 @@
         "after": [
           {
             "result": {
-              "duration": 62637,
-              "status": "passed"
-            },
-            "match": {
-              "location": "SearchAndAddBrandNewVisitor.tearDown()"
-            }
-          },
-          {
-            "result": {
-              "duration": 23962,
-              "status": "passed"
-            },
-            "match": {
-              "location": "AddVisitorForExistingIndividual.tearDown()"
-            }
-          },
-          {
-            "result": {
-              "duration": 24586,
+              "duration": 28403,
               "status": "passed"
             },
             "match": {
               "location": "ConvertVisitorToMember.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 20619,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 16468,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.tearDown()"
             }
           }
         ],
@@ -294,7 +518,7 @@
         "steps": [
           {
             "result": {
-              "duration": 92077922210,
+              "duration": 90188306383,
               "status": "passed"
             },
             "line": 4,
@@ -306,7 +530,7 @@
           },
           {
             "result": {
-              "duration": 140014675771,
+              "duration": 140214790051,
               "status": "passed"
             },
             "line": 5,
@@ -422,7 +646,7 @@
           },
           {
             "result": {
-              "duration": 19790970508,
+              "duration": 18875467117,
               "status": "passed"
             },
             "line": 9,
