@@ -7,15 +7,15 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 20880644,
+  "duration": 4897910,
   "status": "passed"
 });
 formatter.before({
-  "duration": 13861039,
+  "duration": 13048006,
   "status": "passed"
 });
 formatter.before({
-  "duration": 163492,
+  "duration": 342732,
   "status": "passed"
 });
 formatter.scenario({
@@ -33,7 +33,7 @@ formatter.step({
 });
 formatter.step({
   "line": 5,
-  "name": "I enter a valid existing email id and click search and create new button and I enter the below details and click the save button and search the added visitor",
+  "name": "I enter a valid new email id and click search and create new button and I enter the below details and click the save button and search the added visitor",
   "rows": [
     {
       "cells": [
@@ -148,40 +148,40 @@ formatter.match({
   "location": "AddAndSearchBrandNewVisitor.User_navigates_to_BNI_homepage()"
 });
 formatter.result({
-  "duration": 36736202697,
+  "duration": 36573101273,
   "status": "passed"
 });
 formatter.match({
   "location": "AddAndSearchBrandNewVisitor.When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable)"
 });
 formatter.result({
-  "duration": 175284310078,
+  "duration": 175331181371,
   "status": "passed"
 });
 formatter.match({
   "location": "AddAndSearchBrandNewVisitor.brand_new_visitor_details_saved_successfully()"
 });
 formatter.result({
-  "duration": 316191,
+  "duration": 362515,
   "status": "passed"
 });
 formatter.match({
   "location": "AddAndSearchBrandNewVisitor.sign_out_from_BNI()"
 });
 formatter.result({
-  "duration": 19019632664,
+  "duration": 18994428555,
   "status": "passed"
 });
 formatter.after({
-  "duration": 58148,
+  "duration": 55668,
   "status": "passed"
 });
 formatter.after({
-  "duration": 44717,
+  "duration": 32524,
   "status": "passed"
 });
 formatter.after({
-  "duration": 43298,
+  "duration": 33981,
   "status": "passed"
 });
 formatter.uri("addVisitorForExistingIndividual.feature");
@@ -193,15 +193,15 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 112648,
+  "duration": 64072,
   "status": "passed"
 });
 formatter.before({
-  "duration": 236489,
+  "duration": 188236,
   "status": "passed"
 });
 formatter.before({
-  "duration": 96679,
+  "duration": 73206,
   "status": "passed"
 });
 formatter.scenario({
@@ -334,40 +334,40 @@ formatter.match({
   "location": "AddVisitorForExistingIndividual.user_logs_into_BNI_and_navigates_to_home_page()"
 });
 formatter.result({
-  "duration": 34492053226,
+  "duration": 35025795318,
   "status": "passed"
 });
 formatter.match({
-  "location": "AddVisitorForExistingIndividual.When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button(DataTable)"
+  "location": "AddVisitorForExistingIndividual.I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button(DataTable)"
 });
 formatter.result({
-  "duration": 125360687445,
+  "duration": 125866165066,
   "status": "passed"
 });
 formatter.match({
   "location": "AddVisitorForExistingIndividual.visitor_details_saved_successfully()"
 });
 formatter.result({
-  "duration": 255555,
+  "duration": 222814,
   "status": "passed"
 });
 formatter.match({
   "location": "AddVisitorForExistingIndividual.I_successfully_sign_out_from_BNI()"
 });
 formatter.result({
-  "duration": 19339493689,
+  "duration": 18955799425,
   "status": "passed"
 });
 formatter.after({
-  "duration": 34695,
+  "duration": 60972,
   "status": "passed"
 });
 formatter.after({
-  "duration": 16841,
+  "duration": 61234,
   "status": "passed"
 });
 formatter.after({
-  "duration": 61849,
+  "duration": 56913,
   "status": "passed"
 });
 formatter.uri("convertVisitorToMember.feature");
@@ -379,15 +379,15 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 62056,
+  "duration": 60984,
   "status": "passed"
 });
 formatter.before({
-  "duration": 186946,
+  "duration": 178431,
   "status": "passed"
 });
 formatter.before({
-  "duration": 49652,
+  "duration": 42456,
   "status": "passed"
 });
 formatter.scenario({
@@ -521,33 +521,33 @@ formatter.match({
   "location": "ConvertVisitorToMember.I_am_on_the_Enter_New_Application_page()"
 });
 formatter.result({
-  "duration": 90188306383,
+  "duration": 92790693104,
   "status": "passed"
 });
 formatter.match({
   "location": "ConvertVisitorToMember.I_search_emailid_and_click_add_and_enter_the_below_details_and_click_save(DataTable)"
 });
 formatter.result({
-  "duration": 140214790051,
+  "duration": 165510384286,
   "status": "passed"
 });
 formatter.match({
   "location": "ConvertVisitorToMember.visitor_is_successfully_converted_to_a_member_and_I_signout_from_BNI()"
 });
 formatter.result({
-  "duration": 18875467117,
+  "duration": 19001524434,
   "status": "passed"
 });
 formatter.after({
-  "duration": 28403,
+  "duration": 55435,
   "status": "passed"
 });
 formatter.after({
-  "duration": 20619,
+  "duration": 48805,
   "status": "passed"
 });
 formatter.after({
-  "duration": 16468,
+  "duration": 48611,
   "status": "passed"
 });
 });

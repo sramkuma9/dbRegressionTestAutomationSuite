@@ -67,7 +67,7 @@ public class AddAndSearchBrandNewVisitor {
           TimeUnit.SECONDS.sleep(2);
     }
 
-    @When("I enter a valid existing email id and click search and create new button and I enter the below details and click the save button and search the added visitor")
+    @When("I enter a valid new email id and click search and create new button and I enter the below details and click the save button and search the added visitor")
     public void When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable addPVVisitor) throws Exception{
         Integer i =2;
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
