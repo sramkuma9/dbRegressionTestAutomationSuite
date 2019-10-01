@@ -27,7 +27,7 @@ public class CaptureScreenShot {
         //Move image file to new destination
         String[] dateSplit = currentDateTime.dateTime().split("/");
         String timesplit[] = dateSplit[2].split(" ");
-        File DestFile = new File("src/test/executionReports/screenShots/" + dateSplit[0] + "/" + dateSplit[1] + "/" + timesplit[0] + "/" + featureName + timesplit[1] + ".jpg");
+        File DestFile = new File("src/test/resources/executionReports/screenShots/" + dateSplit[0] + "/" + dateSplit[1] + "/" + timesplit[0] + "/" + featureName + timesplit[1] + ".jpg");
         //Copy file at destination
         FileUtils.copyFile(SrcFile, DestFile);
     }

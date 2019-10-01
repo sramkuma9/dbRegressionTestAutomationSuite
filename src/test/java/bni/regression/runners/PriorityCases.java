@@ -5,7 +5,7 @@ import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(format = { "json:src/test/executionReports/cucumber/DBTestAutomationReport.json", "pretty", "html:src/test/executionReports/cucumber/DBAutomationHTMLReport" },
+@CucumberOptions(format = { "json:src/test/resources/executionReports/cucumber/DBTestAutomationReport.json", "pretty", "html:src/test/resources/executionReports/cucumber/DBAutomationHTMLReport" },
         features = {"src/test/resources/features"},
         glue = {"bni.regression.steps.endToEndIntegrationSteps"})
 public class PriorityCases {

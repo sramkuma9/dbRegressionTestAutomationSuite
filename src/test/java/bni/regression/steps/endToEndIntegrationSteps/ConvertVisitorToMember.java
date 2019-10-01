@@ -97,7 +97,7 @@ public class ConvertVisitorToMember {
             enterNewApplication.clickSearchButton();
             TimeUnit.SECONDS.sleep(2);
             enterNewApplication.clickAddButton();
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(5);
             add = new Add(driver);
             add.clickApplicationDateField();
             TimeUnit.SECONDS.sleep(2);
