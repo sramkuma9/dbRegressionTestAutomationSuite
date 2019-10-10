@@ -40,11 +40,11 @@ public class AddVisitorForExistingIndividual {
     }
 
     // Scenario: Navigate to Add a Visitor page
-    @Given("user logs into BNI and navigates to home page")
-    public void user_logs_into_BNI_and_navigates_to_home_page() throws Exception {
+    @Given("user logs into BNI and navigates to home page using the below \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"")
+    public void user_logs_into_BNI_and_navigates_to_home_page_using_the_below_username_and_password_and_role(String userName, String password, String role) throws Exception {
         driver=launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
-        login.loginToBni();
+        login.loginToBni(userName, password);
         TimeUnit.SECONDS.sleep(2);
         driver = launchBrowser.getDriver();
         bniConnect = new BNIConnect(driver);

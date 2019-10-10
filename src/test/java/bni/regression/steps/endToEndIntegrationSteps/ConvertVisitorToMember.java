@@ -13,10 +13,12 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import gherkin.formatter.model.DataTableRow;
 import org.openqa.selenium.WebDriver;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import static junit.framework.TestCase.assertEquals;
@@ -50,11 +52,11 @@ public class ConvertVisitorToMember {
 
     // Scenario: Navigate to Add a Visitor page
     // Scenario: Navigate to Add a Visitor page
-    @Given("I am on the Enter New Application page")
-    public void I_am_on_the_Enter_New_Application_page() throws Exception {
+    @Given("I am on the Enter New Application page using the below \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"")
+    public void I_am_on_the_Enter_New_Application_page_using_the_below_username_and_password_and_role(String userName, String password, String role) throws Exception {
         driver = launchBrowser.getDriver();
         launchBrowser.invokeBrowser();
-        login.loginToBni();
+        login.loginToBni(userName, password);
         TimeUnit.SECONDS.sleep(2);
         driver = launchBrowser.getDriver();
         bniConnect = new BNIConnect(driver);
@@ -88,6 +90,7 @@ public class ConvertVisitorToMember {
     @When("I search emailid and click add and enter the below details and click save")
     public void I_search_emailid_and_click_add_and_enter_the_below_details_and_click_save(DataTable convertToMember) throws Exception {
         Integer i =1;
+        //List<List<String>> data1 = convertToMember.raw();
         for (Map<String, String> data : convertToMember.asMaps(String.class, String.class)) {
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
             String visitorEmailId = readWriteExcel.getCellData("addVisitor",0,i);

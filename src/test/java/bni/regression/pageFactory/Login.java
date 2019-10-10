@@ -30,13 +30,15 @@ public class Login {
         wait = new WebDriverWait(driver, 5);
     }
 
-    public void enterBniUserName(){
-        bniUserName.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniUsername", "properties/config.properties"));
+    public void enterBniUserName(String userName){
+        //bniUserName.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniUsername", "properties/config.properties"));
+        bniUserName.sendKeys(userName);
         //bniUserName.sendKeys(Keys.TAB);
     }
-    public void enterBniPassword(){
+    public void enterBniPassword(String password){
 
-        bniPassword.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniPassword", "properties/config.properties"));
+        //bniPassword.sendKeys(readWritePropertyFile.loadAndReadPropertyFile("bniPassword", "properties/config.properties"));
+        bniPassword.sendKeys(password);
     }
     public void clickBniSignInButton(){
 
