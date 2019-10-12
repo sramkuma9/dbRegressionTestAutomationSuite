@@ -1,6 +1,7 @@
 package bni.regression.steps.endToEndIntegrationSteps;
 
 import bni.regression.libraries.common.*;
+import bni.regression.libraries.ui.SelectCountryRegionChapter;
 import bni.regression.pageFactory.AddAVisitor;
 import bni.regression.pageFactory.BNIConnect;
 import cucumber.api.DataTable;
@@ -37,6 +38,7 @@ public class AddAndSearchBrandNewVisitor {
     private SignOut signOut = new SignOut();
     private BNIConnect bniConnect;
     private AddAVisitor addAVisitor;
+    private SelectCountryRegionChapter selectCountryRegionChapter = new SelectCountryRegionChapter();
     public static String fixedDateTime;
     public static String visitorDateTime;
     public String name;
@@ -61,40 +63,33 @@ public class AddAndSearchBrandNewVisitor {
     @Given("User navigates to BNI homepage using the below login credentials")
     public void User_navigates_to_BNI_homepage_using_the_below_login_credentials(DataTable loginDetails) throws Exception {
         List<List<String>> login = loginDetails.raw();
-        loginSubList = login.subList(1,login.size());
-        System.out.println(loginSubList.get(0));
-
-//        for (Integer loginIteration = 1; loginIteration < login.size(); loginIteration++) {
-//            for (Integer colIteration = 0; colIteration < 2; colIteration++){
-//                String[] splitCredentials = login.get(loginIteration).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
-//                System.out.println(splitCredentials[colIteration]);
-//            }
-//            //System.out.println("row length is " + splitCredentials.length);
-//
-//        }
-//        driver = launchBrowser.getDriver();
-//        launchBrowser.invokeBrowser();
-//        login.loginToBni(userName, password);
-//        TimeUnit.SECONDS.sleep(2);
-//        driver = launchBrowser.getDriver();
-//        bniConnect = new BNIConnect(driver);
-//        captureScreenShot = new CaptureScreenShot(driver);
-//        bniConnect.navigateMenu("Operations,Region");
-//        TimeUnit.SECONDS.sleep(2);
+        loginSubList = login.subList(1, login.size());
     }
 
     @When("I enter a valid new email id and click search and create new button and I enter the below details and click the save button and search the added visitor")
     public void When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable addPVVisitor) throws Exception {
         Integer i = 2;
-        //System.out.println(loginSubList.get(0));
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
-            System.out.println(loginSubList.get(i-2));
-            for (Integer colIteration = 0; colIteration < 2; colIteration++){
-                String[] splitCredentials = login.get(loginIteration).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
-                System.out.println(splitCredentials[colIteration]);
-            }
+            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
+            driver = launchBrowser.getDriver();
+            launchBrowser.invokeBrowser();
+            TimeUnit.SECONDS.sleep(2);
+            login.loginToBni(splitCredentials[0], splitCredentials[1]);
+            TimeUnit.SECONDS.sleep(4);
+            driver = launchBrowser.getDriver();
             bniConnect = new BNIConnect(driver);
-            bniConnect.selectItemFromManageVisitor("Add a Visitor");
+            captureScreenShot = new CaptureScreenShot(driver);
+            bniConnect.navigateMenu("Operations,Chapter");
+            TimeUnit.SECONDS.sleep(2);
+           // selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
+            bniConnect = new BNIConnect(driver);
+            TimeUnit.SECONDS.sleep(2);
+            String language[] = readWritePropertyFile.loadAndReadPropertyFile("language", "properties/config.properties").split(",");
+            int colNumber = Integer.parseInt(language[1]);
+            readWriteExcel.setExcelFile("src/test/resources/inputFiles/translation.xlsx");
+            String transMenu = readWriteExcel.getCellData("translation",colNumber,1);
+            System.out.println(transMenu);
+            bniConnect.selectItemFromManageVisitor(transMenu);
             addAVisitor = new AddAVisitor(driver);
             TimeUnit.SECONDS.sleep(3);
             String dateTimeStamp = currentDateTime.dateTime();
@@ -178,6 +173,7 @@ public class AddAndSearchBrandNewVisitor {
             Alert alert = driver.switchTo().alert();
             alert.accept();
             i++;
+            signOut.signOutBni();
         }
     }
 
@@ -189,6 +185,6 @@ public class AddAndSearchBrandNewVisitor {
     @And("sign out from BNI")
     public void sign_out_from_BNI() throws Exception {
         TimeUnit.SECONDS.sleep(2);
-        signOut.signOutBni();
+        //signOut.signOutBni();
     }
 }

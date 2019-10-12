@@ -13,6 +13,8 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -20,11 +22,14 @@ public class AddVisitorForExistingIndividual {
 
     public static WebDriver driver;
     private LaunchBrowser launchBrowser = new LaunchBrowser();
+    private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
     private Login login = new Login();
     private SignOut signOut = new SignOut();
     private BNIConnect bniConnect;
     private AddAVisitor addAVisitor;
+    public List<List<String>> loginSubList;
     private CaptureScreenShot captureScreenShot;
+    ReadWriteExcel readWriteExcel = new ReadWriteExcel();
 
     @Before
     public void setup() throws Exception {
@@ -40,26 +45,38 @@ public class AddVisitorForExistingIndividual {
     }
 
     // Scenario: Navigate to Add a Visitor page
-    @Given("user logs into BNI and navigates to home page using the below \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"")
-    public void user_logs_into_BNI_and_navigates_to_home_page_using_the_below_username_and_password_and_role(String userName, String password, String role) throws Exception {
-        driver=launchBrowser.getDriver();
-        launchBrowser.invokeBrowser();
-        login.loginToBni(userName, password);
-        TimeUnit.SECONDS.sleep(2);
-        driver = launchBrowser.getDriver();
-        bniConnect = new BNIConnect(driver);
-        captureScreenShot = new CaptureScreenShot(driver);
-        bniConnect.navigateMenu("Operations,Region");
-        TimeUnit.SECONDS.sleep(2);
+    @Given("user logs into BNI and navigates to home page using the below data")
+    public void user_logs_into_BNI_and_navigates_to_home_page_using_the_below_data(DataTable loginDetails) throws Exception {
+        List<List<String>> login = loginDetails.raw();
+        loginSubList = login.subList(1, login.size());
     }
 
     @When("I enter a valid existing email id and click search and Add button and I enter the below details and click the save button")
     public void I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button(DataTable addPVVisitor) throws Exception{
+        Integer i = 2;
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
+            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
+            driver = launchBrowser.getDriver();
+            launchBrowser.invokeBrowser();
+            TimeUnit.SECONDS.sleep(2);
+            login.loginToBni(splitCredentials[0], splitCredentials[1]);
+            TimeUnit.SECONDS.sleep(5);
+            driver = launchBrowser.getDriver();
             bniConnect = new BNIConnect(driver);
-            bniConnect.selectItemFromManageVisitor("Add a Visitor");
+            captureScreenShot = new CaptureScreenShot(driver);
+            bniConnect.navigateMenu("Operations,Chapter");
+            TimeUnit.SECONDS.sleep(2);
+            // selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
+            bniConnect = new BNIConnect(driver);
+            TimeUnit.SECONDS.sleep(2);
+            String language[] = readWritePropertyFile.loadAndReadPropertyFile("language", "properties/config.properties").split(",");
+            int colNumber = Integer.parseInt(language[1]);
+            readWriteExcel.setExcelFile("src/test/resources/inputFiles/translation.xlsx");
+            String transMenu = readWriteExcel.getCellData("translation",colNumber,1);
+            System.out.println(transMenu);
+            bniConnect.selectItemFromManageVisitor(transMenu);
             addAVisitor = new AddAVisitor(driver);
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(5);
             addAVisitor.enterEmail(data.get("emailId"));
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.clickSearchButton();
@@ -95,7 +112,9 @@ public class AddVisitorForExistingIndividual {
             addAVisitor.enterVisitorPhoneNumber(data.get("phone"));
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.clickSaveButton();
-            TimeUnit.SECONDS.sleep(12);
+            TimeUnit.SECONDS.sleep(15);
+            i++;
+            signOut.signOutBni();
         }
     }
 
@@ -107,6 +126,6 @@ public class AddVisitorForExistingIndividual {
     @And("I successfully sign out from BNI")
     public void I_successfully_sign_out_from_BNI() throws Exception{
         TimeUnit.SECONDS.sleep(2);
-        signOut.signOutBni();
+       // signOut.signOutBni();
     }
 }

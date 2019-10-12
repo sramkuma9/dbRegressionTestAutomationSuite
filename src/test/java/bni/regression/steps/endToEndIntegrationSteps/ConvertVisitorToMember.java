@@ -1,9 +1,6 @@
 package bni.regression.steps.endToEndIntegrationSteps;
 
-import bni.regression.libraries.common.CaptureScreenShot;
-import bni.regression.libraries.common.CurrentDateTime;
-import bni.regression.libraries.common.LaunchBrowser;
-import bni.regression.libraries.common.ReadWriteExcel;
+import bni.regression.libraries.common.*;
 import bni.regression.libraries.ui.Login;
 import bni.regression.libraries.ui.SignOut;
 import bni.regression.pageFactory.*;
@@ -36,7 +33,9 @@ public class ConvertVisitorToMember {
     private ViewEditVisitorsList viewEditVisitorsList;
     private EnterNewApplication enterNewApplication;
     private Add add;
+    public List<List<String>> loginSubList;
     public  String [] convertToMemberDetails = new String [8];
+    private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
 
     @Before
     public void setup() throws Exception {
@@ -52,55 +51,68 @@ public class ConvertVisitorToMember {
 
     // Scenario: Navigate to Add a Visitor page
     // Scenario: Navigate to Add a Visitor page
-    @Given("I am on the Enter New Application page using the below \"([^\"]*)\" and \"([^\"]*)\" and \"([^\"]*)\"")
-    public void I_am_on_the_Enter_New_Application_page_using_the_below_username_and_password_and_role(String userName, String password, String role) throws Exception {
-        driver = launchBrowser.getDriver();
-        launchBrowser.invokeBrowser();
-        login.loginToBni(userName, password);
-        TimeUnit.SECONDS.sleep(2);
-        driver = launchBrowser.getDriver();
-        bniConnect = new BNIConnect(driver);
-        bniConnect.navigateMenu("Operations,Region");
-        TimeUnit.SECONDS.sleep(2);
-        bniConnect.selectItemFromManageVisitor("View/Edit Visitors List");
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList = new ViewEditVisitorsList(driver);
-        viewEditVisitorsList.clickFromStartDateField();
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.selectYear("2019");
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.selectMonth("Jan");
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.selectDateFromDatePicker("15");
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.clickToEndDateField();
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.selectYear("2019");
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.selectMonth("Sep");
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.selectDateFromDatePicker("10");
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.clickGoButton();
-        TimeUnit.SECONDS.sleep(2);
-        viewEditVisitorsList.clickConvertToMemberButton();
-        TimeUnit.SECONDS.sleep(2);
+    @Given("I am on the Enter New Application page using the below data")
+    public void I_am_on_the_Enter_New_Application_page_using_the_below_data(DataTable loginDetails) throws Exception {
+        List<List<String>> login = loginDetails.raw();
+        loginSubList = login.subList(1, login.size());
     }
 
     @When("I search emailid and click add and enter the below details and click save")
     public void I_search_emailid_and_click_add_and_enter_the_below_details_and_click_save(DataTable convertToMember) throws Exception {
         Integer i =1;
-        //List<List<String>> data1 = convertToMember.raw();
+        Integer j = 2;
         for (Map<String, String> data : convertToMember.asMaps(String.class, String.class)) {
+            String[] splitCredentials = loginSubList.get(j - 2).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
+            driver = launchBrowser.getDriver();
+            launchBrowser.invokeBrowser();
+            TimeUnit.SECONDS.sleep(2);
+            login.loginToBni(splitCredentials[0], splitCredentials[1]);
+            TimeUnit.SECONDS.sleep(4);
+            driver = launchBrowser.getDriver();
+            bniConnect = new BNIConnect(driver);
+            captureScreenShot = new CaptureScreenShot(driver);
+            bniConnect.navigateMenu("Operations,Region");
+            TimeUnit.SECONDS.sleep(2);
+            // selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
+            bniConnect = new BNIConnect(driver);
+            TimeUnit.SECONDS.sleep(2);
+            String language[] = readWritePropertyFile.loadAndReadPropertyFile("language", "properties/config.properties").split(",");
+            int colNumber = Integer.parseInt(language[1]);
+            readWriteExcel.setExcelFile("src/test/resources/inputFiles/translation.xlsx");
+            String transMenu = readWriteExcel.getCellData("translation",colNumber,2);
+            System.out.println(transMenu);
+            bniConnect.selectItemFromManageVisitor(transMenu);
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList = new ViewEditVisitorsList(driver);
+            viewEditVisitorsList.clickFromStartDateField();
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.selectYear("2019");
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.selectMonth("Jan");
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.selectDateFromDatePicker("15");
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.clickToEndDateField();
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.selectYear("2019");
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.selectMonth("Sep");
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.selectDateFromDatePicker("10");
+            TimeUnit.SECONDS.sleep(2);
+            viewEditVisitorsList.clickGoButton();
+            TimeUnit.SECONDS.sleep(5);
+            viewEditVisitorsList.clickConvertToMemberButton();
+            TimeUnit.SECONDS.sleep(2);
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
             String visitorEmailId = readWriteExcel.getCellData("addVisitor",0,i);
             enterNewApplication = new EnterNewApplication(driver);
             enterNewApplication.enterEmail(visitorEmailId);
             TimeUnit.SECONDS.sleep(2);
             enterNewApplication.clickSearchButton();
-            TimeUnit.SECONDS.sleep(2);
-            enterNewApplication.clickAddButton();
             TimeUnit.SECONDS.sleep(5);
+            enterNewApplication.clickAddButton();
+            TimeUnit.SECONDS.sleep(8);
             add = new Add(driver);
             add.clickApplicationDateField();
             TimeUnit.SECONDS.sleep(2);
@@ -153,12 +165,14 @@ public class ConvertVisitorToMember {
             assertEquals("Chapter is not correct", data.get("chapter"), convertToMemberDetails[4] );
             assertEquals("Company Name is not correct", data.get("companyName"), convertToMemberDetails[5] );
             i++;
+            j++;
+            signOut.signOutBni();
         }
     }
 
     @Then("visitor is successfully converted to a member and I signout from BNI")
     public void visitor_is_successfully_converted_to_a_member_and_I_signout_from_BNI() throws Exception{
         TimeUnit.SECONDS.sleep(2);
-        signOut.signOutBni();
+        //signOut.signOutBni();
     }
 }

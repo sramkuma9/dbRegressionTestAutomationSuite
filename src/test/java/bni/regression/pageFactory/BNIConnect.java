@@ -6,7 +6,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -15,22 +17,37 @@ public class BNIConnect {
     public WebDriverWait wait;
     private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
 
-    @FindBy(css =  "#accountNav_2 > p > a")
+    @FindBy(css = "#accountNav_2 > p > a")
     WebElement options;
 
-    @FindBy(css =  "#accountNav_2 > ul > li:nth-child(3) > a")
+    @FindBy(css = "#accountNav_2 > ul > li:nth-child(3) > a")
     WebElement signOut;
 
     @FindBy(css = "#footer > div:nth-child(2) > a:nth-child(3)")
     WebElement signOutFooter;
 
-    @FindBy(css =  "#textnav > li")
+    @FindBy(css = "#bniCountry")
+    WebElement countryListBox;
+
+    @FindBy(css = "#commonFilterListCountries > div > a")
+    List<WebElement> countrySelect;
+
+    @FindBy(css = "#bniRegion")
+    WebElement regionListBox;
+
+    @FindBy(css = "#commonFilterListCountries > div > a")
+    List<WebElement> regionSelect;
+
+    @FindBy(css = "#bniChapter")
+    WebElement chapterListBox;
+
+    @FindBy(css = "#textnav > li")
     List<WebElement> menuNavigate;
 
-    @FindBy(css =  "#textnav > li > ul > li")
+    @FindBy(css = "#textnav > li > ul > li")
     List<WebElement> subMenuNavigate;
 
-    @FindBy(css = "#tabs-3-4 > table")
+    @FindBy(css = "#help")
     List<WebElement> manageVisitorMenu;
 
     public BNIConnect(WebDriver driver) {
@@ -47,6 +64,47 @@ public class BNIConnect {
         action.build().perform();
     }
 
+    public void selectCountry(String country) throws InterruptedException {
+        int counter = 0;
+        countryListBox.click();
+        TimeUnit.SECONDS.sleep(2);
+        for (WebElement divElement : countrySelect) {
+            List<WebElement> a_collection = divElement.findElements(By.tagName("span"));
+            String countryName = a_collection.get(0).getText();
+            System.out.println(countryName);
+            if (country.equals(countryName)){
+                a_collection.get(0).click();
+                System.out.println("I have clicked the country");
+                counter++;
+                break;
+            }if (counter == 1) {
+                break;
+            }
+        }
+    }
+
+    public void selectRegion(String region) throws InterruptedException {
+        int counter = 0;
+        regionListBox.click();
+        TimeUnit.SECONDS.sleep(2);
+        for (WebElement divElement : regionSelect) {
+            List<WebElement> a_collection = divElement.findElements(By.tagName("span"));
+            String regionName = a_collection.get(0).getText();
+            if (region.equals(regionName)){
+                a_collection.get(0).click();
+                counter++;
+                break;
+            }if (counter == 1) {
+                break;
+            }
+        }
+    }
+
+    public void selectChapter(String chapter) {
+        Select chapterSelect = new Select(chapterListBox);
+        chapterSelect.selectByVisibleText(chapter);
+    }
+
     public void navigateMenu(String menuItem) throws Exception {
         String[] menusplit = menuItem.split(",");
         int size = menusplit.length;
@@ -56,8 +114,7 @@ public class BNIConnect {
             List<WebElement> td_collection = trElement.findElements(By.tagName("a"));
             String menuName = td_collection.get(0).getText();
             if (menusplit[0].equals(menuName)) {
-                switch(size)
-                {
+                switch (size) {
                     case 1:
                         TimeUnit.SECONDS.sleep(3);
                         td_collection.get(0).click();
@@ -79,32 +136,31 @@ public class BNIConnect {
                         }
                 }
             }
-            if (counter == 1){
+            if (counter == 1) {
                 break;
             }
         }
     }
 
-    public void selectItemFromManageVisitor(String item) throws Exception{
+    public void selectItemFromManageVisitor(String item) throws Exception {
         TimeUnit.SECONDS.sleep(2);
-        for(WebElement trElement : manageVisitorMenu)
-        {
-            List<WebElement> td_collection=trElement.findElements(By.tagName("tbody"));
+        for (WebElement trElement : manageVisitorMenu) {
+            List<WebElement> td_collection = trElement.findElements(By.tagName("tbody"));
             String menuItem = td_collection.get(0).findElement(By.tagName("tr")).getText();
-                if (item.equals(menuItem)){
-                    td_collection.get(0).findElement(By.tagName("tr")).findElement(By.tagName("a")).click();
-                    TimeUnit.SECONDS.sleep(3);
-                    break;
-                }
+            if (item.equals(menuItem)) {
+                td_collection.get(0).findElement(By.tagName("tr")).findElement(By.tagName("a")).click();
+                TimeUnit.SECONDS.sleep(3);
+                break;
+            }
         }
     }
 
-    public void clickSignOut() throws Exception{
+    public void clickSignOut() throws Exception {
         signOut.click();
         TimeUnit.SECONDS.sleep(5);
     }
 
-    public void clickSignOutFooter() throws Exception{
+    public void clickSignOutFooter() throws Exception {
         signOutFooter.click();
         TimeUnit.SECONDS.sleep(5);
     }
