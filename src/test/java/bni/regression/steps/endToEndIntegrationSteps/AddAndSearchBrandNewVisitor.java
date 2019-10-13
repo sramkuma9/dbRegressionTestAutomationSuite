@@ -81,13 +81,13 @@ public class AddAndSearchBrandNewVisitor {
             captureScreenShot = new CaptureScreenShot(driver);
             bniConnect.navigateMenu("Operations,Chapter");
             TimeUnit.SECONDS.sleep(2);
-           // selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
+            selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
             bniConnect = new BNIConnect(driver);
             TimeUnit.SECONDS.sleep(2);
             String language[] = readWritePropertyFile.loadAndReadPropertyFile("language", "properties/config.properties").split(",");
             int colNumber = Integer.parseInt(language[1]);
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/translation.xlsx");
-            String transMenu = readWriteExcel.getCellData("translation",colNumber,1);
+            String transMenu = readWriteExcel.getCellData("translation", colNumber, 1);
             System.out.println(transMenu);
             bniConnect.selectItemFromManageVisitor(transMenu);
             addAVisitor = new AddAVisitor(driver);

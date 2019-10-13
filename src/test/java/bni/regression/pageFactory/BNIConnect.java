@@ -66,15 +66,16 @@ public class BNIConnect {
 
     public void selectCountry(String country) throws InterruptedException {
         int counter = 0;
+        Actions action = new Actions(driver);
         countryListBox.click();
         TimeUnit.SECONDS.sleep(2);
         for (WebElement divElement : countrySelect) {
             List<WebElement> a_collection = divElement.findElements(By.tagName("span"));
             String countryName = a_collection.get(0).getText();
-            System.out.println(countryName);
             if (country.equals(countryName)){
+                action.moveToElement(a_collection.get(0));
+                action.build().perform();
                 a_collection.get(0).click();
-                System.out.println("I have clicked the country");
                 counter++;
                 break;
             }if (counter == 1) {
@@ -85,12 +86,15 @@ public class BNIConnect {
 
     public void selectRegion(String region) throws InterruptedException {
         int counter = 0;
+        Actions action = new Actions(driver);
         regionListBox.click();
         TimeUnit.SECONDS.sleep(2);
         for (WebElement divElement : regionSelect) {
             List<WebElement> a_collection = divElement.findElements(By.tagName("span"));
             String regionName = a_collection.get(0).getText();
             if (region.equals(regionName)){
+                action.moveToElement(a_collection.get(0));
+                action.build().perform();
                 a_collection.get(0).click();
                 counter++;
                 break;

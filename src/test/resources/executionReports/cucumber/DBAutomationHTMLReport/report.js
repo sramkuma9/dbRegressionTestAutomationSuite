@@ -1,34 +1,34 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("convertVisitorToMember.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("addAndsearchBrandNewVisitor.feature");
 formatter.feature({
   "line": 1,
-  "name": "Convert visitor to member",
+  "name": "Add and search brand new visitor",
   "description": "",
-  "id": "convert-visitor-to-member",
+  "id": "add-and-search-brand-new-visitor",
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 7054543,
+  "duration": 21162877,
   "status": "passed"
 });
 formatter.before({
-  "duration": 14637198,
+  "duration": 226708,
   "status": "passed"
 });
 formatter.before({
-  "duration": 172998,
+  "duration": 42911324,
   "status": "passed"
 });
 formatter.scenario({
   "line": 3,
-  "name": "convert the added brand new visitor to member",
+  "name": "Add a brand new Visitor",
   "description": "",
-  "id": "convert-visitor-to-member;convert-the-added-brand-new-visitor-to-member",
+  "id": "add-and-search-brand-new-visitor;add-a-brand-new-visitor",
   "type": "scenario",
   "keyword": "Scenario"
 });
 formatter.step({
   "line": 4,
-  "name": "I am on the Enter New Application page using the below data",
+  "name": "User navigates to BNI homepage using the below login credentials",
   "rows": [
     {
       "cells": [
@@ -65,107 +65,101 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "I search emailid and click add and enter the below details and click save",
+  "name": "I enter a valid new email id and click search and create new button and I enter the below details and click the save button and search the added visitor",
   "rows": [
     {
       "cells": [
-        "applicationDay",
-        "",
-        "applicationMonth",
-        "",
-        "applicationYear",
-        "",
-        "country",
-        "",
-        "region",
-        "",
         "chapter",
         "",
-        "profession",
-        "",
-        "speciality",
+        "region",
         "",
         "firstName",
         "",
         "lastName",
         "",
+        "profession",
+        "",
+        "speciality",
+        "",
+        "person",
+        "",
+        "visitDay",
+        "",
+        "visitMonth",
+        "",
+        "visitYear",
+        "",
+        "title",
+        "",
         "companyName",
         "",
-        "addressLine1",
+        "country",
         "",
-        "phone",
-        "",
-        "paymentOption",
-        "",
-        "membershipOption"
+        "phone"
       ],
       "line": 9
     },
     {
       "cells": [
-        "9",
-        "",
-        "Sep",
-        "",
-        "2019",
-        "",
-        "Antarctica",
-        "",
-        "Ant - One",
-        "",
         "Ant - One - Chapter A",
         "",
-        "Information Technology",
-        "",
-        "Information Technology",
+        "Ant - One",
         "",
         "Selenium",
         "",
         "Test+v",
         "",
+        "Information Technology",
+        "",
+        "Information Technology",
+        "",
+        "BNI",
+        "",
+        "12",
+        "",
+        "Aug",
+        "",
+        "2019",
+        "",
+        "Mr",
+        "",
         "Airtel",
         "",
-        "77, Edward Street",
+        "Antarctica",
         "",
-        "1234567890",
-        "",
-        "Card",
-        "",
-        "One Year Membership"
+        "123456789"
       ],
       "line": 10
     },
     {
       "cells": [
-        "9",
-        "",
-        "Sep",
-        "",
-        "2019",
-        "",
-        "Antarctica",
-        "",
-        "Ant - One",
-        "",
         "Ant - One - Chapter A",
         "",
-        "Information Technology",
-        "",
-        "Information Technology",
+        "Ant - One",
         "",
         "Selenium",
         "",
         "Test+v",
         "",
+        "Information Technology",
+        "",
+        "Information Technology",
+        "",
+        "BNI",
+        "",
+        "12",
+        "",
+        "Aug",
+        "",
+        "2019",
+        "",
+        "Mr",
+        "",
         "Airtel",
         "",
-        "77, Edward Street",
+        "Antarctica",
         "",
-        "1234567890",
-        "",
-        "Card",
-        "",
-        "One Year Membership"
+        "123456789"
       ],
       "line": 11
     }
@@ -174,40 +168,21 @@ formatter.step({
 });
 formatter.step({
   "line": 12,
-  "name": "visitor is successfully converted to a member and I signout from BNI",
+  "name": "brand new visitor details saved successfully",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "ConvertVisitorToMember.I_am_on_the_Enter_New_Application_page_using_the_below_data(DataTable)"
-});
-formatter.result({
-  "duration": 318945464,
-  "status": "passed"
+formatter.step({
+  "line": 13,
+  "name": "sign out from BNI",
+  "keyword": "And "
 });
 formatter.match({
-  "location": "ConvertVisitorToMember.I_search_emailid_and_click_add_and_enter_the_below_details_and_click_save(DataTable)"
+  "location": "AddAndSearchBrandNewVisitor.User_navigates_to_BNI_homepage_using_the_below_login_credentials(DataTable)"
 });
 formatter.result({
-  "duration": 290578449341,
-  "error_message": "java.lang.NullPointerException\n\tat bni.regression.libraries.common.ReadWriteExcel.getCellData(ReadWriteExcel.java:29)\n\tat bni.regression.steps.endToEndIntegrationSteps.ConvertVisitorToMember.I_search_emailid_and_click_add_and_enter_the_below_details_and_click_save(ConvertVisitorToMember.java:108)\n\tat ✽.When I search emailid and click add and enter the below details and click save(convertVisitorToMember.feature:8)\n",
-  "status": "failed"
+  "duration": 545732008,
+  "status": "passed"
 });
 formatter.match({
-  "location": "ConvertVisitorToMember.visitor_is_successfully_converted_to_a_member_and_I_signout_from_BNI()"
-});
-formatter.result({
-  "status": "skipped"
-});
-formatter.after({
-  "duration": 43108,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 37471,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 36382,
-  "status": "passed"
-});
+  "location": "AddAndSearchBrandNewVisitor.When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable)"
 });
