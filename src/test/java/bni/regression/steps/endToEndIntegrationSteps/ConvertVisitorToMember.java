@@ -2,6 +2,7 @@ package bni.regression.steps.endToEndIntegrationSteps;
 
 import bni.regression.libraries.common.*;
 import bni.regression.libraries.ui.Login;
+import bni.regression.libraries.ui.SelectCountryRegionChapter;
 import bni.regression.libraries.ui.SignOut;
 import bni.regression.pageFactory.*;
 import cucumber.api.DataTable;
@@ -36,6 +37,7 @@ public class ConvertVisitorToMember {
     public List<List<String>> loginSubList;
     public  String [] convertToMemberDetails = new String [8];
     private ReadWritePropertyFile readWritePropertyFile = new ReadWritePropertyFile();
+    private SelectCountryRegionChapter selectCountryRegionChapter = new SelectCountryRegionChapter();
 
     @Before
     public void setup() throws Exception {
@@ -62,18 +64,18 @@ public class ConvertVisitorToMember {
         Integer i =1;
         Integer j = 2;
         for (Map<String, String> data : convertToMember.asMaps(String.class, String.class)) {
-            String[] splitCredentials = loginSubList.get(j - 2).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
+            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").split(",");
             driver = launchBrowser.getDriver();
             launchBrowser.invokeBrowser();
             TimeUnit.SECONDS.sleep(2);
-            login.loginToBni(splitCredentials[0], splitCredentials[1]);
+            login.loginToBni(splitCredentials[0].replaceAll(" ", ""), splitCredentials[1].replaceAll(" ",""));
             TimeUnit.SECONDS.sleep(4);
             driver = launchBrowser.getDriver();
             bniConnect = new BNIConnect(driver);
             captureScreenShot = new CaptureScreenShot(driver);
             bniConnect.navigateMenu("Operations,Region");
             TimeUnit.SECONDS.sleep(2);
-            // selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
+            selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2].trim(), splitCredentials[3].trim(), splitCredentials[4].trim());
             bniConnect = new BNIConnect(driver);
             TimeUnit.SECONDS.sleep(2);
             String language[] = readWritePropertyFile.loadAndReadPropertyFile("language", "properties/config.properties").split(",");

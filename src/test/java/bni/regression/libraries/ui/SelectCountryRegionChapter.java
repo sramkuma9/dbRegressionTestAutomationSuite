@@ -11,9 +11,9 @@ public class SelectCountryRegionChapter {
         bniConnect = new bni.regression.pageFactory.BNIConnect(LaunchBrowser.driver);
         bniConnect.selectCountry(country);
         TimeUnit.SECONDS.sleep(2);
-        bniConnect.selectCountry(region);
+        bniConnect.selectRegion(region);
         TimeUnit.SECONDS.sleep(2);
-        bniConnect.selectCountry(chapter);
+        bniConnect.selectChapter(chapter);
         TimeUnit.SECONDS.sleep(2);
     }
 }

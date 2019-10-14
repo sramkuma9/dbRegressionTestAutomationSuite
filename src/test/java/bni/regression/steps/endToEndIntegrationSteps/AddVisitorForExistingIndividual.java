@@ -2,6 +2,7 @@ package bni.regression.steps.endToEndIntegrationSteps;
 
 import bni.regression.libraries.common.*;
 import bni.regression.libraries.ui.Login;
+import bni.regression.libraries.ui.SelectCountryRegionChapter;
 import bni.regression.libraries.ui.SignOut;
 import bni.regression.pageFactory.AddAVisitor;
 import bni.regression.pageFactory.BNIConnect;
@@ -30,6 +31,7 @@ public class AddVisitorForExistingIndividual {
     public List<List<String>> loginSubList;
     private CaptureScreenShot captureScreenShot;
     ReadWriteExcel readWriteExcel = new ReadWriteExcel();
+    private SelectCountryRegionChapter selectCountryRegionChapter = new SelectCountryRegionChapter();
 
     @Before
     public void setup() throws Exception {
@@ -55,18 +57,18 @@ public class AddVisitorForExistingIndividual {
     public void I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button(DataTable addPVVisitor) throws Exception{
         Integer i = 2;
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
-            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
+            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").split(",");
             driver = launchBrowser.getDriver();
             launchBrowser.invokeBrowser();
             TimeUnit.SECONDS.sleep(2);
-            login.loginToBni(splitCredentials[0], splitCredentials[1]);
+            login.loginToBni(splitCredentials[0].replaceAll(" ", ""), splitCredentials[1].replaceAll(" ",""));
             TimeUnit.SECONDS.sleep(5);
             driver = launchBrowser.getDriver();
             bniConnect = new BNIConnect(driver);
             captureScreenShot = new CaptureScreenShot(driver);
             bniConnect.navigateMenu("Operations,Chapter");
             TimeUnit.SECONDS.sleep(2);
-            // selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
+            selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2].trim(), splitCredentials[3].trim(), splitCredentials[4].trim());
             bniConnect = new BNIConnect(driver);
             TimeUnit.SECONDS.sleep(2);
             String language[] = readWritePropertyFile.loadAndReadPropertyFile("language", "properties/config.properties").split(",");

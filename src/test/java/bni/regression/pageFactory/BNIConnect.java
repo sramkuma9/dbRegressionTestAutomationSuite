@@ -35,11 +35,15 @@ public class BNIConnect {
     @FindBy(css = "#bniRegion")
     WebElement regionListBox;
 
-    @FindBy(css = "#commonFilterListCountries > div > a")
+    @FindBy(css = "#commonFilterListRegions > div > a")
     List<WebElement> regionSelect;
 
     @FindBy(css = "#bniChapter")
     WebElement chapterListBox;
+
+
+    @FindBy(css = "#commonFilterListChapters > div > a")
+    List<WebElement> chapterSelect;
 
     @FindBy(css = "#textnav > li")
     List<WebElement> menuNavigate;
@@ -104,9 +108,24 @@ public class BNIConnect {
         }
     }
 
-    public void selectChapter(String chapter) {
-        Select chapterSelect = new Select(chapterListBox);
-        chapterSelect.selectByVisibleText(chapter);
+    public void selectChapter(String chapter) throws InterruptedException {
+        int counter = 0;
+        Actions action = new Actions(driver);
+        chapterListBox.click();
+        TimeUnit.SECONDS.sleep(2);
+        for (WebElement divElement : chapterSelect) {
+            List<WebElement> a_collection = divElement.findElements(By.tagName("span"));
+            String chapterName = a_collection.get(0).getText();
+            if (chapter.equals(chapterName)){
+                action.moveToElement(a_collection.get(0));
+                action.build().perform();
+                a_collection.get(0).click();
+                counter++;
+                break;
+            }if (counter == 1) {
+                break;
+            }
+        }
     }
 
     public void navigateMenu(String menuItem) throws Exception {

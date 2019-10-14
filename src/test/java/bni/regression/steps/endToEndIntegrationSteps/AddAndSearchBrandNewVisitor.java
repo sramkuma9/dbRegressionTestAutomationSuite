@@ -70,25 +70,24 @@ public class AddAndSearchBrandNewVisitor {
     public void When_I_enter_a_valid_existing_email_id_and_click_search_and_Add_button_and_I_enter_the_below_details_and_click_the_save_button_and_search_the_added_visitor(DataTable addPVVisitor) throws Exception {
         Integer i = 2;
         for (Map<String, String> data : addPVVisitor.asMaps(String.class, String.class)) {
-            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").replaceAll(" ", "").split(",");
+            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").split(",");
             driver = launchBrowser.getDriver();
             launchBrowser.invokeBrowser();
             TimeUnit.SECONDS.sleep(2);
-            login.loginToBni(splitCredentials[0], splitCredentials[1]);
+            login.loginToBni(splitCredentials[0].replaceAll(" ", ""), splitCredentials[1].replaceAll(" ",""));
             TimeUnit.SECONDS.sleep(4);
             driver = launchBrowser.getDriver();
             bniConnect = new BNIConnect(driver);
             captureScreenShot = new CaptureScreenShot(driver);
             bniConnect.navigateMenu("Operations,Chapter");
             TimeUnit.SECONDS.sleep(2);
-            selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2], splitCredentials[3], splitCredentials[4]);
+            selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2].trim(), splitCredentials[3].trim(), splitCredentials[4].trim());
             bniConnect = new BNIConnect(driver);
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(3);
             String language[] = readWritePropertyFile.loadAndReadPropertyFile("language", "properties/config.properties").split(",");
             int colNumber = Integer.parseInt(language[1]);
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/translation.xlsx");
             String transMenu = readWriteExcel.getCellData("translation", colNumber, 1);
-            System.out.println(transMenu);
             bniConnect.selectItemFromManageVisitor(transMenu);
             addAVisitor = new AddAVisitor(driver);
             TimeUnit.SECONDS.sleep(3);
