@@ -64,7 +64,7 @@ public class ConvertVisitorToMember {
         Integer i =1;
         Integer j = 2;
         for (Map<String, String> data : convertToMember.asMaps(String.class, String.class)) {
-            String[] splitCredentials = loginSubList.get(i - 2).toString().replace("[", "").replace("]", "").split(",");
+            String[] splitCredentials = loginSubList.get(j - 2).toString().replace("[", "").replace("]", "").split(",");
             driver = launchBrowser.getDriver();
             launchBrowser.invokeBrowser();
             TimeUnit.SECONDS.sleep(2);
