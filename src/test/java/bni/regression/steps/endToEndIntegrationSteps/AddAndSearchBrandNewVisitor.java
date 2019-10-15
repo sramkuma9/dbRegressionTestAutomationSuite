@@ -52,6 +52,8 @@ public class AddAndSearchBrandNewVisitor {
     @Before
     public void setup() throws Exception {
         fixedDateTime = currentDateTime.dateTime();
+        readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
+        boolean setFlag = readWriteExcel.deleteCellData("src/test/resources/inputFiles/testInput.xlsx", "addVisitor", 0);
     }
 
     @After
@@ -74,8 +76,8 @@ public class AddAndSearchBrandNewVisitor {
             driver = launchBrowser.getDriver();
             launchBrowser.invokeBrowser();
             TimeUnit.SECONDS.sleep(2);
-            login.loginToBni(splitCredentials[0].replaceAll(" ", ""), splitCredentials[1].replaceAll(" ",""));
-            TimeUnit.SECONDS.sleep(4);
+            login.loginToBni(splitCredentials[0].replaceAll(" ", ""), splitCredentials[1].replaceAll(" ", ""));
+            TimeUnit.SECONDS.sleep(10);
             driver = launchBrowser.getDriver();
             bniConnect = new BNIConnect(driver);
             captureScreenShot = new CaptureScreenShot(driver);

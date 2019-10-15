@@ -17,3 +17,4 @@ bni/regression/pageFactory/AddAVisitor.class
 bni/regression/libraries/ui/SelectCountryRegionChapter.class
 bni/regression/pageFactory/ViewEditVisitorsList.class
 bni/regression/steps/endToEndIntegrationSteps/AddAndSearchBrandNewVisitor.class
+bni/regression/steps/endToEndIntegrationSteps/TestAndDelete.class

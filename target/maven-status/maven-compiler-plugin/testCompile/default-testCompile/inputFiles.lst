@@ -7,6 +7,7 @@
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/libraries/common/LaunchBrowser.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/libraries/ui/Login.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/pageFactory/Login.java
+/home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/TestAndDelete.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/pageFactory/BNIConnect.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/AddAndSearchBrandNewVisitor.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/pageFactory/ViewEditVisitorsList.java
