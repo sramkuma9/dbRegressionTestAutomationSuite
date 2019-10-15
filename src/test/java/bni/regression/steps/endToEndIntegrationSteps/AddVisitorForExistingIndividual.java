@@ -78,7 +78,7 @@ public class AddVisitorForExistingIndividual {
             System.out.println(transMenu);
             bniConnect.selectItemFromManageVisitor(transMenu);
             addAVisitor = new AddAVisitor(driver);
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(15);
             addAVisitor.enterEmail(data.get("emailId"));
             TimeUnit.SECONDS.sleep(2);
             addAVisitor.clickSearchButton();

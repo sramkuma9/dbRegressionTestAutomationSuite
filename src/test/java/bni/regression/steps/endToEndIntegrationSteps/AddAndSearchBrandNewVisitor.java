@@ -52,8 +52,8 @@ public class AddAndSearchBrandNewVisitor {
     @Before
     public void setup() throws Exception {
         fixedDateTime = currentDateTime.dateTime();
-        readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
-        boolean setFlag = readWriteExcel.deleteCellData("src/test/resources/inputFiles/testInput.xlsx", "addVisitor", 0);
+        //readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
+        //boolean setFlag = readWriteExcel.deleteCellData("src/test/resources/inputFiles/testInput.xlsx", "addVisitor", 0);
     }
 
     @After
@@ -82,7 +82,7 @@ public class AddAndSearchBrandNewVisitor {
             bniConnect = new BNIConnect(driver);
             captureScreenShot = new CaptureScreenShot(driver);
             bniConnect.navigateMenu("Operations,Chapter");
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(3);
             selectCountryRegionChapter.selectCountryRegChap(splitCredentials[2].trim(), splitCredentials[3].trim(), splitCredentials[4].trim());
             bniConnect = new BNIConnect(driver);
             TimeUnit.SECONDS.sleep(3);
@@ -92,7 +92,7 @@ public class AddAndSearchBrandNewVisitor {
             String transMenu = readWriteExcel.getCellData("translation", colNumber, 1);
             bniConnect.selectItemFromManageVisitor(transMenu);
             addAVisitor = new AddAVisitor(driver);
-            TimeUnit.SECONDS.sleep(3);
+            TimeUnit.SECONDS.sleep(14);
             String dateTimeStamp = currentDateTime.dateTime();
             visitorDateTime = (dateTimeStamp.replaceAll("/", "").replaceAll(":", "").replaceAll(" ", ""));
             addAVisitor.enterEmail(data.get("firstName") + data.get("lastName") + visitorDateTime + "@gmail.com");
@@ -143,8 +143,9 @@ public class AddAndSearchBrandNewVisitor {
             TimeUnit.SECONDS.sleep(10);
             bniConnect = new BNIConnect(driver);
             TimeUnit.SECONDS.sleep(5);
-            bniConnect.selectItemFromManageVisitor("Add a Visitor");
-            TimeUnit.SECONDS.sleep(3);
+            bniConnect.selectItemFromManageVisitor(transMenu);
+            addAVisitor = new AddAVisitor(driver);
+            TimeUnit.SECONDS.sleep(14);
             addAVisitor = new AddAVisitor(driver);
             addAVisitor.enterEmail(data.get("firstName") + data.get("lastName") + visitorDateTime + "@gmail.com");
             TimeUnit.SECONDS.sleep(2);

@@ -84,7 +84,7 @@ public class ConvertVisitorToMember {
             String transMenu = readWriteExcel.getCellData("translation",colNumber,2);
             System.out.println(transMenu);
             bniConnect.selectItemFromManageVisitor(transMenu);
-            TimeUnit.SECONDS.sleep(2);
+            TimeUnit.SECONDS.sleep(10);
             viewEditVisitorsList = new ViewEditVisitorsList(driver);
             viewEditVisitorsList.clickFromStartDateField();
             TimeUnit.SECONDS.sleep(2);
@@ -147,7 +147,7 @@ public class ConvertVisitorToMember {
             add.selectMemberShipOption(data.get("membershipOption"));
             TimeUnit.SECONDS.sleep(2);
             add.clickSubmitButton();
-            TimeUnit.SECONDS.sleep(10);
+            TimeUnit.SECONDS.sleep(15);
             enterNewApplication = new EnterNewApplication(driver);
             enterNewApplication.enterEmail(visitorEmailId);
             TimeUnit.SECONDS.sleep(2);
