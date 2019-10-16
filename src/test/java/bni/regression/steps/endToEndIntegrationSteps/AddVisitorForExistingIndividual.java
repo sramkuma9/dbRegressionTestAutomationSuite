@@ -62,7 +62,7 @@ public class AddVisitorForExistingIndividual {
             launchBrowser.invokeBrowser();
             TimeUnit.SECONDS.sleep(2);
             login.loginToBni(splitCredentials[0].replaceAll(" ", ""), splitCredentials[1].replaceAll(" ",""));
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(12);
             driver = launchBrowser.getDriver();
             bniConnect = new BNIConnect(driver);
             captureScreenShot = new CaptureScreenShot(driver);

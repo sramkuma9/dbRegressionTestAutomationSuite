@@ -1,0 +1,92 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 19286615,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 109458,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 135222,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.setup()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "test",
+        "description": "",
+        "id": "add-and-search-brand-new-visitor;test",
+        "after": [
+          {
+            "result": {
+              "duration": 43039,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddAndSearchBrandNewVisitor.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 35855,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 47543,
+              "status": "passed"
+            },
+            "match": {
+              "location": "AddVisitorForExistingIndividual.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 3672104508,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "test and delete",
+            "match": {
+              "location": "TestAndDelete.test_and_delete()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      }
+    ],
+    "name": "Add and search brand new visitor",
+    "description": "",
+    "id": "add-and-search-brand-new-visitor",
+    "keyword": "Feature",
+    "uri": "testAndDelete.feature"
+  }
+]

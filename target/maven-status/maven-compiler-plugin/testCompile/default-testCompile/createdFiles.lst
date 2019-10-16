@@ -10,6 +10,7 @@ bni/regression/libraries/common/ReadPDFReader.class
 bni/regression/steps/endToEndIntegrationSteps/ConvertVisitorToMember.class
 bni/regression/libraries/common/LaunchBrowser.class
 bni/regression/libraries/common/ReadWriteExcel.class
+bni/regression/libraries/db/DbConnect.class
 bni/regression/pageFactory/Login.class
 bni/regression/libraries/common/CurrentDateTime.class
 bni/regression/pageFactory/EnterNewApplication.class
