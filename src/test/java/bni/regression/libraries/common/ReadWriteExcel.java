@@ -62,6 +62,28 @@ public class ReadWriteExcel {
         return true;
     }
 
+    public boolean setSqlCount(String fileName, String sheetName, int colNumber, int rowFlag, String value) {
+        try {
+            sheet = workbook.getSheet(sheetName);
+            row = sheet.getRow(1);
+            if (row == null)
+                row = sheet.createRow(1);
+
+            cell = row.getCell(colNumber);
+            if (cell == null)
+                cell = row.createCell(colNumber);
+            cell.setCellValue(value);
+
+            fos = new FileOutputStream(fileName);
+            workbook.write(fos);
+            fos.close();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
     public boolean deleteCellData(String fileName, String sheetName, int colNumber) {
         try {
             sheet = workbook.getSheet(sheetName);
