@@ -17,8 +17,8 @@ public class TestAndDelete {
         //boolean setFlag = readWriteExcel.deleteCellData("src/test/resources/inputFiles/testInput.xlsx", "addVisitor", 0);
         String[][] sqlResult = dbConnect.queryAndRetrieveRecords(readWritePropertyFile.loadAndReadPropertyFile("addAVisitor", "properties/sql.properties"));
         readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
-        String rowCount = readWriteExcel.getCellData("addVisitor",1,1);
-        String colCount = readWriteExcel.getCellData("addVisitor",2,1);
+        String rowCount = readWriteExcel.getCellData("sqlCount",0,1);
+        String colCount = readWriteExcel.getCellData("sqlCount",1,1);
         for (int i = 0; i < Integer.parseInt(rowCount); i++) {
             for(int j = 0; j <= Integer.parseInt(colCount); j++) {
                System.out.println(sqlResult[i][j]);

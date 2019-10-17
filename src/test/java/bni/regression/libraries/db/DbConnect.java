@@ -78,8 +78,8 @@ public class DbConnect {
             Integer colCount = rsmd.getColumnCount() - 1;
 
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/testInput.xlsx");
-            readWriteExcel.setSqlCount("src/test/resources/inputFiles/testInput.xlsx","addVisitor",1,2,recordCount.toString());
-            readWriteExcel.setSqlCount("src/test/resources/inputFiles/testInput.xlsx","addVisitor",2,2,colCount.toString());
+            readWriteExcel.setSqlCount("src/test/resources/inputFiles/testInput.xlsx","sqlCount",0,2,recordCount.toString());
+            readWriteExcel.setSqlCount("src/test/resources/inputFiles/testInput.xlsx","sqlCount",1,2,colCount.toString());
 
             //getting the value of each record.
             for (Integer iteration = 0; iteration < recordCount; iteration++) {
