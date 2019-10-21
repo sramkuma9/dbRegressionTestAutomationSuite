@@ -19,7 +19,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
@@ -90,7 +89,7 @@ public class AddAndSearchBrandNewVisitor {
             int colNumber = Integer.parseInt(language[1]);
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/translation.xlsx");
             String transMenu = readWriteExcel.getCellData("translation", colNumber, 1);
-            bniConnect.selectItemFromManageVisitor(transMenu);
+            bniConnect.selectItemFromSubListMenu(transMenu);
             addAVisitor = new AddAVisitor(driver);
             TimeUnit.SECONDS.sleep(14);
             String dateTimeStamp = currentDateTime.dateTime();
@@ -143,7 +142,7 @@ public class AddAndSearchBrandNewVisitor {
             TimeUnit.SECONDS.sleep(10);
             bniConnect = new BNIConnect(driver);
             TimeUnit.SECONDS.sleep(5);
-            bniConnect.selectItemFromManageVisitor(transMenu);
+            bniConnect.selectItemFromSubListMenu(transMenu);
             addAVisitor = new AddAVisitor(driver);
             TimeUnit.SECONDS.sleep(14);
             addAVisitor = new AddAVisitor(driver);

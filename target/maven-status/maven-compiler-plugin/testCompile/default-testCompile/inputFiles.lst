@@ -11,6 +11,7 @@
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/TestAndDelete.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/pageFactory/BNIConnect.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/AddAndSearchBrandNewVisitor.java
+/home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/PowerSearchFindAPerson.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/pageFactory/ViewEditVisitorsList.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/pageFactory/Add.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/pageFactory/AddAVisitor.java
@@ -19,4 +20,3 @@
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/steps/endToEndIntegrationSteps/ConvertVisitorToMember.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/libraries/ui/SignOut.java
 /home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/runners/PriorityCases.java
-/home/ajay/IdeaProjects/dbRegressionTestAutomationSuite/src/test/java/bni/regression/libraries/db/PuttyConnection.java

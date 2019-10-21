@@ -76,7 +76,7 @@ public class AddVisitorForExistingIndividual {
             readWriteExcel.setExcelFile("src/test/resources/inputFiles/translation.xlsx");
             String transMenu = readWriteExcel.getCellData("translation",colNumber,1);
             System.out.println(transMenu);
-            bniConnect.selectItemFromManageVisitor(transMenu);
+            bniConnect.selectItemFromSubListMenu(transMenu);
             addAVisitor = new AddAVisitor(driver);
             TimeUnit.SECONDS.sleep(15);
             addAVisitor.enterEmail(data.get("emailId"));

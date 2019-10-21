@@ -52,7 +52,10 @@ public class BNIConnect {
     List<WebElement> subMenuNavigate;
 
     @FindBy(css = "#help")
-    List<WebElement> manageVisitorMenu;
+    List<WebElement> subListMenu;
+
+    @FindBy(css = "#help")
+    List<WebElement> mainListMenu;
 
     public BNIConnect(WebDriver driver) {
         BNIConnect.driver = driver;
@@ -157,6 +160,24 @@ public class BNIConnect {
                                 break;
                             }
                         }
+                    case 3:
+                        TimeUnit.SECONDS.sleep(3);
+                        action.moveToElement(td_collection.get(0));
+                        action.build().perform();
+                        TimeUnit.SECONDS.sleep(3);
+                        for (WebElement subElement : subMenuNavigate) {
+                            List<WebElement> sub_collection = subElement.findElements(By.tagName("a"));
+                            String subMenuName = sub_collection.get(0).getText();
+                            if (menusplit[1].equals(subMenuName)) {
+                                sub_collection.get(0).click();
+                                counter = counter + 1;
+                                break;
+                            }
+                        }
+                        TimeUnit.SECONDS.sleep(4);
+                        this.selectItemFromMainListMenu(menusplit[1]);
+                        TimeUnit.SECONDS.sleep(5);
+                        this.selectItemFromSubListMenu(menusplit[2]);
                 }
             }
             if (counter == 1) {
@@ -165,9 +186,22 @@ public class BNIConnect {
         }
     }
 
-    public void selectItemFromManageVisitor(String item) throws Exception {
+    public void selectItemFromSubListMenu(String item) throws Exception {
         TimeUnit.SECONDS.sleep(2);
-        for (WebElement trElement : manageVisitorMenu) {
+        for (WebElement trElement : subListMenu) {
+            List<WebElement> td_collection = trElement.findElements(By.tagName("tbody"));
+            String menuItem = td_collection.get(0).findElement(By.tagName("tr")).getText();
+            if (item.equals(menuItem)) {
+                td_collection.get(0).findElement(By.tagName("tr")).findElement(By.tagName("a")).click();
+                TimeUnit.SECONDS.sleep(3);
+                break;
+            }
+        }
+    }
+
+    public void selectItemFromMainListMenu(String item) throws Exception {
+        TimeUnit.SECONDS.sleep(2);
+        for (WebElement trElement : mainListMenu) {
             List<WebElement> td_collection = trElement.findElements(By.tagName("tbody"));
             String menuItem = td_collection.get(0).findElement(By.tagName("tr")).getText();
             if (item.equals(menuItem)) {
