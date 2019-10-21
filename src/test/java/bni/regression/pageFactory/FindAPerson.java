@@ -94,12 +94,12 @@ public class FindAPerson {
         }
     }
 
-    public void selectVisitMonth(String month) {
+    public void selectMonth(String month) {
         Select visitMonthSelect = new Select(periodMonth);
         visitMonthSelect.selectByVisibleText(month);
     }
 
-    public void selectVisitYear(String year) {
+    public void selectYear(String year) {
         Select visitYearSelect = new Select(periodYear);
         visitYearSelect.selectByVisibleText(year);
     }
@@ -149,31 +149,32 @@ public class FindAPerson {
         roleSelect.selectByVisibleText(role);
     }
 
-    public void clickfeesSuspendedFlag(Boolean feesSuspended) {
-        if (feesSuspended==true) {
+    public void clickfeesSuspendedFlag(String feesSuspended) {
+        if (feesSuspended.equals("true")) {
             feesSuspendedFlag.click();
         }
     }
 
-    public void clickActiveRecordsOnlyFlag(Boolean activeRecords) {
-        if (activeRecords==true) {
+    public void clickActiveRecordsOnlyFlag(String activeRecords) {
+        if (activeRecords.equals("true")) {
             activeRecordsOnlyFlag.click();
         }
     }
 
-    public void clickShowRecordsWithRemarksOnlyFlag(Boolean showRecords) {
-        if (showRecords==true) {
+    public void clickShowRecordsWithRemarksOnlyFlag(String showRecords) {
+        if (showRecords.equals("true")) {
             showRecordsWithRemarksOnlyFlag.click();
         }
     }
 
-    public void clickDeletedRecordsFlag(Boolean deletedRecords) {
-        if (deletedRecords==true) {
+    public void clickDeletedRecordsFlag(String deletedRecords) {
+        if (deletedRecords.equals("true")) {
             deletedRecordsFlag.click();
         }
     }
 
     public void enterResultsPerPage(String resultsPerPage){
+        resultsPerPageTextBox.clear();
         resultsPerPageTextBox.sendKeys(resultsPerPage);
     }
 }

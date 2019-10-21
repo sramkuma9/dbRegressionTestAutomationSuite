@@ -6,6 +6,7 @@ import bni.regression.libraries.ui.SelectCountryRegionChapter;
 import bni.regression.libraries.ui.SignOut;
 import bni.regression.pageFactory.AddAVisitor;
 import bni.regression.pageFactory.BNIConnect;
+import bni.regression.pageFactory.FindAPerson;
 import cucumber.api.DataTable;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -47,6 +48,7 @@ public class PowerSearchFindAPerson {
     public List<List<String>> loginSubList;
     private CaptureScreenShot captureScreenShot;
     ReadWriteExcel readWriteExcel = new ReadWriteExcel();
+    private FindAPerson findAPerson;
 
     @Before
     public void setup() throws Exception {
@@ -82,8 +84,54 @@ public class PowerSearchFindAPerson {
             captureScreenShot = new CaptureScreenShot(driver);
             bniConnect.navigateMenu("Tools,Power Search,Find a Person");
             TimeUnit.SECONDS.sleep(5);
-
-
+            findAPerson = new FindAPerson(driver);
+            findAPerson.enterFirstName(data.get("firstName"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.enterLastName(data.get("lastName"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.enterCompany(data.get("company"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.enterBNIOrganisation(data.get("bniOrganisation"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.selectDateCriteria(data.get("dateCriteria"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.clickPeriodStartDate();
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectYear(data.get("periodStartYear"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectMonth(data.get("periodStartMonth"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectDateFromDatePicker(data.get("PeriodStartDay"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.clickPeriodEndDate();
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectYear(data.get("periodEndYear"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectMonth(data.get("periodEndMonth"));
+            TimeUnit.SECONDS.sleep(2);
+            System.out.println(data.get("periodEndDay"));
+            findAPerson.selectDateFromDatePicker(data.get("periodEndDay"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.clickQueryDate();
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectYear(data.get("queryYear"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectMonth(data.get("queryMonth"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectDateFromDatePicker(data.get("queryDay"));
+            TimeUnit.SECONDS.sleep(2);
+            findAPerson.selectRole(data.get("role"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.clickfeesSuspendedFlag(data.get("feesSuspended"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.clickActiveRecordsOnlyFlag(data.get("activeRecordsOnly"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.clickShowRecordsWithRemarksOnlyFlag(data.get("showRecordsWithRemarksOnly"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.clickDeletedRecordsFlag(data.get("deletedRecords"));
+            TimeUnit.SECONDS.sleep(1);
+            findAPerson.enterResultsPerPage(data.get("resultsPerPage"));
+            TimeUnit.SECONDS.sleep(1);
         }
     }
 
