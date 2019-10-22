@@ -7,19 +7,19 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 6157204,
+  "duration": 21892803,
   "status": "passed"
 });
 formatter.before({
-  "duration": 21249075,
+  "duration": 13366328,
   "status": "passed"
 });
 formatter.before({
-  "duration": 176557,
+  "duration": 175912,
   "status": "passed"
 });
 formatter.before({
-  "duration": 331824,
+  "duration": 323159,
   "status": "passed"
 });
 formatter.scenario({
@@ -156,12 +156,55 @@ formatter.step({
         "20"
       ],
       "line": 10
+    },
+    {
+      "cells": [
+        "Selenium",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "line": 11
     }
   ],
   "keyword": "When "
 });
 formatter.step({
-  "line": 11,
+  "line": 12,
   "name": "Reports for the specified person displayed successfully- verify with DB",
   "keyword": "Then "
 });
@@ -169,37 +212,37 @@ formatter.match({
   "location": "PowerSearchFindAPerson.I_m_in_the_BNI_home_page_and_click_Tools_Power_search(DataTable)"
 });
 formatter.result({
-  "duration": 336352608,
+  "duration": 342043691,
   "status": "passed"
 });
 formatter.match({
   "location": "PowerSearchFindAPerson.I_click_Find_a_Person_and_enter_the_below_details_and_click_search_button(DataTable)"
 });
 formatter.result({
-  "duration": 128451345679,
+  "duration": 244001046960,
   "status": "passed"
 });
 formatter.match({
   "location": "PowerSearchFindAPerson.Reports_for_the_specified_person_displayed_successfully_verify_with_DB()"
 });
 formatter.result({
-  "duration": 592944,
+  "duration": 672723,
   "status": "passed"
 });
 formatter.after({
-  "duration": 49824,
+  "duration": 44723,
   "status": "passed"
 });
 formatter.after({
-  "duration": 31785,
+  "duration": 49425,
   "status": "passed"
 });
 formatter.after({
-  "duration": 30916,
+  "duration": 49936,
   "status": "passed"
 });
 formatter.after({
-  "duration": 36204,
+  "duration": 40640,
   "status": "passed"
 });
 });

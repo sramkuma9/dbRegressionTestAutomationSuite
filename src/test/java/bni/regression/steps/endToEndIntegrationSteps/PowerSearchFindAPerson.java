@@ -95,43 +95,62 @@ public class PowerSearchFindAPerson {
             TimeUnit.SECONDS.sleep(1);
             findAPerson.selectDateCriteria(data.get("dateCriteria"));
             TimeUnit.SECONDS.sleep(1);
-            findAPerson.clickPeriodStartDate();
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectYear(data.get("periodStartYear"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectMonth(data.get("periodStartMonth"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectDateFromDatePicker(data.get("PeriodStartDay"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.clickPeriodEndDate();
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectYear(data.get("periodEndYear"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectMonth(data.get("periodEndMonth"));
-            TimeUnit.SECONDS.sleep(2);
-            System.out.println(data.get("periodEndDay"));
-            findAPerson.selectDateFromDatePicker(data.get("periodEndDay"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.clickQueryDate();
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectYear(data.get("queryYear"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectMonth(data.get("queryMonth"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectDateFromDatePicker(data.get("queryDay"));
-            TimeUnit.SECONDS.sleep(2);
-            findAPerson.selectRole(data.get("role"));
-            TimeUnit.SECONDS.sleep(1);
-            findAPerson.clickfeesSuspendedFlag(data.get("feesSuspended"));
-            TimeUnit.SECONDS.sleep(1);
-            findAPerson.clickActiveRecordsOnlyFlag(data.get("activeRecordsOnly"));
-            TimeUnit.SECONDS.sleep(1);
-            findAPerson.clickShowRecordsWithRemarksOnlyFlag(data.get("showRecordsWithRemarksOnly"));
-            TimeUnit.SECONDS.sleep(1);
-            findAPerson.clickDeletedRecordsFlag(data.get("deletedRecords"));
-            TimeUnit.SECONDS.sleep(1);
+            if (!(data.get("periodStartYear")).equals("")) {
+                findAPerson.clickPeriodStartDate();
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectYear(data.get("periodStartYear"));
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectMonth(data.get("periodStartMonth"));
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectDateFromDatePicker(data.get("PeriodStartDay"));
+                TimeUnit.SECONDS.sleep(2);
+            }
+            if (!(data.get("periodEndYear")).equals("")) {
+                findAPerson.clickPeriodEndDate();
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectYear(data.get("periodEndYear"));
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectMonth(data.get("periodEndMonth"));
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectDateFromDatePicker(data.get("periodEndDay"));
+                TimeUnit.SECONDS.sleep(2);
+            }
+            if (!(data.get("queryYear")).equals("")) {
+                findAPerson.clickQueryDate();
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectYear(data.get("queryYear"));
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectMonth(data.get("queryMonth"));
+                TimeUnit.SECONDS.sleep(2);
+                findAPerson.selectDateFromDatePicker(data.get("queryDay"));
+                TimeUnit.SECONDS.sleep(2);
+            }
+            if (!(data.get("role")).equals("")) {
+                findAPerson.selectRole(data.get("role"));
+                TimeUnit.SECONDS.sleep(1);
+            }
+            if (!(data.get("feesSuspended")).equals("")) {
+                findAPerson.clickfeesSuspendedFlag(data.get("feesSuspended"));
+                TimeUnit.SECONDS.sleep(1);
+            }
+            if (!(data.get("activeRecordsOnly")).equals("")) {
+                findAPerson.clickActiveRecordsOnlyFlag(data.get("activeRecordsOnly"));
+                TimeUnit.SECONDS.sleep(1);
+            }
+            if (!(data.get("showRecordsWithRemarksOnly")).equals("")) {
+                findAPerson.clickShowRecordsWithRemarksOnlyFlag(data.get("showRecordsWithRemarksOnly"));
+                TimeUnit.SECONDS.sleep(1);
+            }
+            if (!(data.get("deletedRecords")).equals("")) {
+                findAPerson.clickDeletedRecordsFlag(data.get("deletedRecords"));
+                TimeUnit.SECONDS.sleep(1);
+            }
             findAPerson.enterResultsPerPage(data.get("resultsPerPage"));
             TimeUnit.SECONDS.sleep(1);
+            findAPerson.clickSearchButton();
+            TimeUnit.SECONDS.sleep(2);
+            // add database verification code
+            signOut.signOutBni();
         }
     }
 

@@ -125,8 +125,10 @@ public class FindAPerson {
     }
 
     public void selectDateCriteria(String dateCriteria) {
-        Select dateCriteriaSelect = new Select(dateCriteriaListBox);
-        dateCriteriaSelect.selectByVisibleText(dateCriteria);
+        if (!dateCriteria.equals("")) {
+            Select dateCriteriaSelect = new Select(dateCriteriaListBox);
+            dateCriteriaSelect.selectByVisibleText(dateCriteria);
+        }
     }
 
     public void clickPeriodStartDate() throws InterruptedException {

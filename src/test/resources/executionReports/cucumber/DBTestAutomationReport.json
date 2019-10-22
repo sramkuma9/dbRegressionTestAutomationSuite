@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 6157204,
+              "duration": 21892803,
               "status": "passed"
             },
             "match": {
@@ -15,7 +15,7 @@
           },
           {
             "result": {
-              "duration": 21249075,
+              "duration": 13366328,
               "status": "passed"
             },
             "match": {
@@ -24,7 +24,7 @@
           },
           {
             "result": {
-              "duration": 176557,
+              "duration": 175912,
               "status": "passed"
             },
             "match": {
@@ -33,7 +33,7 @@
           },
           {
             "result": {
-              "duration": 331824,
+              "duration": 323159,
               "status": "passed"
             },
             "match": {
@@ -48,7 +48,7 @@
         "after": [
           {
             "result": {
-              "duration": 49824,
+              "duration": 44723,
               "status": "passed"
             },
             "match": {
@@ -57,7 +57,7 @@
           },
           {
             "result": {
-              "duration": 31785,
+              "duration": 49425,
               "status": "passed"
             },
             "match": {
@@ -66,7 +66,7 @@
           },
           {
             "result": {
-              "duration": 30916,
+              "duration": 49936,
               "status": "passed"
             },
             "match": {
@@ -75,7 +75,7 @@
           },
           {
             "result": {
-              "duration": 36204,
+              "duration": 40640,
               "status": "passed"
             },
             "match": {
@@ -88,7 +88,7 @@
         "steps": [
           {
             "result": {
-              "duration": 336352608,
+              "duration": 342043691,
               "status": "passed"
             },
             "line": 4,
@@ -132,7 +132,7 @@
           },
           {
             "result": {
-              "duration": 128451345679,
+              "duration": 244001046960,
               "status": "passed"
             },
             "line": 8,
@@ -226,16 +226,59 @@
                   "20"
                 ],
                 "line": 10
+              },
+              {
+                "cells": [
+                  "Selenium",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                "line": 11
               }
             ],
             "keyword": "When "
           },
           {
             "result": {
-              "duration": 592944,
+              "duration": 672723,
               "status": "passed"
             },
-            "line": 11,
+            "line": 12,
             "name": "Reports for the specified person displayed successfully- verify with DB",
             "match": {
               "location": "PowerSearchFindAPerson.Reports_for_the_specified_person_displayed_successfully_verify_with_DB()"
