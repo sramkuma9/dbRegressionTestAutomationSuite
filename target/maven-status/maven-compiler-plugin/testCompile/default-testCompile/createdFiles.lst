@@ -1,5 +1,6 @@
 bni/regression/runners/PriorityCases.class
 bni/regression/libraries/ui/Login.class
+bni/regression/pageFactory/FindAPerson.class
 bni/regression/libraries/common/CaptureScreenShot.class
 bni/regression/libraries/common/ReadWritePropertyFile.class
 bni/regression/libraries/ui/SignOut.class

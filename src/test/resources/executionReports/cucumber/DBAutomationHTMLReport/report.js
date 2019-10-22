@@ -7,19 +7,19 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 21892803,
+  "duration": 29457287,
   "status": "passed"
 });
 formatter.before({
-  "duration": 13366328,
+  "duration": 177888,
   "status": "passed"
 });
 formatter.before({
-  "duration": 175912,
+  "duration": 292217,
   "status": "passed"
 });
 formatter.before({
-  "duration": 323159,
+  "duration": 156539,
   "status": "passed"
 });
 formatter.scenario({
@@ -212,37 +212,37 @@ formatter.match({
   "location": "PowerSearchFindAPerson.I_m_in_the_BNI_home_page_and_click_Tools_Power_search(DataTable)"
 });
 formatter.result({
-  "duration": 342043691,
+  "duration": 402237106,
   "status": "passed"
 });
 formatter.match({
   "location": "PowerSearchFindAPerson.I_click_Find_a_Person_and_enter_the_below_details_and_click_search_button(DataTable)"
 });
 formatter.result({
-  "duration": 244001046960,
+  "duration": 250879795649,
   "status": "passed"
 });
 formatter.match({
   "location": "PowerSearchFindAPerson.Reports_for_the_specified_person_displayed_successfully_verify_with_DB()"
 });
 formatter.result({
-  "duration": 672723,
+  "duration": 219812,
   "status": "passed"
 });
 formatter.after({
-  "duration": 44723,
+  "duration": 63359,
   "status": "passed"
 });
 formatter.after({
-  "duration": 49425,
+  "duration": 36897,
   "status": "passed"
 });
 formatter.after({
-  "duration": 49936,
+  "duration": 32805,
   "status": "passed"
 });
 formatter.after({
-  "duration": 40640,
+  "duration": 68842,
   "status": "passed"
 });
 });

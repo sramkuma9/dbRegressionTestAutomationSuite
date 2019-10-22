@@ -6,16 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 21892803,
-              "status": "passed"
-            },
-            "match": {
-              "location": "ConvertVisitorToMember.setup()"
-            }
-          },
-          {
-            "result": {
-              "duration": 13366328,
+              "duration": 29457287,
               "status": "passed"
             },
             "match": {
@@ -24,7 +15,7 @@
           },
           {
             "result": {
-              "duration": 175912,
+              "duration": 177888,
               "status": "passed"
             },
             "match": {
@@ -33,11 +24,20 @@
           },
           {
             "result": {
-              "duration": 323159,
+              "duration": 292217,
               "status": "passed"
             },
             "match": {
               "location": "AddAndSearchBrandNewVisitor.setup()"
+            }
+          },
+          {
+            "result": {
+              "duration": 156539,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.setup()"
             }
           }
         ],
@@ -48,16 +48,7 @@
         "after": [
           {
             "result": {
-              "duration": 44723,
-              "status": "passed"
-            },
-            "match": {
-              "location": "ConvertVisitorToMember.tearDown()"
-            }
-          },
-          {
-            "result": {
-              "duration": 49425,
+              "duration": 63359,
               "status": "passed"
             },
             "match": {
@@ -66,7 +57,7 @@
           },
           {
             "result": {
-              "duration": 49936,
+              "duration": 36897,
               "status": "passed"
             },
             "match": {
@@ -75,11 +66,20 @@
           },
           {
             "result": {
-              "duration": 40640,
+              "duration": 32805,
               "status": "passed"
             },
             "match": {
               "location": "AddAndSearchBrandNewVisitor.tearDown()"
+            }
+          },
+          {
+            "result": {
+              "duration": 68842,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ConvertVisitorToMember.tearDown()"
             }
           }
         ],
@@ -88,7 +88,7 @@
         "steps": [
           {
             "result": {
-              "duration": 342043691,
+              "duration": 402237106,
               "status": "passed"
             },
             "line": 4,
@@ -132,7 +132,7 @@
           },
           {
             "result": {
-              "duration": 244001046960,
+              "duration": 250879795649,
               "status": "passed"
             },
             "line": 8,
@@ -275,7 +275,7 @@
           },
           {
             "result": {
-              "duration": 672723,
+              "duration": 219812,
               "status": "passed"
             },
             "line": 12,
